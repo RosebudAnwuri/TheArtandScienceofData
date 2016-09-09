@@ -70,6 +70,10 @@ clicktype = remDr$findElement(using = "css selector", '#stage-team-stats-options
 remDr$mouseMoveToLocation(webElement = clicktype)
 clicktype$click()
 webElem = remDr$findElement(using = "css selector", '#statistics-team-table-defensive')
+
+#Dealing with web can be a real pain especially living with place terrible internet
+#This is area is for error handling. Whenever the table is not populated but instead is of the class try-error (which means it failed), we retry all the steps in getting that table till it works
+#Crude I know, will keep on thinking of ways to refine this.
 webElemtext = try(webElem$getElementAttribute("outerHTML")[[1]])
 defenseTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
 while (class(defenseTable) == "try-error"){
