@@ -1,116 +1,15 @@
-library(XML)
-#Discipline
-
-discTable = readHTMLTable('http://www.foxsports.com/soccer/stats?competition=1&season=20130&category=DISCIPLINE')
-
-
-for (i in 1:11){
-  print (i)
-  flush.console()
-  if (i == 1){
-    discTable = readHTMLTable('http://www.foxsports.com/soccer/stats?competition=1&season=20120&category=DISCIPLINE')
-    discTable = data.frame(discTable)
-    names(discTable) = c('Name','GP','GS','MP','FS','FC','YC','RC','OFF','C','CK','PKG','PK')
-    
-    }
-  else{
-  tablereader = readHTMLTable(paste0('http://www.foxsports.com/soccer/stats?competition=1&season=20120&category=DISCIPLINE&pos=0&team=0&isOpp=0&splitType=0&sort=5&sortOrder=0&page=',i))
-  tablereader = data.frame(tablereader)
-  names(tablereader) = c('Name','GP','GS','MP','FS','FC','YC','RC','OFF','C','CK','PKG','PK')
-  discTable = rbind(discTable,tablereader)}
-}
-
-discTable$Name = gsub('[[:digit:]]+', '', discTable$Name)
-summary(duplicated(discTable[,1]))
-discTable = discTable[!duplicated(discTable["Name"]),]
-
-#Standard
-StandardTable = readHTMLTable('http://www.foxsports.com/soccer/stats?competition=1&season=20120&category=STANDARD')
-StandardTable = data.frame(StandardTable)
-names(StandardTable) = c('Name','GP',	'GS',	'MP',	'G',	'A','SOG'	,'S'	,'YC',	'RC')
-
-for (i in 2:11){
-  print (i)
-  flush.console()
-  tablereader = readHTMLTable(paste0('http://www.foxsports.com/soccer/stats?competition=1&season=20120&category=STANDARD&pos=0&team=0&isOpp=0&splitType=0&sort=3&sortOrder=0&page=',i))
-  tablereader = data.frame(tablereader)
-  names(tablereader) = c('Name','GP',	'GS',	'MP',	'G',	'A','SOG'	,'S'	,'YC',	'RC')
-  StandardTable = rbind(StandardTable,tablereader)
-}
-summary(duplicated(StandardTable[,1]))
-StandardTable = StandardTable[!duplicated(StandardTable["Name"]),]
-StandardTable$Name = gsub('[[:digit:]]+', '', StandardTable$Name)
-
-#Control
-controlTable = readHTMLTable('http://www.foxsports.com/soccer/stats?competition=1&season=20120&category=CONTROL')
-controlTable = data.frame(controlTable)
-names(controlTable) = c('Name','GP',	'GS','MP',	'TT',	'P',	'INT',	'BLK',	'GMB',	'TKL'	,'OFF'	,'C'	,'CK')
-
-for (i in 2:11){
-  print (i)
-  flush.console()
-  tablereader = readHTMLTable(paste0('http://www.foxsports.com/soccer/stats?competition=1&season=20120&category=CONTROL&pos=0&team=0&isOpp=0&splitType=0&sort=3&sortOrder=0&page=',i))
-  tablereader = data.frame(tablereader)
-  names(tablereader) = c('Name','GP',	'GS','MP',	'TT',	'P',	'INT',	'BLK',	'GMB',	'TKL'	,'OFF'	,'C'	,'CK')
-  controlTable = rbind(controlTable,tablereader)
-}
-summary(duplicated(controlTable[,1]))
-controlTable = controlTable[!duplicated(controlTable["Name"]),]
-controlTable$Name = gsub('[[:digit:]]+', '', controlTable$Name)
-
-#housekeeping
-#extract the club names
-substrRight <- function(x, n){
-  substr(x, nchar(x)-n+1, nchar(x))
-}
-controlTable$Club = substrRight(controlTable$Name,3)
-StandardTable$Club = substrRight(StandardTable$Name,3)
-discTable$Club = substrRight(discTable$Name,3)
-
-#Remove the redundant surnames
-controlTable$Name = sub(".*? (.+)", "\\1", controlTable$Name)
-StandardTable$Name = sub(".*? (.+)", "\\1", StandardTable$Name)
-discTable$Name = sub(".*? (.+)", "\\1", discTable$Name)
-
-#Get the names in the correct format
-controlTable$Name = sub(",.*", "", controlTable$Name)
-StandardTable$Name = sub(",.*", "", StandardTable$Name)
-discTable$Name = sub(",.*", "", discTable$Name)
-library(sqldf)
-controlTable = sqldf('select * from controlTable where GS is not null')
-discTable = sqldf('select * from discTable where GS is not null')
-StandardTable = sqldf('select * from StandardTable where GS is not null')
-
-#Cos I'm lazy and three datasets exists I will sort and then join, I am quite sure all players exists in all
-test = merge(controlTable,discTable, by = "Name", all = T)
-test3 = merge(test,StandardTable,by = "Name",all = T)
-
-
-
-#Remove redundant columns
+library(DataCombine)
+library(rpart)
 library(stringr)
-delCols = NULL
-for (i in 1:ncol(test3)){
-  if(str_count(names(test3)[i],'.x') >0){
-    delCols = append(delCols,names(test3)[i])
-  }
-}
-test3 <- test3[, !(colnames(test3) %in% delCols), drop=FALSE]
+library(RSelenium)
+library(rvest)
+library(XML)
+library(digest)
 
-for (i in 1:ncol(test3)){
-  if(is.factor(test3[,i])== T){
-    test3[,i] = as.numeric(as.character(unlist(test3[,i])))
-  }
-}
-
-test3$Club.x =NULL
-test3$Club.y = NULL
-dataset2 = test3
-dataset2$Name =sub('.*\t','',dataset2$Name)
-
-dataset2 =dataset2[rowSums(is.na(dataset2)) == 0,]
+options(stringsAsFactors = F)
+#Get standard league table from skysports.com
 Dat = NULL
-for (i in 2005:2015){
+for (i in 2009:2015){
 teamStats = readHTMLTable(paste0('http://www.skysports.com/premier-league-table/',i))
 names(teamStats) = NULL
 teamStats = data.frame(teamStats)
@@ -119,25 +18,153 @@ Dat = rbind(Dat,teamStats)
 print(i)
 flush.console()
 }
+
+####Housekeeping!#####
 Dat$X. = NULL
 Dat$Last.6 = NULL
 Dat[,2:9] = apply(Dat[,2:9],2,function(x) as.integer(as.character(x)))
-library(stringr)
 Dat$Team = factor(str_replace_all(as.character(Dat$Team),pattern = "[*]",''))
-write.csv(Dat,"FootballData.csv",row.names = F)
 
-library(DataCombine)
+#Create a lead variable for the Premier League points 
 datasetLagged = slide(Dat,Var = "Pts",TimeVar = "Year",GroupVar = "Team",slideBy = +1)
 names(datasetLagged)[ncol(datasetLagged)] = 'leadPoints'
-Train = subset(datasetLagged,Year %in% 2005:2013)
-Test = subset(datasetLagged,Year %in% 2014:2015)
-RankingModel = lm(leadPoints~Pts*F, data =Train,na.action = na.omit)
-summary(RankingModel)
-Test$prediction = predict(RankingModel,newdata = Test)
 
 
-library(dplyr)
-rankedData1 = rankedData %>%
-  group_by(Year)%>%
- mutate(rankings_pred = order(prediction, decreasing = T))
-print.data.frame(rankedData)
+####Rendering whoscored.com website using a remote selenium driver and getting a data####
+
+startServer()
+remDr = remoteDriver()
+remDr$open(silent = F)
+remDr$navigate("https://www.whoscored.com/Regions/252/Tournaments/2/Seasons/5826/Stages/12496/TeamStatistics/England-Premier-League-2015-2016")
+remDr$setImplicitWaitTimeout(30000)
+inTable = NULL
+for (i in 2:8){
+clicktype = remDr$findElement(using = "css selector", '#seasons')
+remDr$mouseMoveToLocation(webElement = clicktype)
+clicktype$click()
+clicktype = remDr$findElement(using = "css selector", paste0('#seasons > option:nth-child(',i,')'))
+remDr$mouseMoveToLocation(webElement = clicktype)
+clicktype$click()
+clicktype = remDr$findElement(using = "css selector", '#sub-navigation > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)')
+remDr$mouseMoveToLocation(webElement = clicktype)
+clicktype$click()
+doc = remDr$getPageSource()[[1]]
+current_doc = read_html(doc)
+firstTable = htmlParse(remDr$getPageSource()[[1]])
+
+#Housekeeping!
+v=readHTMLTable(firstTable, as.data.frame = T)
+v= v[c(1,3,6)]
+names(v) = NULL
+v=lapply(v, function(x){data.frame(x)})
+testData =Reduce(function(x,y) merge(x,y,by="Team", all = T),v)
+testData[,2:15] = apply(testData[,2:15],2,function(x) as.numeric(as.character(x)))
+testData$RedCards = substring(as.character(testData$Discipline),nchar(as.character(testData$Discipline)))
+testData$YellowCards = substring(as.character(testData$Discipline),1,nchar(as.character(testData$Discipline))-1)
+testData$Discipline = NULL
+
+
+#Defense Table
+clicktype = remDr$findElement(using = "css selector", '#stage-team-stats-options > li:nth-child(2) > a:nth-child(1)')
+
+remDr$mouseMoveToLocation(webElement = clicktype)
+clicktype$click()
+webElem = remDr$findElement(using = "css selector", '#statistics-team-table-defensive')
+webElemtext = try(webElem$getElementAttribute("outerHTML")[[1]])
+defenseTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
+while (class(defenseTable) == "try-error"){
+  clicktype = remDr$findElement(using = "css selector", '#stage-team-stats-options > li:nth-child(2) > a:nth-child(1)')
+  remDr$mouseMoveToLocation(webElement = clicktype)
+  clicktype$click()
+  webElem = remDr$findElement(using = "css selector", '#statistics-team-table-defensive')
+  webElemtext = try(webElem$getElementAttribute("outerHTML")[[1]],silent = F)
+  defenseTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
+}
+
+defenseTable[,3:8] = apply(defenseTable[,3:8],2,function(x) as.numeric(x))
+bigTable = merge(testData,defenseTable,by = "Team",all = T)
+
+
+#Offensive
+clicktype1 = remDr$findElement(using = "css selector", '#stage-team-stats-options > li:nth-child(3) > a:nth-child(1)')
+remDr$mouseMoveToLocation(webElement = clicktype1)
+clicktype1$click()
+webElem1 = remDr$findElement(using = "css selector", '#statistics-team-table-offensive')
+webElemtext = try(webElem1$getElementAttribute("outerHTML")[[1]],silent = F)
+offenseTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
+while(class(offenseTable) == "try-error"){
+  clicktype1 = remDr$findElement(using = "css selector", '#stage-team-stats-options > li:nth-child(3) > a:nth-child(1)')
+  remDr$mouseMoveToLocation(webElement = clicktype1)
+  clicktype1$click()
+  webElem1 = remDr$findElement(using = "css selector", '#statistics-team-table-offensive')
+webElemtext = try(webElem1$getElementAttribute("outerHTML")[[1]], silent = F)
+offenseTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
+}
+
+offenseTable[,3:7] = apply(offenseTable[,3:7],2,function(x) as.numeric(x))
+
+bigTable = merge(bigTable,offenseTable,by = "Team",all = T)
+
+
+
+#Detailed
+clicktype3 = remDr$findElement(using = "css selector", '#stage-team-stats-options > li:nth-child(4) > a:nth-child(1)')
+remDr$mouseMoveToLocation(webElement = clicktype3)
+clicktype3$click()
+webElem2 = remDr$findElement(using = "css selector", '#statistics-team-table-detailed')
+webElemtext = try(webElem$getElementAttribute("outerHTML")[[1]])
+detailedTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
+while (class(detailedTable) == "try-error"){
+clicktype3 = remDr$findElement(using = "css selector", '#stage-team-stats-options > li:nth-child(4) > a:nth-child(1)')
+remDr$mouseMoveToLocation(webElement = clicktype3)
+clicktype3$click()
+webElem2 = remDr$findElement(using = "css selector", '#statistics-team-table-detailed')
+webElemtext = try(webElem$getElementAttribute("outerHTML")[[1]])
+detailedTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
+}
+bigTable = merge(bigTable,detailedTable,by = "Team",all = T)
+inTable = rbind(inTable,bigTable)
+print(i)
+flush.console()
+}
+remDr$close()
+browseURL("http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer")
+
+#Adding a Year column to the final table
+inTable$Year = rep(2015:2009, each=20, length.out = 140)
+
+####Housekeeping! Again! I am about to join two tables based on their team names. Hence, I have to ensure that they are of the same format####
+inTable$Team[inTable$Team == "Birmingham City"] = "Birmingham"
+inTable$Team[inTable$Team == "Blackburn Rovers"] = "Blackburn"
+inTable$Team[inTable$Team == "Bolton Wanderers"] = "Bolton"
+inTable$Team[inTable$Team == "Cardiff City"] = "Cardiff"
+inTable$Team[inTable$Team == "Norwich City"] = "Norwich"
+inTable$Team[inTable$Team == "Swansea City"] = "Swansea"
+inTable$Team[inTable$Team == "Stoke City"] = "Stoke"
+inTable$Team[inTable$Team == "Tottenham Hotspur"] = "Tottenham"
+inTable$Team[inTable$Team == "West Ham United"] = "West Ham"
+inTable$Team[inTable$Team == "Wigan Athletic"] = "Wigan"
+
+#Removing trailing and leading spaces in the team names
+inTable$Team = gsub("^\\s+|\\s+$", "",inTable$Team)
+
+#Merge final tables from skysports and whoscored together and remove duplicate columns
+Datasetfinal = merge(inTable,datasetLagged,by = c("Year","Team"),all = T)
+Datasetfinal <- Datasetfinal[, !duplicated(colnames(Datasetfinal), fromLast = TRUE)] 
+
+#Converting the percentages to numbers
+Datasetfinal$Left.Side = as.numeric(str_replace(Datasetfinal$Left.Side,"%",""))/100
+Datasetfinal$Middle.of.the.pitch = as.numeric(str_replace(Datasetfinal$Middle.of.the.pitch,"%",""))/100
+Datasetfinal$Right.Side = as.numeric(str_replace(Datasetfinal$Right.Side,"%",""))/100
+
+#Removing not so useful columns
+Datasetfinal$R.x = NULL
+Datasetfinal$Rating.x = NULL
+Datasetfinal$R.y = NULL
+Datasetfinal$Rating.y = NULL
+Datasetfinal$Pl = NULL
+
+#Convert column types. Again.
+Datasetfinal[,3:37] = apply(Datasetfinal[,3:37],2,function(x) as.numeric(x))
+
+#Now, we have our data!
