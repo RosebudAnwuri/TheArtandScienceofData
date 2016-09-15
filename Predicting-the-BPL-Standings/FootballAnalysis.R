@@ -22,6 +22,10 @@ flush.console()
 ####Housekeeping!#####
 Dat$X. = NULL
 Dat$Last.6 = NULL
+
+#You see that as.character right there? it's probably the most useful life lesson in R
+#When changing data types, it 100% much safer to convert to a character first.
+#Trust me when I say I have learnt the hard way
 Dat[,2:9] = apply(Dat[,2:9],2,function(x) as.integer(as.character(x)))
 Dat$Team = factor(str_replace_all(as.character(Dat$Team),pattern = "[*]",''))
 
@@ -30,7 +34,7 @@ datasetLagged = slide(Dat,Var = "Pts",TimeVar = "Year",GroupVar = "Team",slideBy
 names(datasetLagged)[ncol(datasetLagged)] = 'leadPoints'
 
 
-####Rendering whoscored.com website using a remote selenium driver and getting a data####
+####Rendering whoscored.com website using a remote selenium driver and getting data####
 
 startServer()
 remDr = remoteDriver()
@@ -85,7 +89,7 @@ while (class(defenseTable) == "try-error"){
   defenseTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
 }
 
-defenseTable[,3:8] = apply(defenseTable[,3:8],2,function(x) as.numeric(x))
+defenseTable[,3:8] = apply(defenseTable[,3:8],2,function(x) as.numeric(as.character(x)))
 bigTable = merge(testData,defenseTable,by = "Team",all = T)
 
 
@@ -105,7 +109,7 @@ webElemtext = try(webElem1$getElementAttribute("outerHTML")[[1]], silent = F)
 offenseTable = try(readHTMLTable(webElemtext, header = T,as.data.frame = T)[[1]])
 }
 
-offenseTable[,3:7] = apply(offenseTable[,3:7],2,function(x) as.numeric(x))
+offenseTable[,3:7] = apply(offenseTable[,3:7],2,function(x) as.numeric(as.character(x)))
 
 bigTable = merge(bigTable,offenseTable,by = "Team",all = T)
 
@@ -137,7 +141,7 @@ browseURL("http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumSer
 #Adding a Year column to the final table
 inTable$Year = rep(2015:2009, each=20, length.out = 140)
 
-####Housekeeping! Again! I am about to join two tables based on their team names. Hence, I have to ensure that they are of the same format####
+####Housekeeping! Again! I am about to join two tables based on their team names. This means I have to ensure that they are of the same format####
 inTable$Team[inTable$Team == "Birmingham City"] = "Birmingham"
 inTable$Team[inTable$Team == "Blackburn Rovers"] = "Blackburn"
 inTable$Team[inTable$Team == "Bolton Wanderers"] = "Bolton"
@@ -162,6 +166,7 @@ Datasetfinal$Middle.of.the.pitch = as.numeric(str_replace(Datasetfinal$Middle.of
 Datasetfinal$Right.Side = as.numeric(str_replace(Datasetfinal$Right.Side,"%",""))/100
 
 #Removing not so useful columns
+#Very noob of me I know.
 Datasetfinal$R.x = NULL
 Datasetfinal$Rating.x = NULL
 Datasetfinal$R.y = NULL
@@ -169,6 +174,6 @@ Datasetfinal$Rating.y = NULL
 Datasetfinal$Pl = NULL
 
 #Convert column types. Again.
-Datasetfinal[,3:37] = apply(Datasetfinal[,3:37],2,function(x) as.numeric(x))
+Datasetfinal[,3:37] = apply(Datasetfinal[,3:37],2,function(x) as.numeric(as.character(x)))
 
 #Now, we have our data!
