@@ -21,6 +21,9 @@ setup_twitter_oauth(api_key, api_secret, token, token_secret)
 set_config(config (ssl_verifypeer= 0L))
 date_time = Sys.Date()-10
 tweetData = NULL
+
+#The search words changes to each of the Telcos, I exclude tweets from their own company run accounts also
+#I had to search for keywords like data, call, network with the Telco names to avoid getting stuff like mtn bike but they still happened!
 while (date_time <= Sys.Date()+1){
   date_time = as.character.Date(date_time)
   tweetdetails <- searchTwitter("etisalat network -from:etisalat_9ja", n=1500, lang="en", since = "2016-05-03",until= date_time, geocode = '10,9, 200km')# Transform tweets list into a data frame 
