@@ -10,12 +10,12 @@ library(wordcloud)
 library(dplyr)
 library(tidytext)
 
-
-api_key <- "UE0sCwrNmxHb8YL759R7SuLEc" # From dev.twitter.com
-api_secret <- "C9OxWPmBAOwzQ6G4VXbCKeXd3XEHG5XvJjzTA1AVLoKbtwnpJy" # From dev.twitter.com
-token <- "370018889-WKxIRFsc8OJhvdtW3BOOdgIy1qGco48d7QlUO0in" # From dev.twitter.com
-token_secret <- "7Ah8qplWJf5ey4zB4IPTTBlypMCUenXnQsrCH7808UbRE" # From dev.twitter.com
-
+####This has been removed for privacy####
+api_key <- "xxx" # From dev.twitter.com
+api_secret <- "xxx" # From dev.twitter.com
+token <- "xxx" # From dev.twitter.com
+token_secret <- "xxx" # From dev.twitter.com
+####This has been removed for privacy####
 # Create Twitter Connection
 setup_twitter_oauth(api_key, api_secret, token, token_secret)
 set_config(config (ssl_verifypeer= 0L))
