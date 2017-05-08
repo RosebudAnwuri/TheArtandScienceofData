@@ -13,11 +13,9 @@ library(readr)
 #Billionaires data
 rD=rsDriver()
 remDr = rD[["client"]]
-remDr$navigate("https://www.forbes.com/billionaires/list/#version:static")
+remDr$navigate("https://billionaires-data-base.silk.co/explore")
 remDr$setImplicitWaitTimeout(30000)
-clicktype = remDr$findElement(using = "css selector", '#the_list')
-remDr$mouseMoveToLocation(webElement = clicktype)
-clicktype$click()
+clicktype = remDr$findElement(using = "css selector", '#canvas > div > div.content-box > div > div.queryviewer.widget.component.component-queryview.component-queryview-table > div.output > table')
 doc = remDr$getPageSource()[[1]]
 firstTable = htmlParse(remDr$getPageSource()[[1]])
 tbl1=readHTMLTable(firstTable, as.data.frame = T)
