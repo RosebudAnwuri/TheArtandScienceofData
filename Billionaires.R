@@ -25,7 +25,8 @@ billionaire_data = tbl1["the_list"]
 billionaire_data = as.data.frame(billionaire_data)
 billionaire_data = billionaire_data %>% filter(is.na(the_list.V2)==F)
 billionaire_data = billionaire_data[,2:7]
-names(billionaire_data)=c("Rank"	,"Name"	,"Net Worth"	,"Age"	,"Source"	,"Country of Citizenship")
+nm=c("Rank"	,"Name"	,"Net Worth"	,"Age"	,"Source"	,"Country of Citizenship")
+setNames(billionaire_data,nm)
 billionaires = billionaire_data$Name[billionaire_data$`Country of Citizenship`=="United States"]
 billionaires = as.character(billionaires)
 billionaires = str_trim(billionaires)
@@ -265,8 +266,12 @@ other_billionaires = str_replace_all(other_billionaires," ","-")
 other_billionaires=tolower(other_billionaires)
 
 other_details = list()
-for (i in 1:length(other_billionaires)){
+for (i in 1672:length(other_billionaires)){
   dat=get_billionaire_info(other_billionaires[i])
   other_details = append(other_details,list(dat))
   print(paste0(round((i/length(other_billionaires))*100,2),"% done at ",i))
 }
+
+other_details = do.call("rbind",other_details)
+other_details = cbind(other_billionaires,other_details)                                                                  
+other_details = as.data.frame(other_details)
