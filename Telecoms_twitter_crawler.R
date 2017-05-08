@@ -67,5 +67,5 @@ glo = rbind(tweetData, tweetDataFinal)
 glo$service_provider = "Glo"  
 
 final_file = rbind(glo,etisalat,mtn,airtel)
-write.csv(final_file,paste0("Data for_",Sys.time(),".csv"),row.names = F)
+write.csv(final_file,paste0("~/Data Analysis/Datasets/Telecom/Data for_",Sys.time(),".csv"),row.names = F)
 write.csv(final_file,paste0("CMT DATA_"),Sys.Date(),".csv",row.names = F)
