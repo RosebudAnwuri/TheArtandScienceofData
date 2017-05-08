@@ -13,9 +13,10 @@ library(readr)
 #Billionaires data
 rD=rsDriver()
 remDr = rD[["client"]]
-remDr$navigate("https://billionaires-data-base.silk.co/explore")
+
+remDr$navigate("https://www.forbes.com/billionaires/list/#version:static")
 remDr$setImplicitWaitTimeout(30000)
-clicktype = remDr$findElement(using = "css selector", '#canvas > div > div.content-box > div > div.queryviewer.widget.component.component-queryview.component-queryview-table > div.output > table')
+clicktype = remDr$findElement(using = "css selector", '#the_list')
 doc = remDr$getPageSource()[[1]]
 firstTable = htmlParse(remDr$getPageSource()[[1]])
 tbl1=readHTMLTable(firstTable, as.data.frame = T)
@@ -23,6 +24,13 @@ billionaire_data = tbl1["the_list"]
 billionaire_data = as.data.frame(billionaire_data)
 billionaire_data = billionaire_data %>% filter(is.na(the_list.V2)==F)
 billionaire_data = billionaire_data[,2:7]
+remDr$navigate("https://billionaires-data-base.silk.co/explore")
+clicktype = remDr$findElement(using = "css selector", '#canvas > div > div.content-box > div > div.queryviewer.widget.component.component-queryview.component-queryview-table > div.output > table')
+doc = remDr$getPageSource()[[1]]
+firstTable = htmlParse(remDr$getPageSource()[[1]])
+tbl1=readHTMLTable(firstTable, as.data.frame = T)
+sector_list = as.data.frame(tbl1[1])
+
 nm=c("Rank"	,"Name"	,"Net Worth"	,"Age"	,"Source"	,"Country of Citizenship")
 setNames(billionaire_data,nm)
 billionaires = billionaire_data$Name[billionaire_data$`Country of Citizenship`=="United States"]
