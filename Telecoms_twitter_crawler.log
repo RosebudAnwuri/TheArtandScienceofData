@@ -1,0 +1,401 @@
+Fatal error: cannot open file 'C:/Users/rose.anwuri/Documents/TheArtandScienceofData/Telecoms_twitter_crawler.R': No such file or directory
+
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 1259
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4516
+Error in rsqlite_connect(dbname, loadable.extensions, flags, vfs) : 
+  Could not connect to database:
+unable to open database file
+Calls: src_sqlite ... initialize -> initialize -> rsqlite_connect -> .Call
+Execution halted
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 1292
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4546
+Error in rsqlite_connect(dbname, loadable.extensions, flags, vfs) : 
+  Could not connect to database:
+unable to open database file
+Calls: src_sqlite ... initialize -> initialize -> rsqlite_connect -> .Call
+Execution halted
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 1292
+[1] "Rate limited .... blocking for a minute and retrying up to 119 times ..."
+[1] "Rate limited .... blocking for a minute and retrying up to 118 times ..."
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4545
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 1031
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 3974
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 830
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 3818
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 786
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 3087
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 585
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 2486
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4403
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 831
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 1452
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4631
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 832
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 3891
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4468
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 1523
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4822
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 2077
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 4519
+[1] TRUE
+Loading required package: methods
+Loading required package: bitops
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:twitteR':
+
+    id, location
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+[1] "Using direct authentication"
+<Token>
+NULL
+<oauth_app> twitter
+  key:    wn7M23NbDoOAWogW3KpebX5Cq
+  secret: <hidden>
+<credentials> oauth_token, oauth_token_secret
+---
+Warning message:
+In doRppAPICall("search/tweets", n, params = params, retryOnRateLimit = retryOnRateLimit,  :
+  5000 tweets were requested but the API can only return 564

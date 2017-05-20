@@ -292,18 +292,11 @@ billionaire_data %>%
   geom_line(aes(color="red")) 
   
   
-billionaire_data %>%
+full_list_of_billionaires %>%
   filter(joining_year >2007) %>%
-  filter(`Country of Citezenship`!="United States") %>%
   group_by(joining_year,Sector) %>%
   summarise(number_of_people = n()) %>%
   top_n(1)
-  
-billionaire_data %>%
-  group_by(`Country of Citezenship`,Sector) %>%
-  summarise(number_of_people = n()) %>%
-  filter(number_of_people >1) %>%
-  top_n(1) %>%
   arrange(-number_of_people)
 
 billionaire_data %>%
@@ -324,20 +317,24 @@ names_to_URLs = function(name){
   name=str_replace_all(name,"\\s+",' ')
   name = str_replace_all(name," ","-")
   name=tolower(name)
-  return(name)
+  url = paste0("https://www.forbes.com/profile/",name,"/")
+  return(url)
 }
 
 get_billionaire_info = function(names_of_billionaires){
-  names_of_billionaires=names_to_URLs(names_of_billionaires)
-  url = paste0("https://www.forbes.com/profile/",names_of_billionaires,"/")
+  url=names_to_URLs(names_of_billionaires)
   data=try(url %>% 
              read_html %>% 
              html_nodes(".stats li") %>% 
              html_text(trim=T)
            ,silent = T)
   if(class(data) =="try-error"){
-    sector = NA
-    education = NA
+    url = backward_names(names_of_billionaires)
+    data=try(url %>% 
+               read_html %>% 
+               html_nodes(".stats li") %>% 
+               html_text(trim=T)
+             ,silent = T)
   }
   sector = ifelse(length(data[grepl("Source of Wealth",data,T)])>0,data[grepl("Source of Wealth",data,T)],NA)
   education = ifelse(length(data[grepl("Education",data,T)])>0,data[grepl("Education",data,T)],NA)
@@ -345,12 +342,91 @@ get_billionaire_info = function(names_of_billionaires){
   education = str_replace_all(education,".*\t|.*\n","")
   return(c(sector,education))
 }
+
+
 lower_billionaires$detail1=""
 lower_billionaires$detail2=""
-for (i in 3:nrow(lower_billionaires)){
+for (i in 351:nrow(lower_billionaires)){
   dat=get_billionaire_info(lower_billionaires$Name[i])
   #dat = list(dat)
   lower_billionaires$detail1[i]=dat[1]
   lower_billionaires$detail2[i]=dat[2]
   print(paste0(round((i/nrow(lower_billionaires))*100,2),"% done at ",i))
 }
+
+new_columns_creator=function(df){
+df$Self_Made = ifelse(grepl("self made",df$detail1,ignore.case = T),"Y","N")
+df$dropped_out = ifelse(grepl("drop out",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+df$bachelors_degree = ifelse(grepl("bachelor",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+df$masters_degree = ifelse(grepl("master of arts|master of science",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+df$MBA = ifelse(grepl("Master of Business Administration",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+df$phd_or_professional_degree = ifelse(grepl("doctor|llb",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+return(df)
+}
+
+lower_billionaires=lower_billionaires_copy  
+lower_billionaires = new_columns_creator(lower_billionaires)
+lower_billionaires$detail1 = unlist(lower_billionaires$detail1)
+lower_billionaires$detail2 = unlist(lower_billionaires$detail2)
+write.csv(lower_billionaires,"Billionaires others.csv",row.names = F)
+year_list=year_list %>% filter(is.na(`Not Available`)==T)
+
+
+year_list$detail1=""
+year_list$detail2=""
+for (i in 6:nrow(year_list)){
+  dat=get_billionaire_info(year_list$Name_updatedv2[i])
+  #dat = list(dat)
+  year_list$detail1[i]=dat[1]
+  year_list$detail2[i]=dat[2]
+  print(paste0(round((i/nrow(year_list))*100,2),"% done at ",i))
+}
+
+new_list = year_list %>% filter(is.na(detail1)==T)
+backward_names = function(name){
+  name = unlist(str_split(name," "))
+  name = rev(name)
+  name = paste(name,collapse = ' ')
+  name = str_trim(name)
+  name=names_to_URLs(name)
+  return(name)
+}
+
+new_list$detail1 =""
+new_list$detail2=""
+for (i in 1:nrow(new_list)){
+  dat=get_billionaire_info(new_list$Name_updatedv2[i])
+  #dat = list(dat)
+  new_list$detail1[i]=dat[1]
+  new_list$detail2[i]=dat[2]
+  print(paste0(round((i/nrow(new_list))*100,2),"% done at ",i))
+}
+write.csv(new_list,"last_list.csv",row.names = F)
+write.csv(year_list,"year_list3.csv",row.names = F)
+
+billionaire_first=read_csv("Billionaire Data.csv")
+billionaire_second=read_csv("Billionaires others.csv")  
+billionaire_third=read_csv("year_list3.csv")
+
+full_list_of_billionaires = rbind(billionaire_first,billionaire_second,billionaire_third)
+
+sector_by_country=full_list_of_billionaires %>%
+  group_by(Country,Sector) %>%
+  summarise(number_of_people = n()) %>%
+  filter(number_of_people >1) %>%
+  top_n(1,wt=number_of_people) %>%
+  arrange(-number_of_people)
+
+number_of_degrees = function(degrees){
+  deg=ifelse(is.na(degrees),NA,length(unlist(str_split(degrees,";"))))
+  deg1 = ifelse(grepl("Drop Out",degrees,T),deg-1,deg)
+  return(deg1)
+}
+full_list_of_billionaires$number_of_degress = unlist(lapply(full_list_of_billionaires$detail2,number_of_degrees))
+
+billionaire_data %>% 
+  filter(Continent=="North America") %>%
+  group_by(joining_year,Sector) %>%
+  summarise(no_of_people = n()) %>%
+  top_n(1) %>%
+  select(joining_year,Sector,no_of_people)
