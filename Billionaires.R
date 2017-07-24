@@ -3,169 +3,10 @@ library(rvest)
 library(stringr)
 library(dplyr)
 library(lubridate)
-library(doParallel)
-library(foreach)
-library(pbapply)
 library(readr)
 
+#List of billionaires from 2007-2017
 
-
-#Billionaires data
-rD=rsDriver()
-remDr = rD[["client"]]
-
-remDr$navigate("https://www.forbes.com/billionaires/list/#version:static")
-remDr$setImplicitWaitTimeout(30000)
-clicktype = remDr$findElement(using = "css selector", '#the_list')
-doc = remDr$getPageSource()[[1]]
-firstTable = htmlParse(remDr$getPageSource()[[1]])
-tbl1=readHTMLTable(firstTable, as.data.frame = T)
-billionaire_data = tbl1["the_list"]
-billionaire_data = as.data.frame(billionaire_data)
-billionaire_data = billionaire_data %>% filter(is.na(the_list.V2)==F)
-billionaire_data = billionaire_data[,2:7]
-remDr$navigate("https://billionaires-data-base.silk.co/explore")
-clicktype = remDr$findElement(using = "css selector", '#canvas > div > div.content-box > div > div.queryviewer.widget.component.component-queryview.component-queryview-table > div.output > table')
-doc = remDr$getPageSource()[[1]]
-firstTable = htmlParse(remDr$getPageSource()[[1]])
-tbl1=readHTMLTable(firstTable, as.data.frame = T)
-sector_list = as.data.frame(tbl1[1])
-
-nm=c("Rank"	,"Name"	,"Net Worth"	,"Age"	,"Source"	,"Country of Citizenship")
-setNames(billionaire_data,nm)
-billionaires = billionaire_data$Name[billionaire_data$`Country of Citizenship`=="United States"]
-billionaires = as.character(billionaires)
-billionaires = str_trim(billionaires)
-billionaires=str_replace_all(billionaires,"[^0-9A-Za-z\\- ]",'')
-billionaires=str_replace_all(billionaires,"\\s+",' ')
-billionaires = str_replace_all(billionaires," ","-")
-billionaires=tolower(billionaires)
-rD=rsDriver()
-remDr = rD[["client"]]
-get_self_made_score = function(names_of_billionaires){
-  
-  url = paste0("https://www.forbes.com/profile/",names_of_billionaires,"/")
-  remDr$navigate(url)
-  remDr$setImplicitWaitTimeout(30000)
-  clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li:nth-child(3) > div.value'),silent = T)
-  i=1
-  while (class(clicktype)=="try-error" & i <3){
-    clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li:nth-child(3) > div.value'),silent = T)
-    i=i+1
-  }
-  if (class(clicktype)=="try-error")(
-    return(NA)
-  )
-  remDr$mouseMoveToLocation(webElement = clicktype)
-  clicktype$click()
-  score = clicktype$getElementAttribute("innerHTML")[[1]]
-  return(score)
-}
-
-
-get_billionaire_info = function(names_of_billionaires){
-  
-  url = paste0("https://www.forbes.com/profile/",names_of_billionaires,"/")
-  remDr$navigate(url)
-  remDr$setImplicitWaitTimeout(30000)
-  #If Self Made
-  clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li:nth-child(2) > div.value'),silent = T)
-  #i=1
-  # while (class(clicktype)=="try-error" & i <3){
-  #   clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li:nth-child(2) > div.value'),silent = T)
-  #   i=i+1
-  # }
-  if (class(clicktype)=="try-error")(
-    clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li:nth-child(2) > div.value'),silent = T)
-    
-  )
-  if (class(clicktype)=="try-error")(
-    clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li:nth-child(1) > div.value'),silent = T)
-  )
-  if (class(clicktype)=="try-error")(
-    return(NA)
-  )
-  score = clicktype$getElementAttribute("innerHTML")[[1]]
-  #If Drop Out
-  clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li.education > div.value'),silent = T)
-  # i=1
-  # while (class(clicktype)=="try-error" & i <3){
-  #   clicktype = try(remDr$findElement(using = "css selector", 'body > div.content > div.stats-lists-container > div.stats > ul > li.education > div.value'),silent = T)
-  #   i=i+1
-  # }
-  if (class(clicktype)=="try-error")(
-    return(NA)
-  )
-  
-  education=clicktype$getElementAttribute("innerHTML")[[1]]
-  return(c(score,education))
-}
-
-billionaire_info=pblapply(billionaires,get_billionaire_info)
-billionaire_info=billionaire_info_copy
-billionaire_info = do.call("rbind",billionaire_info)
-billionaire_info = cbind(billionaires,billionaire_info)
-billionaire_info = as.data.frame(billionaire_info)
-
-#Creat columns from billionaire information
-billionaire_info$Self_Made = ifelse(grepl("self made",billionaire_info$V2,ignore.case = T),"Y","N")
-billionaire_info$dropped_out = ifelse(grepl("drop out",billionaire_info$V3,ignore.case = T),"Y",ifelse(is.na(billionaire_info$V3),NA,"N"))
-billionaire_info$bachelors_degree = ifelse(grepl("bachelor",billionaire_info$V3,ignore.case = T),"Y",ifelse(is.na(billionaire_info$V3),NA,"N"))
-billionaire_info$masters_degree = ifelse(grepl("master of arts|master of science",billionaire_info$V3,ignore.case = T),"Y",ifelse(is.na(billionaire_info$V3),NA,"N"))
-billionaire_info$MBA = ifelse(grepl("Master of Business Administration",billionaire_info$V3,ignore.case = T),"Y",ifelse(is.na(billionaire_info$V3),NA,"N"))
-billionaire_info$phd_or_professional_degree = ifelse(grepl("doctor|llb",billionaire_info$V3,ignore.case = T),"Y",ifelse(is.na(billionaire_info$V3),NA,"N"))
-write.csv(billionaire_info,"Billionaire Data.csv",row.names = F)
-
-#Add original name column
-billionaire_info$Names = billionaire_data$Name[billionaire_data$`Country of Citizenship`=="United States"]
-billionaire_info$Worth = billionaire_data$`Net Worth`[billionaire_data$`Country of Citizenship`=="United States"]
-billionaire_info$Age = billionaire_data$Age[billionaire_data$`Country of Citizenship`=="United States"]
-billionaire_info$Worth = str_replace(billionaire_info$Worth,"B",'')
-billionaire_info$Worth = str_trim(billionaire_info$Worth)
-
-#Get info for billionaires outside the US
-billionaires_outside_us = billionaire_data$Name[billionaire_data$`Country of Citizenship`!="United States"]
-billionaires_outside_us = as.character(billionaires_outside_us)
-billionaires_outside_us = str_trim(billionaires_outside_us)
-billionaires_outside_us=str_replace_all(billionaires_outside_us,"[^0-9A-Za-z\\- ]",'')
-billionaires_outside_us=str_replace_all(billionaires_outside_us,"\\s+",' ')
-billionaires_outside_us = str_replace_all(billionaires_outside_us," ","-")
-billionaires_outside_us=tolower(billionaires_outside_us)
-
-billionaires_info_others=pblapply(billionaires_outside_us,get_billionaire_info)
-billionaires_info_others=list()
-for (i in 673:length(billionaires_outside_us)){
-  dat=get_billionaire_info(billionaires_outside_us[i])
-  billionaires_info_others = append(billionaires_info_others,list(dat))
-  print(paste0(round((i/length(billionaires_outside_us))*100,2),"% done at",i))
-}
-
-billionaires_info_others = do.call("rbind", billionaires_info_others)
-
-billionaires_info_others = cbind(billionaires_outside_us,billionaires_info_others)
-billionaires_info_others = as.data.frame(billionaires_info_others)
-
-#Create columns for details
-
-billionaires_info_others$Self_Made = ifelse(grepl("self made",billionaires_info_others$V2,ignore.case = T),"Y","N")
-billionaires_info_others$dropped_out = ifelse(grepl("drop out",billionaires_info_others$V3,ignore.case = T),"Y",ifelse(is.na(billionaires_info_others$V3),NA,"N"))
-billionaires_info_others$bachelors_degree = ifelse(grepl("bachelor",billionaires_info_others$V3,ignore.case = T),"Y",ifelse(is.na(billionaires_info_others$V3),NA,"N"))
-billionaires_info_others$masters_degree = ifelse(grepl("master of arts|master of science",billionaires_info_others$V3,ignore.case = T),"Y",ifelse(is.na(billionaires_info_others$V3),NA,"N"))
-billionaires_info_others$MBA = ifelse(grepl("Master of Business Administration",billionaires_info_others$V3,ignore.case = T),"Y",ifelse(is.na(billionaires_info_others$V3),NA,"N"))
-billionaires_info_others$phd_or_professional_degree = ifelse(grepl("doctor|llb",billionaires_info_others$V3,ignore.case = T),"Y",ifelse(is.na(billionaires_info_others$V3),NA,"N"))
-
-data_view = billionaire_data[billionaire_data$`Country of Citizenship`!="United States",]
-data_view = data_view %>% arrange(Name)
-
-#Add original columns
-billionaires_info_others$Names = data_view$Name[data_view$`Country of Citizenship`!="United States"]
-billionaires_info_others$Worth = data_view$`Net Worth`[data_view$`Country of Citizenship`!="United States"]
-billionaires_info_others$Age = data_view$Age[data_view$`Country of Citizenship`!="United States"]
-billionaires_info_others$Worth = str_replace(billionaires_info_others$Worth,"B",'')
-billionaires_info_others$Worth = str_trim(billionaires_info_others$Worth)
-write.csv(billionaires_info_others,"~/Data Analysis/Datasets/Billionaire Data 2.csv",row.names = F)
-
-#Find out who has been leaving the billionaire scene
 years = 7:17
 
 get_historical_ranks = function(year){
@@ -180,38 +21,41 @@ get_historical_ranks = function(year){
   tbl = tbl[,-6]
   names(tbl) = c("Rank","Name","Citizenship","Age","Net Worth")
   tbl=tbl %>% mutate(Year= paste0(20,year_update))
-  
 }
 
-historical_ranks = lapply(years,get_historical_ranks)
-historical_ranks = do.call("rbind",historical_ranks)
-write.csv(historical_ranks,"~/Data Analysis/Datasets/historical ranks.csv")
-historical_ranks = read_csv("~/Data Analysis/Datasets/historical ranks2.csv")
-historical_ranks = historical_ranks %>% mutate(markings= "X")
-historical_ranks[9865,2] = "Jim Davis, new balance"
-historical_ranks[12711,2] ="Jim Davis, recruitment"
-historical_ranks[11497,2] = "Jim Davis, new balance"
-historical_ranks[11030,2] ="Jim Davis, recruitment"
-historical_ranks[9783,2] = "Wang Wei, delivery"
-historical_ranks[10981,2] = "Wang Wei, computer hardware"
-join_year=historical_ranks %>% group_by(Name_updated,Citizenship) %>% summarise(joining_year=min(Year))
-year_list=historical_ranks %>% 
+full_list = lapply(years,get_historical_ranks)
+full_list = do.call("rbind",full_list)
+
+#At this point had to some excel work to harmonize the names e.g. some year bill gates was mentioned as William Gates III
+#This is where I spent most of my time
+#Mark X for each billionaire in each year (this will come in handy later)
+full_list = full_list %>% mutate(markings= "X")
+
+#Three billionaires have exactly the same names - Wang Wei, Robert Miller and Jim Davis
+full_list[9865,2] = "Jim Davis, new balance"
+full_list[12711,2] ="Jim Davis, recruitment"
+full_list[11497,2] = "Jim Davis, new balance"
+full_list[11030,2] ="Jim Davis, recruitment"
+full_list[9783,2] = "Wang Wei, delivery"
+full_list[10981,2] = "Wang Wei, computer hardware"
+
+#Use spread to make the year columns - the markings are useful here
+full_list=full_list %>% 
   select(Name_updated,Citizenship,Year,markings) %>%
-  spread(Year,markings) %>%
-  mutate( joining_year=join_year$joining_year)
+  spread(Year,markings)
 
-
-
-year_list = read_csv("year_list.csv")
-
+#Create year billionaire joined
 joining_year = function(row){
-  yr=names(year_list)[(which(is.na(year_list[row,3:13])==F))[1]+2]
+  yr=names(full_list)[(which(is.na(full_list[row,3:13])==F))[1]+2]
   return(yr)
 }
-year_list$joining_year = unlist(lapply(1:nrow(year_list),joining_year))
-year_list=year_list %>%
-  mutate(no_of_times_on_list =rowSums(is.na(year_list[,3:13])==F))
+full_list$joining_year = unlist(lapply(1:nrow(full_list),joining_year))
 
+#No of time billionaire has been on the list
+full_list=full_list %>%
+  mutate(no_of_times_on_list =rowSums(is.na(full_list[,3:13])==F))
+
+#No of times billionaires left
 leavers = function(row){
   total =0
   for(i in 1:(length(row)-1)){
@@ -222,8 +66,9 @@ leavers = function(row){
   return(total)
 }
 
-year_list$no_of_times_left =apply(year_list[,3:13],1,leavers)
+full_list$no_of_times_left =apply(full_list[,3:13],1,leavers)
 
+#No of times billionaires have comeback to the list
 comers = function(row){
   total =0
   first_time = min(which(is.na(row)==F))
@@ -242,7 +87,9 @@ comers = function(row){
 }
 
 
-year_list$no_of_comebacks=apply(year_list[,3:13],1,comers)
+full_list$no_of_comebacks=apply(full_list[,3:13],1,comers)
+
+#Longest time away from the list
 max_distance = function(row){
   lst=which(is.na(row)==F)
   lt = NULL
@@ -256,60 +103,34 @@ max_distance = function(row){
   return(max(lt))
 }
 
-year_list$longest_time_away = apply(year_list[,3:13],1,max_distance)
-write_csv(year_list,"year_list.csv")
+full_list$longest_time_away = apply(full_list[,3:13],1,max_distance)
 
-# #After some work in Excel e.g. joining data columns togther to the original billionaire info
-# #I'd like to get data on the other guys from the past 10 years (1929 people)
-# year_list = read_csv("year_list.csv")
-# parsing_list = year_list %>% filter(is.na(`Not Available`) ==T)
-# other_billionaires = parsing_list$Name
-# other_billionaires = as.character(other_billionaires)
-# other_billionaires = str_trim(other_billionaires)
-# other_billionaires=str_replace_all(other_billionaires,"[^0-9A-Za-z\\- ]",'')
-# other_billionaires=str_replace_all(other_billionaires,"\\s+",' ')
-# other_billionaires = str_replace_all(other_billionaires," ","-")
-# other_billionaires=tolower(other_billionaires)
-# 
-# other_details = list()
-# for (i in 1672:length(other_billionaires)){
-#   dat=get_billionaire_info(other_billionaires[i])
-#   other_details = append(other_details,list(dat))
-#   print(paste0(round((i/length(other_billionaires))*100,2),"% done at ",i))
-# }
-# 
-# other_details = do.call("rbind",other_details)
-# other_details = cbind(other_billionaires,other_details)                                                                  
-# other_details = as.data.frame(other_details)
-
-billionaire_data = read_csv("Billionaire Data.csv")
-
-billionaire_data %>% 
-  group_by(joining_year) %>% 
-  summarise(Number_of_comers = n()) %>%
-  filter(joining_year >2007) %>%
-  ggplot(aes(joining_year,Number_of_comers)) +
-  geom_line(aes(color="red")) 
+#Last year on list and last year off it
+last_year_on_list = function(row){
+  years_onList=which(is.na(row)==F)
+  year_left = names(full_list[,5:15])[max(years_onList)]
+  return(year_left)
   
-  
-full_list_of_billionaires %>%
-  filter(joining_year >2007) %>%
-  group_by(joining_year,Sector) %>%
-  summarise(number_of_people = n()) %>%
-  top_n(1)
-  arrange(-number_of_people)
+}
+last_year_left = function(row){
+  lst=NULL
+  if (length(which(is.na(row)==T))==0){
+    return ("")
+  }
+  else{
+    for (i in 2:length(row)){
+      if (is.na(row[i])==T&is.na(row[i-1])==F){
+        lst = append(lst,i)
+      }
+    }
+    year_left = names(full_list[,5:15])[max(lst)]
+    return(year_left)
+  }
+}
+full_list$last_off_list = apply(full_list[,5:15],1,last_year_left)
 
-billionaire_data %>%
-  filter(no_of_comebacks >=2) %>%
-  nrow()
-url="http://stats.areppim.com/listes/list_billionairesx17xwor.htm"
-tbl = url %>% 
-  read_html %>%
-  html_node("body > table") %>%
-  html_table()
-tbl=setNames(tbl,c("Rank","Name","Worth","Age","Source of Wealth","Country of Citizenship"))
-lower_billionaires = tbl1[1061:nrow(tbl1),]
 
+#Make the names into URLs
 names_to_URLs = function(name){
   name = as.character(name)
   name = str_trim(name)
@@ -320,6 +141,19 @@ names_to_URLs = function(name){
   url = paste0("https://www.forbes.com/profile/",name,"/")
   return(url)
 }
+
+#Making a function to display name backwards e.g Joy Jones as Jones Joy 
+#This will come in handy when getting the billionaire's info
+backward_names = function(name){
+  name = unlist(str_split(name," "))
+  name = rev(name)
+  name = paste(name,collapse = ' ')
+  name = str_trim(name)
+  name=names_to_URLs(name)
+  return(name)
+}
+
+#Get the billionaires info
 
 get_billionaire_info = function(names_of_billionaires){
   url=names_to_URLs(names_of_billionaires)
@@ -342,91 +176,33 @@ get_billionaire_info = function(names_of_billionaires){
   education = str_replace_all(education,".*\t|.*\n","")
   return(c(sector,education))
 }
+#Getting the columns for the details of billionaires set
+full_list$detail1 =""
+full_list$detail2 =""
 
-
-lower_billionaires$detail1=""
-lower_billionaires$detail2=""
-for (i in 351:nrow(lower_billionaires)){
-  dat=get_billionaire_info(lower_billionaires$Name[i])
+#I opted for a for loop as opposed to the sexy apply function as this gives me the ability
+#to store intermediate results
+for (i in 1:nrow(full_list)){
+  dat=get_billionaire_info(full_list$Name[i])
   #dat = list(dat)
-  lower_billionaires$detail1[i]=dat[1]
-  lower_billionaires$detail2[i]=dat[2]
-  print(paste0(round((i/nrow(lower_billionaires))*100,2),"% done at ",i))
+  full_list$detail1[i]=dat[1]
+  full_list$detail2[i]=dat[2]
+  print(paste0(round((i/nrow(full_list))*100,2),"% done at ",i))
 }
 
-new_columns_creator=function(df){
-df$Self_Made = ifelse(grepl("self made",df$detail1,ignore.case = T),"Y","N")
-df$dropped_out = ifelse(grepl("drop out",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
-df$bachelors_degree = ifelse(grepl("bachelor",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
-df$masters_degree = ifelse(grepl("master of arts|master of science",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
-df$MBA = ifelse(grepl("Master of Business Administration",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
-df$phd_or_professional_degree = ifelse(grepl("doctor|llb",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
-return(df)
+#Create columns for educational information
+education_columns_creator=function(df){
+  df$Self_Made = ifelse(grepl("self made",df$detail1,ignore.case = T),"Y","N")
+  df$dropped_out = ifelse(grepl("drop out",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+  df$bachelors_degree = ifelse(grepl("bachelor",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+  df$masters_degree = ifelse(grepl("master of arts|master of science",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+  df$MBA = ifelse(grepl("Master of Business Administration",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+  df$phd_or_professional_degree = ifelse(grepl("doctor|llb",df$detail2,ignore.case = T),"Y",ifelse(is.na(df$detail2),NA,"N"))
+  return(df)
 }
 
-lower_billionaires=lower_billionaires_copy  
-lower_billionaires = new_columns_creator(lower_billionaires)
-lower_billionaires$detail1 = unlist(lower_billionaires$detail1)
-lower_billionaires$detail2 = unlist(lower_billionaires$detail2)
-write.csv(lower_billionaires,"Billionaires others.csv",row.names = F)
-year_list=year_list %>% filter(is.na(`Not Available`)==T)
+full_list = new_columns_creator(full_list)
+full_list$detail1 = unlist(full_list$detail1)
+full_list$detail2 = unlist(full_list$detail2)
 
-
-year_list$detail1=""
-year_list$detail2=""
-for (i in 6:nrow(year_list)){
-  dat=get_billionaire_info(year_list$Name_updatedv2[i])
-  #dat = list(dat)
-  year_list$detail1[i]=dat[1]
-  year_list$detail2[i]=dat[2]
-  print(paste0(round((i/nrow(year_list))*100,2),"% done at ",i))
-}
-
-new_list = year_list %>% filter(is.na(detail1)==T)
-backward_names = function(name){
-  name = unlist(str_split(name," "))
-  name = rev(name)
-  name = paste(name,collapse = ' ')
-  name = str_trim(name)
-  name=names_to_URLs(name)
-  return(name)
-}
-
-new_list$detail1 =""
-new_list$detail2=""
-for (i in 1:nrow(new_list)){
-  dat=get_billionaire_info(new_list$Name_updatedv2[i])
-  #dat = list(dat)
-  new_list$detail1[i]=dat[1]
-  new_list$detail2[i]=dat[2]
-  print(paste0(round((i/nrow(new_list))*100,2),"% done at ",i))
-}
-write.csv(new_list,"last_list.csv",row.names = F)
-write.csv(year_list,"year_list3.csv",row.names = F)
-
-billionaire_first=read_csv("Billionaire Data.csv")
-billionaire_second=read_csv("Billionaires others.csv")  
-billionaire_third=read_csv("year_list3.csv")
-
-full_list_of_billionaires = rbind(billionaire_first,billionaire_second,billionaire_third)
-
-sector_by_country=full_list_of_billionaires %>%
-  group_by(Country,Sector) %>%
-  summarise(number_of_people = n()) %>%
-  filter(number_of_people >1) %>%
-  top_n(1,wt=number_of_people) %>%
-  arrange(-number_of_people)
-
-number_of_degrees = function(degrees){
-  deg=ifelse(is.na(degrees),NA,length(unlist(str_split(degrees,";"))))
-  deg1 = ifelse(grepl("Drop Out",degrees,T),deg-1,deg)
-  return(deg1)
-}
-full_list_of_billionaires$number_of_degress = unlist(lapply(full_list_of_billionaires$detail2,number_of_degrees))
-
-billionaire_data %>% 
-  filter(Continent=="North America") %>%
-  group_by(joining_year,Sector) %>%
-  summarise(no_of_people = n()) %>%
-  top_n(1) %>%
-  select(joining_year,Sector,no_of_people)
+#Data Munging complete! :)
