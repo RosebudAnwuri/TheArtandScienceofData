@@ -1,0 +1,6 @@
+/packrat
+.httr-oauth
+.RData
+.Rhistory
+.Rproj.user
+README.md

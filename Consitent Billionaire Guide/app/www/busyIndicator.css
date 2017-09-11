@@ -1,0 +1,19 @@
+div.shinysky-busy-indicator {
+  position:fixed;
+  top: 30%;
+  left: 40%;
+  margin-top:  auto;
+  margin-left:  auto;
+  display:none;
+  background: rgba(0, 0, 0, 0);
+  vertical-align: middle;
+  text-align: center;  
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  border-radius: 0px;
+  
+  
+  
+}
