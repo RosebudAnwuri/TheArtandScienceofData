@@ -7,6 +7,7 @@ library(XML)
 library(zoo)
 library(h2o)
 library(purrr)
+library(caret)
 
 options(stringsAsFactors = F)
 #Get standard league table from skysports.com
@@ -227,57 +228,57 @@ epl_db$Team[epl_db$Team == "Leicester City"] = "Leicester"
 
 #Merge final tables from skysports and whoscored together and remove duplicate columns
 epl_database = right_join(epl_db,epl_data,by = c("Year","Team"))
-epl_database=read.csv("Football Analysis/data/epl_data.csv")
+write.csv(epl_database,"Football Analysis/data/epl_data.csv",row.names = F)
 
-url="https://en.wikipedia.org/wiki/Deloitte_Football_Money_League"
-
-list_of_tables = url %>%
-  read_html %>%
-  html_nodes("#table") %>%
-  html_table
-spend_tables=lapply(1:27, function(x) "Club" %in% names(list_of_tables[[x]])==T)
-spend_tables = list_of_tables[spend_tables==T]
-spend_tables = spend_tables[1:7]
-change_names= function(index){
-  names(spend_tables[[index]])=make.names(names(spend_tables[[index]]) )
-  names(spend_tables[[index]])[1] = "Rank"
-  if(is.numeric(which(grepl("Rank.in",names(spend_tables[[index]]),T)))){
-    names(spend_tables[[index]])[which(grepl("Rank.in",names(spend_tables[[index]]),T))]="Previous.Rank"
-  }
-  else{
-    spend_tables[[index]]$Previous.Rank=NA
-  }
-  return(spend_tables[[index]])
+netSpend=function(year){
+  
+  url=paste0("https://www.transfermarkt.co.uk/premier-league/transfers/wettbewerb/GB1/plus/?saison_id=",year,"&s_w=&leihe=0&leihe=1&intern=0&intern=1")
+  Team=url %>% read_html %>% html_nodes(".table-header a") %>% html_text
+  Team = Team[Team != ""]
+  net_spend=url %>% read_html %>% html_nodes(".table-footer.footer-border span") %>% html_text
+  df = cbind(Team,net_spend)
+  #flush.console(year)
+  return(df)
+  
 }
-add_year = function(tbl,year){
-  tbl$Year=year
-  return(tbl)
-}
-spend_tables=lapply(1:7, change_names)
-year_addition=mapply(add_year,spend_tables,c(2015:2009))
-year_addition = lapply(year_addition,data.frame)
-spend_tbls=do.call("rbind.fill",year_addition)
-spend_tbls = spend_tbls[,1:7]
-spend_tbls$Previous.Rank[spend_tbls$Year==2009]=c(1,2,3,4,5,6,10,7,9,8,19,15,11,13,14,16,31,12,31,31,31,31,31,31,31,31,31,17,31,31,31)
-spend_tbls$Change[Encoding(spend_tbls$Change)=="UTF-8"]="0"
-spend_tbls$Previous.Rank=str_replace(spend_tbls$Previous.Rank,"\\+","")
-spend_tbls$Previous.Rank = as.numeric(spend_tbls$Previous.Rank)
-spend_tbls$Change=spend_tbls$Previous.Rank-spend_tbls$Rank
-spend_tbls = spend_tbls %>%
-  filter(Country=="England")
-spend_tbls=spend_tbls %>%
-  rename(Team=Club)
+spend = ldply(years,netSpend)
 
-spend_tbls$Team[spend_tbls$Team=="Leicester City"]="Leicester"
-spend_tbls$Team[spend_tbls$Team=="Stoke City"]="Stoke"
-spend_tbls$Team[spend_tbls$Team=="Tottenham Hotspur"]="Tottenham"
-spend_tbls$Team[spend_tbls$Team=="West Ham United"]="West Ham"
+#remove pound and million sign and convert to a number
+spend = spend %>%
+  mutate(net_spend=as.numeric(str_replace_all(net_spend,"£|m","")))
 
-epl_database=spend_tbls %>%
-  select(Team,Year,Previous.Rank,Change, Revenue....million.) %>%
-  left_join(epl_database,.,by=c("Team","Year"))
+spend = spend %>%
+  mutate(Year=rep(2009:2016,each=20))
+
+
+#####Tiring and unsexy#####
+spend$Team[spend$Team=="Arsenal FC"]="Arsenal"
+spend$Team[spend$Team=="Chelsea FC"]="Chelsea"
+spend$Team[spend$Team=="Fulham FC"]="Fulham"
+spend$Team[spend$Team=="Stoke"]="Stoke City"
+spend$Team[spend$Team=="Wigan"]="Wigan Athletic"
+spend$Team[spend$Team=="West Ham"]="West Ham United"
+spend$Team[spend$Team=="Sunderland AFC"]="Sunderland"
+spend$Team[spend$Team=="Blackpool FC"]="Blackpool"
+spend$Team[spend$Team=="Everton FC"]="Everton"
+spend$Team[spend$Team=="Liverpool FC"]="Liverpool"
+spend$Team[spend$Team=="Middlesbrough FC"]="Middlesbrough"
+spend$Team[spend$Team=="Norwich"]="Norwich City"
+spend$Team[spend$Team=="Swansea"]="Swansea City"
+spend$Team[spend$Team=="Southampton FC"]="Southampton"
+spend$Team[spend$Team=="Reading FC"]="Reading"
+spend$Team[spend$Team=="Cardiff"]="Cardiff City"
+spend$Team[spend$Team=="Hull"]="Hull City"
+spend$Team[spend$Team=="Burnley FC"]="Burnley"
+spend$Team[spend$Team=="Leicester"]="Leicester City"
+spend$Team[spend$Team=="AFC Bournemouth"]="Bournemouth"
+spend$Team[spend$Team=="Watford FC"]="Watford"
+spend$Team[spend$Team=="Middlesbrough FC"]="Middlesbrough"
 #Now, we have our data!
 
+epl_database = epl_database %>%
+  left_join(.,spend,by=c("Team","Year")) %>%
+  select(-realYear)
 #####Preprocessing#####
 h2o.init()
 model_data = epl_database %>%
@@ -291,13 +292,14 @@ test = model_data %>% filter(Year == 2014) %>%
 
 train$Team = as.factor(train$Team)
 test$Team = as.factor(test$Team)
-cor=h2o.cor(model_data[,2:45] %>% as.h2o %>% h2o.na_omit)
+cor=h2o.cor(model_data[,2:42] %>% as.h2o %>% h2o.na_omit)
 row.names(cor) = colnames(cor)
 cor$Pts = abs(cor$Pts)
-features = c(5,7,11:13,16,19)
+features = c(7,13,6,11)
+#2,4,7,11:13
 response = 8
 
-
+model_gbm2= h2o.gbm(x=features,y=response,training_frame = train,validation_frame = test)
 
 #####Model Selection########
 models = c("h2o.glm","h2o.gbm","h2o.deeplearning","h2o.randomForest")
@@ -305,30 +307,13 @@ models = c("h2o.glm","h2o.gbm","h2o.deeplearning","h2o.randomForest")
 list_of_models = invoke_map(models,x=features,y=response,training_frame =train, validation_frame = test)
 
 #Extract Model ID from model
-getID = function(model,newID){
-  ID=model@model_id
-  return(ID)
-}
+
 #Store IDs for retreival later
 IDs = list_of_models %>%
   map_chr(getID)
 
-test.r2 = function(model){
-  # test$test_pred = h2o.predict(model,test)
-  # test.df = test %>% as.data.frame
-  # test.df$rank_pred=rank(-test.df$test_pred,ties.method = "min")
-  # rsquared = R2(test.df$rank_pred,as.numeric(as.character(test.df$lead_rank)))
-  return(h2o.r2(model,valid = T))
-}
-model_glm= h2o.getModel(IDs[1])
 
-test.rmse = function(model){
-  test$test_pred = predict(model,test)
-  test.df = test %>% as.data.frame
-  test.df$rank_pred=rank(-test.df$test_pred,ties.method = "min")
-  rmse= RMSE(test.df$rank_pred,as.numeric(as.character(test.df$rank)),na.rm = T)
-  return(rmse)
-}
+
 
 #######Model Validation########
 list_of_models %>%
@@ -338,10 +323,13 @@ list_of_models %>%
   list_of_models %>%
   map_dbl(test.rmse) %>%
   set_names(.,models)
-h2o.getModel(IDs[1]) %>% h2o.varimp_plot
+
+h2o.getModel(IDs[2]) %>% h2o.varimp_plot
 
 glm_model = h2o.getModel(IDs[1])
 #######Model Tuning#######
+
+
 
 ##GLM###
 hyper_params =list(alpha=seq(0,1,0.1))
@@ -358,24 +346,25 @@ glm_Grid = h2o.grid(algorithm = "glm",
 #0.8109321185122624
 h2o.getGrid("glm_tuning2",sort_by = "r2",decreasing = T)
 model_glm = h2o.getModel("glm_tuning2_model_5")
-hyper_params =list(learn_rate_annealing=seq(0.1,0.2,0.01))
+hyper_params =list(ntrees=seq(50,100,10))
 gbm_Grid = h2o.grid(algorithm = "gbm",
-                    grid_id = "gbm_grid7",
+                    grid_id = "gbm_grid2",
                     hyper_params = hyper_params,
-                    x=features,seed=-7.307983e+18,
+                    x=features,seed=7.304183e+18,
                     y=response,training_frame = train,
                     validation_frame = test
-                    ,ntrees = 23
-                    ,max_depth=2,
-                    min_rows=1,
-                    learn_rate = 0.19
+                    #,ntrees = 23
+                    #,max_depth=2,
+                    #min_rows=1,
+                    #learn_rate = 0.19
                     
                     )
 
 
 
-h2o.getGrid("gbm_grid6",sort_by = "r2",decreasing = T)
-
+grid_sorted=h2o.getGrid("gbm_grid2",sort_by = "r2",decreasing = T)
+ldply(grid_sorted@model_ids %>% unlist, function(x) h2o.getModel(x) %>% test.rmse)
+h2o.getModel("gbm_grid_model_0") %>% test.rmse
 hyper_params =list(rho=seq(0.99,0.999,0.001))
 dl_Grid = h2o.grid(algorithm = "deeplearning",
                     grid_id = "deepl6",
@@ -411,6 +400,8 @@ best_model =h2o.getModel("rfD4_model_5")
 
 
 #####Final Model######
-test$predict = h2o.predict(model_glm,test)
+model_gbm= h2o.getModel(IDs[2])
+test$predict = h2o.predict(model_gbm,test)
 test.df = as.data.frame(test)
-write.csv(test.df,"testpred.csv")
+test.df$pred_rank = rank(-test.df$predict,ties.method = "first")
+write.csv(test.df,"testpred3.csv")
