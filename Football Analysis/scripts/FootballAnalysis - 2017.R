@@ -285,9 +285,9 @@ model_data = epl_database %>%
   filter(!is.na(Pts)) %>%
   select(-Pl)
 
-train = model_data %>% filter(Year<2014)   %>%
+train = model_data %>% filter(Year<2015)   %>%
   as.h2o 
-test = model_data %>% filter(Year == 2014) %>%
+test = model_data %>% filter(Year == 2015) %>%
   as.h2o 
 
 train$Team = as.factor(train$Team)
@@ -299,7 +299,6 @@ features = c(7,13,6,11)
 #2,4,7,11:13
 response = 8
 
-model_gbm2= h2o.gbm(x=features,y=response,training_frame = train,validation_frame = test)
 
 #####Model Selection########
 models = c("h2o.glm","h2o.gbm","h2o.deeplearning","h2o.randomForest")
@@ -346,25 +345,26 @@ glm_Grid = h2o.grid(algorithm = "glm",
 #0.8109321185122624
 h2o.getGrid("glm_tuning2",sort_by = "r2",decreasing = T)
 model_glm = h2o.getModel("glm_tuning2_model_5")
-hyper_params =list(ntrees=seq(50,100,10))
+hyper_params =list(learn_rate=seq(0.1,1,0.1))
 gbm_Grid = h2o.grid(algorithm = "gbm",
-                    grid_id = "gbm_grid2",
+                    grid_id = "gbm_grid7",
                     hyper_params = hyper_params,
-                    x=features,seed=7.304183e+18,
+                    x=features,seed=8.973598e+18,
                     y=response,training_frame = train,
                     validation_frame = test
-                    #,ntrees = 23
-                    #,max_depth=2,
-                    #min_rows=1,
-                    #learn_rate = 0.19
+                    ,ntrees = 40
+                    
+                    ,min_rows=7
+                    ,learn_rate = 0.1
                     
                     )
 
 
 
-grid_sorted=h2o.getGrid("gbm_grid2",sort_by = "r2",decreasing = T)
-ldply(grid_sorted@model_ids %>% unlist, function(x) h2o.getModel(x) %>% test.rmse)
-h2o.getModel("gbm_grid_model_0") %>% test.rmse
+grid_sorted=h2o.getGrid("gbm_grid7",sort_by = "r2",decreasing = T)
+rmse=ldply(grid_sorted@model_ids %>% unlist, function(x) h2o.getModel(x) %>% test.rmse)
+cbind(learn_rate=grid_sorted@summary_table$learn_rate,rmse) %>% arrange(V1)
+model_gbm=h2o.getModel("gbm_grid7_model_0")
 hyper_params =list(rho=seq(0.99,0.999,0.001))
 dl_Grid = h2o.grid(algorithm = "deeplearning",
                     grid_id = "deepl6",
@@ -400,7 +400,14 @@ best_model =h2o.getModel("rfD4_model_5")
 
 
 #####Final Model######
-model_gbm= h2o.getModel(IDs[2])
+model_gbm= h2o.gbm(x=features,seed=8.973598e+18,
+                   y=response,training_frame = train,
+                   validation_frame = test
+                   ,ntrees = 40
+                   ,min_rows=7
+                   ,learn_rate = 0.1
+                   
+)
 test$predict = h2o.predict(model_gbm,test)
 test.df = as.data.frame(test)
 test.df$pred_rank = rank(-test.df$predict,ties.method = "first")
