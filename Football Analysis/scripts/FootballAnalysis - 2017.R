@@ -299,7 +299,7 @@ features = c(7,13,6,11)
 #2,4,7,11:13
 response = 8
 
-
+model_gbm2= h2o.gbm(x=features,y=response,training_frame = train,validation_frame = test)
 #####Model Selection########
 models = c("h2o.glm","h2o.gbm","h2o.deeplearning","h2o.randomForest")
 
@@ -400,15 +400,8 @@ best_model =h2o.getModel("rfD4_model_5")
 
 
 #####Final Model######
-model_gbm= h2o.gbm(x=features,seed=8.973598e+18,
-                   y=response,training_frame = train,
-                   validation_frame = test
-                   ,ntrees = 40
-                   ,min_rows=7
-                   ,learn_rate = 0.1
-                   
-)
+model_gbm= h2o.getModel(IDs[2])
 test$predict = h2o.predict(model_gbm,test)
 test.df = as.data.frame(test)
 test.df$pred_rank = rank(-test.df$predict,ties.method = "first")
-write.csv(test.df,"testpred3.csv")
+write.csv(test.df,"testpred4.csv")
