@@ -147,3 +147,23 @@ test_accuracy = function(model){
   table_accuracy=h2o.hit_ratio_table(model,valid = T)[1,2]
   return(table_accuracy)
 }
+
+
+model_type.H2OMultinomialModel <- function(x, ...) {
+  return("classification")
+  
+}
+
+predict_model.H2OMultinomialModel <- function(x, newdata, type, ...) {
+  # Function performs prediction and returns dataframe with Response
+  #
+  # x is h2o model
+  # newdata is data frame
+  # type is only setup for data frame
+  
+  pred <- h2o.predict(x, as.h2o(newdata))
+  
+  # return classification probabilities only
+  return(as.data.frame(pred[,-1]))
+  
+}
