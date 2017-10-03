@@ -4,6 +4,8 @@ library(stringr)
 library(dplyr)
 library(lubridate)
 library(readr)
+library(purrr)
+library(lime)
 
 #List of billionaires from 2007-2017
 
@@ -97,25 +99,30 @@ library(plyr)
 library(dplyr)
 library(purrr)
 library(scales)
-
+library(lime)
 #Initialize H2o cluster
 h2o.init()
 
 dat = full_list %>%
-  filter(Cluster !="The Newbie" | is.na(Age)==F)
+  filter(Cluster !="The Newbie")
 
-data = as.h2o(dat1 %>% 
-                select(-Detail1,-Detail2)
-              )
+data = dat1 %>% 
+        select(-Detail1,-Detail2) %>%
+  as.h2o()
+              
 splits = h2o.splitFrame(data,ratios = c(0.6,0.2),destination_frames = c("train", "valid", "test"), seed = 1234)
-train = splits[[1]]
-val = splits[[2]]
-test = splits[[3]]
+train = h2o.getFrame("train")
+val = h2o.getFrame("valid")
+test = h2o.getFrame("test")
 
 
 
 #Column index numbers
-features=c(2,4:11,18:19,25:26,29)
+features=c(4,5,7,9,18,25,26,28)
+  #c(4:11,18:19,25:26,28)
+  
+  #
+#2,4:11,18:19,25:26,29
 response=27
 
 #Models we would like to train and test the accuracy
@@ -135,12 +142,11 @@ IDs = list_of_models %>%
 list_of_models %>%
   map_dbl(test_accuracy) %>%
   set_names(.,names_of_models)
-
-#RandomForest performed best so let's extract that model
-model_rf = h2o.getModel(IDs[1])
-h2o.varimp_plot(model_rf)
-
+#GBM performed best so let's compute that variable importance
+model_gbm = h2o.getModel(IDs[3])
+h2o.varimp_plot(h2o.getModel(IDs[3]))
 #Store variable importance in csv for visualization
-var_imp_rf=h2o.varimp(model_rf)
-write.csv(var_imp_rf,"Variable Importance RandomForest.csv",row.names = F)
+var_imp_rf=h2o.varimp(model_gbm)
+write.csv(var_imp_rf,"Variable Importance GBM.csv",row.names = F)
+
 
