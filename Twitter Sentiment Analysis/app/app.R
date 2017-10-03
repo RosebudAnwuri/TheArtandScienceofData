@@ -23,7 +23,7 @@ library(knitr)
 library(markdown)
 library(lubridate)
 
-set_config(config (ssl_verifypeer= 0L))
+
 api_key <- "UE0sCwrNmxHb8YL759R7SuLEc" # From dev.twitter.com
 api_secret <- "C9OxWPmBAOwzQ6G4VXbCKeXd3XEHG5XvJjzTA1AVLoKbtwnpJy" # From dev.twitter.com
 token <- "370018889-WKxIRFsc8OJhvdtW3BOOdgIy1qGco48d7QlUO0in" # From dev.twitter.com
@@ -73,9 +73,9 @@ ui = dashboardPage(skin = "blue",
                    status = "info",
                    title=h1(strong('Getting Started with the Twitter Sentiment Analysis App'),style ="font-family = Lucida Calligraphy;font-size: 22pt;text-align:center;vertical-align: middle"),
                    #br(),
-                   h2("Hello There! Welcome to the Twitter Sentiment Analysis App! Now, you may ask what exactly does that mean? Well, it's simple! This app helps you understand how Twitter users feel about a certain topic. You can take a closer look on the general sentiment on that topic with a few simple steps. The great thing about this is that the topic can be anything of your choice. You can search for the sentiment towards a person like Obama, a place like Seychelles or even a movie like Mad Max!","This easy-to-use app has lots of interesting features and even lets you download the data it uses for all of its analysis. So the next time you want to get a review of a movie before heading to the cinemas, you can simply get on this app and get a 'Twitter Review' here! :-)",style= "font-size: 14pt"),
+                   h2("Hello There! Welcome to the Twitter Sentiment Analysis App! Now, you may ask what exactly does that mean? Well, it's simple! This app helps you understand how Twitter users feel about a certain topic. The great thing about this is that the topic can be anything of your choice. You can search for the sentiment towards a person like Obama, a place like Seychelles or even a movie like Mad Max!","This easy-to-use app has lots of interesting features and even lets you download the data it uses for all of its analysis. So the next time you want to get a review of a movie before heading to the cinemas, you can simply get on this app and get a 'Twitter Review' here! :-)",style= "font-size: 14pt"),
                    h2("I hope that by now you are as excited about the app as I am! I'd give a brief tutorial on how to get started with the app and create your first sentiment dashboard!",style= "font-size: 14pt"),
-                   h2(strong("First Question: How do I get started?"),style= "font-size: 14pt"),
+                   h2(strong("How do I get started?"),style= "font-size: 14pt"),
                    h2("There are two main sections:","the",em(' Sentiment Scoring Model'),"and the",em('Word Cloud Creator.'),"These sections work the same way and you can get your first analysis done in four simple steps.",style= "font-size: 14pt"),
                    h2("1. Type your search term (e.g. Hillary Clinton, Grey's Anatomy, Nigeria) into the search box.",style= "font-size: 14pt"),
                    h2("2. Choose a time period.",style= "font-size: 14pt"),
@@ -115,7 +115,6 @@ ui = dashboardPage(skin = "blue",
                    h3("a.	The Twitter search API searches through all Tweets all over the world. That might take some time.",style= "font-size: 14pt; text-indent:25px"),
                    h3("b.	If you search for highly used words/phrases like Donald Trump, it would take significantly longer than searching for something like the twitter sentiment towards the philosophical trends of the 13th Century.",style= "font-size: 14pt; text-indent:25px"),
                    h3("c.	Twitter search API is rate limited. This means that after a number of searches per day, Twitter begins to block further searches for a period of time. So if you see that your search is 'stuck' on a completion status for a while, you are probably being rate limited.",style= "font-size: 14pt; text-indent:25px"),
-                   h2("3.	Try not to click the search button again while your wordcloud or dashboard is being created (You'd see a busy screen after your first click). If you do, the application will execute the same command for the number of times you clicked it. That's going to be a bit frustrating now, wouldn't it? ",style= "font-size: 14pt"),
                    h2("It's pretty easy and fun to use. So dig in! I hope you enjoy it.",style= "font-size: 14pt"),
                    h2("Happy Twitter Sentimenting! :-)",style= "font-size: 14pt")
                    
@@ -125,7 +124,7 @@ ui = dashboardPage(skin = "blue",
      
      tabItem(tabName = "Table",
              fluidRow(
-               box(title = strong("Search Bar"),height = 700,dateRangeInput("daterange1",label = h4("Select time range"),max = Sys.Date(),min = Sys.Date()-10,start = Sys.Date()-10),
+               box(title = strong("Search Bar"),height = 700,dateRangeInput("daterange1",label = h4("Select time range"),max = Sys.Date(),min = Sys.Date()-10,start = Sys.Date()-10,end=Sys.Date()),
                    textInput('search1',h4("Enter search keyword:"),value = ""),
                    #em(h4("Tip: To make your twitter search faster, shorten the search time range")),
                    actionButton("Sarch1","Search"),solidHeader = T,status = "primary",
@@ -141,7 +140,7 @@ ui = dashboardPage(skin = "blue",
                box(title = strong("Twitter Trends"),height = 700,conditionalPanel("typeof output.severalPlots !== 'undefined'",box(width = 5,solidHeader = T,height = 100,selectizeInput('graphs',h4('Variables to visualize'),choices = c("Number of Tweets","score","statusSource","Hourly score"),selected = "score"))
                                                                                    , conditionalPanel("input.graphs == 'score'",box(width = 5,height = 100,solidHeader = T,selectizeInput('Aggregation',h4('Level of aggregation'),choices = c("sum","mean"),selected = "mean")))),conditionalPanel("input.graphs == 'statusSource'",
                                                                                                                                                                                                                                                                                                         box(checkboxInput('showSent',h4("Show Average Sentiment for each Channel"),value = F),solidHeader = T,width = 5,height = 100)),
-                    plotOutput('severalPlots',height = "510px"),solidHeader = T,status = "success"
+                    plotlyOutput('severalPlots',height = "510px"),solidHeader = T,status = "success"
                ),
                valueBoxOutput('tweetno',width = 3),
                valueBoxOutput("averageSentiment",width = 3),
@@ -216,7 +215,7 @@ ui = dashboardPage(skin = "blue",
           status = "success",solidHeader = T,
           height = 550),
        busyIndicator(text = "Creating Word Cloud...",wait = 1000)
-      ,box(title = strong("Percentage Share of Word Sentiment"),solidHeader = T,status = "warning",plotOutput('topWords',height = "400px"),height = 500)
+      ,box(title = strong("Percentage Share of Word Sentiment"),solidHeader = T,status = "warning",plotlyOutput('topWords',height = "400px"),height = 500)
       
       )
  ),
@@ -275,7 +274,7 @@ server = shinyServer(function(input, output, session){
           while (date_time <= input$daterange[2]){
             date_time = as.character.Date(date_time+1)
             
-            tweetdetails <- searchTwitter(word, n=1500, lang="en", since = paste(input$daterange[1]),until = date_time, geocode = '10,9, 200km')
+            tweetdetails <- searchTwitter(word, n=50, lang="en", since = paste(input$daterange[1]),until = date_time, geocode = '10,9, 200km')
             
             tweetData = append(tweetData, tweetdetails)
             i = i+1
@@ -349,7 +348,7 @@ server = shinyServer(function(input, output, session){
           while (date_time <= input$daterange1[2]){
             date_time = as.character.Date(date_time+1)
             
-            tweetdetails <- searchTwitter(word, n=1500, lang="en", since = paste(input$daterange1[1]),until=date_time,geocode = '10,9, 200km')
+            tweetdetails <- searchTwitter(word, n=50, lang="en", since = paste(input$daterange1[1]),until=date_time,geocode = '10,9, 200km')
             
             tweetData = append(tweetData, tweetdetails)
             i = i+1
@@ -476,7 +475,6 @@ server = shinyServer(function(input, output, session){
   cloudCreator = function(df){
     corpus = Corpus(VectorSource(df$text))
     corpus = tm_map(corpus, removeNumbers)
-    corpus = tm_map(corpus, content_transformer(tolower))
     corpus = tm_map(corpus, removeWords, c("amp",stopwords("english")))
     exc = unlist(str_split(tolower(input$search)," "))
     for (i in 1:length(exc)){
@@ -487,6 +485,8 @@ server = shinyServer(function(input, output, session){
     corpus = tm_map(corpus, removePunctuation)
     corpus = tm_map(corpus, content_transformer(stripWhitespace))
     corpus = tm_map(corpus, stemDocument)
+    corpus = tm_map(corpus, content_transformer(tolower))
+    
    
     if (input$sarch4 != ''){
 
@@ -510,7 +510,7 @@ server = shinyServer(function(input, output, session){
     
     
     corpus = tm_map(corpus, PlainTextDocument)
-    
+    corpus <- Corpus(VectorSource(corpus))
     
     
     frequencies = DocumentTermMatrix(corpus)
@@ -526,32 +526,29 @@ server = shinyServer(function(input, output, session){
   wordCloud = reactive({wordcloud(colnames(Clouding()),colSums(Clouding()),colors = wes_palette(name = input$palette,type = "discrete"),max.words  = 300,rot.per = 0,family="Trebuchet MS",font = 2)})
   
  topWords = function(){
-  x1= data.frame(word = colnames(Clouding()),frequency=colSums(Clouding()))
-  lexicon = sentiments %>% filter(lexicon == "AFINN")
-  clouder = merge(x1,lexicon,by ="word",all.x= T)
-  clouder= clouder %>% mutate(score = ifelse(is.na(score),0,score))
-  coll = wes_palette(input$palette)[1:3]
+   x1= Clouding()%>%
+     summarise_all(funs(sum)) %>%
+     gather(Word,frequency) %>%
+     inner_join(.,sentiments %>%
+                 filter(lexicon=="nrc") %>%
+                 rename(Word=word),by="Word") %>%
+     select(-lexicon,-score) %>%
+     group_by(sentiment) %>%
+     summarise(total_sentiment=sum(frequency))
+  
+  colors=c('#0091ea','#e74c3c','#f06292','#00838f','#f1c40f','#ff9800','#00bfa5','rgba(236, 240, 241,1.0)','#7f8c8d','#2c3e50')
   return( 
-    clouder %>%
-      mutate(tet=ifelse(score > 0,"Positive",ifelse(score<0,"Negative","Neutral"))) %>%
-      group_by(tet) %>%
-      dplyr::summarise(n=n()) %>%
-      ggplot(aes(x='',y=n,fill=tet))+
-      geom_bar(width = 1,stat = "identity")+
-      coord_polar("y", start=0)+
-      #geom_text(aes(x='',y=n,fill=tet,label = n))+
-      theme_void()+
-      theme(axis.text.x=element_blank(),text=element_text(size = 14,family = "Trebuchet MS"))+
-      geom_text(aes(y = n/3 + c(0, cumsum(n)[-length(n)]), x=c(1.7,1.7,1.7),
-                    label = percent(n/nrow(clouder))), size = 5,show.legend = F)+
-    
-      scale_fill_manual(values =coll)
+    x1%>%
+     plot_ly(labels=~sentiment,values=~total_sentiment,textinfo="percent", insidetextfont = list(color = '#FFFFFF'), marker = list(colors = colors,
+                                                                                          line = list(color = '#FFFFFF', width = 1))) %>%
+      add_pie(hole=0.6) %>%
+      layout(showlegend=TRUE)
     
 
 )
 
  }
- output$topWords = renderPlot({topWords()},res = 72)
+ output$topWords = renderPlotly({topWords()})
   output$downloadtable <- downloadHandler(
     filename = function() { paste("Tweets on",input$search,'_',Sys.time(), '.pdf', sep='') },
     content = function(file) {
@@ -661,7 +658,7 @@ severalPlot = function(){
     
     }
   }
-  else if(input$Aggregation == 'sum'){
+  else if(input$graphs == 'score'){
     if (input$daterange1[2] - input$daterange1[1] +1 <= 3){
       return( ggplot(tableReact(),aes_string("as.Date(created)",input$graphs))+
                 stat_summary(fun.y = input$Aggregation,geom = "bar",fill = wes_palette(input$palette1)[ceiling(runif(1,1,length(wes_palette(input$palette1))))])+
@@ -671,37 +668,23 @@ severalPlot = function(){
                 theme(text=element_text(size = 14,family = "Trebuchet MS")))
     }
     else {
-   return( ggplot(tableReact(),aes_string("as.Date(created)",input$graphs))+
-             stat_summary(fun.y = input$Aggregation,geom = "line",size =1.1,color = wes_palette(input$palette1)[floor(runif(1,1,length(wes_palette(input$palette1))))])+
-             theme_classic()+
-             xlab("Date")+ylab(paste("Total", input$graphs))+
-             ggtitle(paste('Trend of Total', input$graphs))+
-             theme(text=element_text(size = 14,family = "Trebuchet MS")))
+   return( tableReact() %>%
+             mutate(Day= as.character(date(created))) %>%
+             group_by(Day) %>%
+             dplyr::summarise(avg_score=eval(parse(text='input$Aggregation(input$graphs)'))) %>%
+             plot_ly(x=~Day,y=~avg_score,mode="lines",type="scatter",hoverinfo = 'text',text=~paste("Sentiment:",avg_score), line = list(color=wes_palette(input$palette1)[runif(1,1,length(wes_palette(input$palette1)))], width = 4)) %>%
+             layout(title = paste(ifelse(input$Aggregation=="sum","Total","Average"),"Sentiment Score per day"),
+                                  xaxis = list(title = "Days"),
+                                  yaxis = list (title = paste(ifelse(input$Aggregation=="sum","Total","Average"),"Sentiment Score"))
+             ))
     }
   }
-  else if(input$Aggregation == 'mean'){
-    if (input$daterange1[2] - input$daterange1[1] +1 <= 3){
-      return( ggplot(tableReact(),aes_string("as.Date(created)",input$graphs))+
-                stat_summary(fun.y = input$Aggregation,geom = "bar",fill = wes_palette(input$palette1)[ceiling(runif(1,1,length(wes_palette(input$palette1))))])+
-                theme_classic()+
-                xlab("Date")+ylab(paste("Average",input$graphs))+
-                ggtitle(paste('Trend of Average',input$graphs))+
-                theme(text=element_text(size = 14,family = "Trebuchet MS"))) 
-    }
-    else {
-   return( ggplot(tableReact(),aes_string("as.Date(created)",input$graphs))+
-             stat_summary(fun.y = input$Aggregation,geom = "line",size =1.1,color = wes_palette(input$palette1)[floor(runif(1,1,length(wes_palette(input$palette1))))])+
-             theme_classic()+
-             xlab("Date")+ylab(paste("Average",input$graphs))+
-             ggtitle(paste('Trend of Average',input$graphs))+
-             theme(text=element_text(size = 14,family = "Trebuchet MS")))
-    }
-  }
+  
 }
   
   
 
-output$severalPlots = renderPlot({severalPlot()})
+output$severalPlots = renderPlotly({severalPlot()})
 vars = reactiveValues(counter = 0)
 output$advButton = renderUI({
   actionLink("click", label = label())
