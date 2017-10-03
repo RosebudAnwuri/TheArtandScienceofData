@@ -1,4 +1,3 @@
-library(packrat)
 library(h2o)
 library(shiny)
 library(shinyjs)
@@ -22,6 +21,28 @@ model = h2o.loadModel("GBM_Model")
 Countries=levels(dat$Country)
 Sectors = levels(dat$Sector)
 Relations = levels(dat$relation)
+busyIndicators <- function(text = "Calculation in progress..",img = "shinysky/busyIndicator/ajaxloaderq.gif", wait=1000) {
+  tagList(
+    singleton(tags$head(
+      tags$link(rel="stylesheet", type="text/css",href="busyIndicator.css")
+    ))
+    ,div(class="shinysky-busy-indicator",p(text),img(src=img))
+    ,tags$script(sprintf(
+      "	setInterval(function(){
+      if ($('html').hasClass('shiny-busy')) {
+      setTimeout(function() {
+      if ($('html').hasClass('shiny-busy')) {
+      $('div.shinysky-busy-indicator').show()
+      }
+      }, %d)  		    
+      } else {
+      $('div.shinysky-busy-indicator').hide()
+      }
+},100)
+      ",wait)
+    )
+  )	
+  }
 ui = shinyUI(
   navbarPage("Billion Dollar Questions",inverse = F,collapsible = T,fluid = T,
              theme=shinytheme("flatly"),
@@ -128,6 +149,20 @@ width:100%;
 min-width:100%;
 }
 }
+#run{
+animation-duration:2s;
+	 -moz-animation-duration: 2s;
+-webkit-animation-duration: 2s;
+-o-animation-duration:.2s;
+-ms-animation-duration:.2s;
+}
+#urlInput > a{
+animation-duration:2s;
+	 -moz-animation-duration: 2s;
+-webkit-animation-duration: 2s;
+-o-animation-duration:.2s;
+-ms-animation-duration:.2s;
+}
 </style>
                                                 
                                                 <a style="color:#00897b ; text-transform:uppercase;font-weight:400;font-size:3.7vh" href="http://theartandscienceofdata.wordpress.com/blog" target"_blank">The Art and Science of Data</a>
@@ -140,7 +175,7 @@ min-width:100%;
                                                 </div>'),
                                               
                                               
-                                              busyIndicator(text = h4("Running Model...",style="font-size: 40px; font-family:Papyrus;"),img = "Loading2.gif"),
+                                              busyIndicators(text = h4("Running Model...",style="font-size: 40px; font-family:Papyrus;"),img = "Loading2.gif"),
                                               
                                               textOutput("prefix_final"),
                                               div(imageOutput("image_final"), style="text-align: center;"),
