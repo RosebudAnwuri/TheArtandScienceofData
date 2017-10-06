@@ -1,3 +1,4 @@
+#All Functions for Billionaires.R
 get_historical_ranks = function(year){
   year_update = ifelse(year <10,paste0(0,year),year)
   url = paste0("http://stats.areppim.com/listes/list_billionairesx",year_update,"xwor.htm")
