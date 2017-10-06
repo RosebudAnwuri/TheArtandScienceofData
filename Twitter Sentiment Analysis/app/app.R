@@ -22,6 +22,8 @@ library(shinysky)
 library(knitr)
 library(markdown)
 library(lubridate)
+library(tidyr)
+library(plotly)
 
 
 api_key <- "UE0sCwrNmxHb8YL759R7SuLEc" # From dev.twitter.com
@@ -30,9 +32,7 @@ token <- "370018889-WKxIRFsc8OJhvdtW3BOOdgIy1qGco48d7QlUO0in" # From dev.twitter
 token_secret <- "7Ah8qplWJf5ey4zB4IPTTBlypMCUenXnQsrCH7808UbRE" # From dev.twitter.com
 
 # Create Twitter Connection
-setup_twitter_oauth(api_key, api_secret, token, token_secret)
-token <- get("oauth_token", twitteR:::oauth_cache)
-token$cache()
+
 ui = dashboardPage(skin = "blue",
   dashboardHeader(title = "Sentiment Analysis"),
   dashboardSidebar(sidebarMenu(
@@ -139,8 +139,8 @@ ui = dashboardPage(skin = "blue",
                
                box(title = strong("Twitter Trends"),height = 700,conditionalPanel("typeof output.severalPlots !== 'undefined'",box(width = 5,solidHeader = T,height = 100,selectizeInput('graphs',h4('Variables to visualize'),choices = c("Number of Tweets","score","statusSource","Hourly score"),selected = "score"))
                                                                                    , conditionalPanel("input.graphs == 'score'",box(width = 5,height = 100,solidHeader = T,selectizeInput('Aggregation',h4('Level of aggregation'),choices = c("sum","mean"),selected = "mean")))),conditionalPanel("input.graphs == 'statusSource'",
-                                                                                                                                                                                                                                                                                                        box(checkboxInput('showSent',h4("Show Average Sentiment for each Channel"),value = F),solidHeader = T,width = 5,height = 100)),
-                    plotlyOutput('severalPlots',height = "510px"),solidHeader = T,status = "success"
+                                                                                                                                                                                                                                                                                                    box(checkboxInput('showSent',h4("Show Average Sentiment for each Channel"),value = F),solidHeader = T,width = 5,height = 100)),
+                    div(plotlyOutput('severalPlots',height = "500px"),style="padding-top:25%"),solidHeader = T,status = "success"
                ),
                valueBoxOutput('tweetno',width = 3),
                valueBoxOutput("averageSentiment",width = 3),
@@ -261,6 +261,9 @@ tags$head(tags$style(
 
 
 server = shinyServer(function(input, output, session){
+  setup_twitter_oauth(api_key, api_secret, token, token_secret)
+  token <- get("oauth_token", twitteR:::oauth_cache)
+  token$cache()
   output$testImage = renderImage({list(src="www/Page2.PNG")},deleteFile = F)
   output$Panels = renderImage({list(src="www/Panels.PNG")},deleteFile = F)
   output$Nextgraph = renderImage({list(src="www/Nextgraph.PNG")},deleteFile = F)
@@ -669,13 +672,14 @@ severalPlot = function(){
     }
     else {
    return( tableReact() %>%
-             mutate(Day= as.character(date(created))) %>%
+             mutate(Day= date(created)) %>%
              group_by(Day) %>%
-             dplyr::summarise(avg_score=eval(parse(text='input$Aggregation(input$graphs)'))) %>%
-             plot_ly(x=~Day,y=~avg_score,mode="lines",type="scatter",hoverinfo = 'text',text=~paste("Sentiment:",avg_score), line = list(color=wes_palette(input$palette1)[runif(1,1,length(wes_palette(input$palette1)))], width = 4)) %>%
+             dplyr::summarise(avg_score=mean(score)) %>%
+             plot_ly(x=~Day,y=~avg_score,mode="lines",type="scatter",hoverinfo = 'text',text=~paste("Day: ",as.Date(Day),
+                                                                                                    "</br> \n Sentiment: ",round(avg_score,2)), line = list(color=wes_palette(input$palette1)[runif(1,1,length(wes_palette(input$palette1)))], width = 4)) %>%
              layout(title = paste(ifelse(input$Aggregation=="sum","Total","Average"),"Sentiment Score per day"),
-                                  xaxis = list(title = "Days"),
-                                  yaxis = list (title = paste(ifelse(input$Aggregation=="sum","Total","Average"),"Sentiment Score"))
+                                  xaxis = list(title = "Days",showline=F,zeroline=F, gridcolor = '#ffffff'),
+                                  yaxis = list (title = paste(ifelse(input$Aggregation=="sum","Total","Average"),"Sentiment Score"),showline=F,zeroline=F, gridcolor = '#ffffff')
              ))
     }
   }

@@ -1,15 +1,14 @@
 library(h2o)
 library(shiny)
-library(shinyjs)
 library(shinydashboard)
+library(shinyjs)
+library(shinyBS)
 library(shinythemes)
 library(plyr)
 library(dplyr)
-library(wesanderson)
 library(scales)
 library(lubridate)
 library(shinysky)
-library(extrafont)
 library(stringr)
 h2o.init()
 df = read.csv("billionaire_data.csv")
@@ -119,10 +118,10 @@ ui = shinyUI(
                                                                 "))), tags$head(
                                                                   tags$link(rel = "stylesheet", type = "text/css", href = "animate.min.css")
                                                                 ),                               
-                                              HTML(
+                                             bsModal( id="startupMessage",trigger='',size='large',HTML(
                                                 '
                                                 
-                                                <div class="row" style="padding-right:5%;padding-left:5%;">
+                                                <div class="row animated wobble" style="padding-right:5%;padding-left:5%;">
                                                 <div class="col s12 m12">
                                                 <div style="background:#009688; color:white;font-size:12pt;font-weight:200;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);">
                                                 <div class="card-content white-text" style="padding:10px;">
@@ -133,46 +132,76 @@ ui = shinyUI(
                                                 </div>
                                                 <div style="background-color:#ffffff;">
                                                 <div class="card-action">
-<style>
-.card-action {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  height:50px;
-text-align:center;
-}
-.card-action:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-@media only screen and (max-width : 500px) {
-img{
-width:100%;
-min-width:100%;
-}
-}
-#run{
-animation-duration:2s;
-	 -moz-animation-duration: 2s;
--webkit-animation-duration: 2s;
--o-animation-duration:.2s;
--ms-animation-duration:.2s;
-}
-#urlInput > a{
-animation-duration:2s;
-	 -moz-animation-duration: 2s;
--webkit-animation-duration: 2s;
--o-animation-duration:.2s;
--ms-animation-duration:.2s;
-}
-</style>
-                                                
                                                 <a style="color:#00897b ; text-transform:uppercase;font-weight:400;font-size:3.7vh" href="http://theartandscienceofdata.wordpress.com/blog" target"_blank">The Art and Science of Data</a>
                                                
                                                 </div>
+
                                                 </div>
                                                 
                                                 </div>
                                                 </div>
-                                                </div>'),
+                                                </div>
+<div class="animated wobble" style="text-align:center;"><button type="button"id="close-button" class="btn btn-default animated swing infinite" data-dismiss="modal" style="
+    text-align: center; margin-top:20px;;width:150px;height:55px;border:none;border-radius:0;background-color:#00897b;
+                                                ">GET STARTED!</button></div>')),HTML('<style>
+.card-action {
+                                                               box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                                                               transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+                                                               height:50px;
+                                                               text-align:center;
+                                                               }
+                                                               .card-action:hover {
+                                                               box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+                                                               }
+                                                               @media only screen and (max-width : 500px) {
+                                                               img{
+                                                               width:100%;
+                                                               min-width:100%;
+                                                               }
+                                                               }
+
+                                                               #run{
+                                                               animation-duration:2s;
+                                                               -moz-animation-duration: 2s;
+                                                               -webkit-animation-duration: 2s;
+                                                               -o-animation-duration:.2s;
+                                                               -ms-animation-duration:.2s;
+                                                               }
+                                                               #urlInput > a{
+                                                               animation-duration:2s;
+                                                               -moz-animation-duration: 2s;
+                                                               -webkit-animation-duration: 2s;
+                                                               -o-animation-duration:.2s;
+                                                               -ms-animation-duration:.2s;
+                                                               }
+#close-button{
+                                                               animation-duration:2s;
+                                                                                      -moz-animation-duration: 2s;
+                                                                                      -webkit-animation-duration: 2s;
+                                                                                      -o-animation-duration:.2s;
+                                                                                      -ms-animation-duration:.2s;
+                                                                                      }
+.modal-content{
+background: none;
+    border: none;
+                                                               box-shadow: none;
+}
+.modal-header{
+border:none;
+}
+.modal .close{
+color:white;
+}
+.modal-body{
+display:none;
+}
+.modal-footer{
+display:none;
+}
+
+                                                               </style>
+                                                               
+                                                               '),
                                               
                                               
                                               busyIndicators(text = h4("Running Model...",style="font-size: 40px; font-family:Papyrus;"),img = "Loading2.gif"),
@@ -182,10 +211,10 @@ animation-duration:2s;
                                               textOutput("prediction_final"),
                                               br(),
                                               tags$head(tags$style("#prefix_final{
-                                                                    font-size: 40px; text-align:center;
+                                                                    font-size: 6vh; text-align:center;
                                                                     }
                                                                    #prediction_final{
-                                                                   font-size: 40px; text-align:center;
+                                                                   font-size: 6vh; text-align:center;
                                                                    }
                                                                    #sidebar{background-color: rgba(236, 240, 241,0.4);}
                                                                   form-group label{}
@@ -216,6 +245,8 @@ animation-duration:2s;
 
 
 server = shinyServer(function(input, output, session){
+  toggleModal(session, "startupMessage", toggle = "open")
+  
   category_predictors = function(){
     self_made=ifelse(input$selfMade=="Yes","Y","N")
     year_born = year(Sys.Date())-input$Age

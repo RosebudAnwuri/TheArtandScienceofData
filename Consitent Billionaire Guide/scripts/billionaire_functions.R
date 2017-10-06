@@ -149,12 +149,12 @@ test_accuracy = function(model){
 }
 
 
-model_type.H2OMultinomialModel <- function(x, ...) {
+model_type.H2OBinomialModel <- function(x, ...) {
   return("classification")
   
 }
 
-predict_model.H2OMultinomialModel <- function(x, newdata, type, ...) {
+predict_model.H2OBinomialModel <- function(x, newdata, type, ...) {
   # Function performs prediction and returns dataframe with Response
   #
   # x is h2o model

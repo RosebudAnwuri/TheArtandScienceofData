@@ -1,4 +1,5 @@
 /packrat
+/.spyproject
 .httr-oauth
 .RData
 .Rhistory

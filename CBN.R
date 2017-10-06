@@ -24,7 +24,7 @@ Sectors = levels(dat$Sector)
 Relations = levels(dat$relation)
 ui = shinyUI(
   navbarPage("Billion Dollar Questions",inverse = F,collapsible = T,fluid = T,
-             theme = shinytheme("flatly"),
+             theme=shinytheme("flatly"),
              tabPanel("What Type of Billionaire Are You?", icon = icon("money"),
                       sidebarLayout(position = 'left',
                                     sidebarPanel(id = "sidebar",
@@ -43,10 +43,37 @@ ui = shinyUI(
                                                  
                                                  
                                     ),
-                                    mainPanel(position="left",
+                                    mainPanel(position="right",
                                               br(),
-                                             
-                                              busyIndicator(text = h4("Running Model...",style="font-size: 40px; font-family:Papyrus;"),img = "shinysky/busyIndicator/Loading3.gif"),
+                                              tags$head(
+                                                tags$link(rel = "stylesheet", type = "text/css", href = "materialize.min.css")
+                                              ),
+                                              tags$head(tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js")),
+                                              
+                                                              HTML(
+                                                              '
+                                                                 
+ <div class="row">
+                                                                   <div class="col s12 m12">
+                                                                   <div class="card teal">
+                                                                   <div class="card-content white-text">
+                                                                   
+                                                                   
+                                                                   <p>Have you ever wondered what sort of billionaire you would end up as? A Consistent one, A Hustler or a Ghost?
+                                                                   Learn a bit more about it on the link below and predict the one you could be with this simple app!</p>
+                                                                   </div>
+                                                                   <div style="background-color:#ffffff;">
+                                                                   <div class="card-action">
+                                                                   <div style="text-align:center;">
+                                                                   <a style="color:#009688; font-family:Papyrus;" href="http://theartandscienceofdata.wordpress.com/blog" target"_blank">The Art and Science of Data</a>
+                                                                   </div>
+                                                                   </div>
+                                                                   </div>
+                                                                   
+                                                                   </div>
+                                                                   </div>
+                                                                   </div>'),
+                                              # busyIndicator(text = h4("Running Model...",style="font-size: 40px; font-family:Papyrus;"),img = "shinysky/busyIndicator/Loading3.gif"),
                                               
                                               textOutput("prefix_final"),
                                               div(imageOutput("image_final"), style="text-align: center;"),

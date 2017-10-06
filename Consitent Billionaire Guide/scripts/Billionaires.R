@@ -103,7 +103,7 @@ library(lime)
 #Initialize H2o cluster
 h2o.init()
 
-dat = full_list %>%
+dat1 = full_list %>%
   filter(Cluster !="The Newbie")
 
 data = dat1 %>% 
@@ -118,7 +118,7 @@ test = h2o.getFrame("test")
 
 
 #Column index numbers
-features=c(4,5,7,9,18,25,26,28)
+features=c(5,7,9,18,25,26,28)
   #c(4:11,18:19,25:26,28)
   
   #
@@ -148,5 +148,26 @@ h2o.varimp_plot(h2o.getModel(IDs[3]))
 #Store variable importance in csv for visualization
 var_imp_rf=h2o.varimp(model_gbm)
 write.csv(var_imp_rf,"Variable Importance GBM.csv",row.names = F)
+model_gbm=h2o.loadModel("C:/Users/rose.anwuri/Documents/TheArtandScienceofData/Consitent Billionaire Guide/app/GBM_Model")
+features_lime=model_gbm@parameters$x
+train_lime = train[,c(features_lime,"Cluster")] %>% h2o.na_omit()
+test_lime = val[,c(features_lime,"Cluster")]%>% h2o.na_omit()
 
+predict_model(x = model_gbm, newdata =test_lime[,-9], type = 'raw') %>%
+  tibble::as_tibble()
+train_lime_df=as.data.frame(train_lime[,-9])
+train_lime_df=train_lime_df[complete.cases(train_lime_df),]
 
+explainer <- lime::lime(
+  train_lime_df, 
+  model          = model_gbm, 
+  bin_continuous = FALSE)
+test_lime_df = as.data.frame(test_lime) %>% filter(Cluster=="The Hustler") %>%as_tibble()
+test_lime_df=test_lime_df[complete.cases(test_lime_df),]
+explanation <- lime::explain(
+  as.data.frame(test_lime_df[,-9]), 
+  explainer    = explainer, 
+  n_labels     = 1, 
+  n_features   = 4,
+  kernel_width = 0.5)
+plot_features(explanation)
