@@ -1,0 +1,76 @@
+---
+title: "The ABC-XYZ of Machine Learning and Data Science"
+author: "Rosebud Anwuri"
+date: "November 24, 2017"
+output: 
+  ioslides_presentation:
+    css: style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objectives
+
+>- Learn the basics of gathering data.
+>- Learn how to clean data.
+>- Learn how to inspect data.
+>- Learn how to make data usable for analysis and Machine Learning.
+
+## Case Study
+
+> *"Excessive public holidays hurt the economy and the financial system"*
+ <p style="font-weight:bold;">-The Philippine Star</p>
+ 
+ 
+ </br>
+> *"But there are two extraneous factors which seem to be worsening both national economic growth and national productivity. The first is the penchant for Nigerian workers to go on strike, work to rule and all such activities that stop them from effectively utilizing man-hours for productive activities. As I write this, PENGASSAN and NUPENG are threatening strikes that will not only keep them out of profitable production, but that will also make Nigerians waste man hours in petrol queues. The painful losses in the first five months of this year are too fresh for us to forget as most Nigerians spent useful time queuing and sleeping in fuel stations because of fuel scarcity. The other extraneous factor is Nigerian government’s love for <em style="font-weight:bold;">public holidays.</em>"*
+ <p style="font-weight:bold;">-Business Day</p>
+
+</br>
+ > *"The Phillipines Department of Labor and Employment cited adverse effects on productivity, competitiveness and workers’ pay from non-working holidays"*
+ <p style="font-weight:bold;">-GMA News Online</p>
+ 
+ </br>
+ <h3 style="color:white;">Question: Does having a large number of holidays actually impact a country's productivity?</h3>
+## Our Approach
+<ol>
+<li> What do we need to answer this question with data?</li>
+<ul>Number of Holidays</ul>
+<ul> Productivity data e.g. a proxy like Gross Domestic Product</ul>
+<li> Where can we find this data?</li>
+<ul> Holiday data is available online. One of such websites in timeanddate.com</ul>
+<ul> GDP data, along with other country statistics, can easily be gotten from The World Bank's Data Catalog</ul> 
+<li> Assumptions </li>
+<ul> Number of holidays stay the same every year</ul>
+<ul> Religious holidays that are not tagged as national holidays are not considered</ul>
+</ol>
+## Getting Started
+
+**Install R and RStudio**
+</br>
+</br>
+Windows 
+</br>
+R: https://cran.r-project.org/bin/windows/base/R-3.4.2-win.exe
+</br>
+Rstudio: https://download1.rstudio.org/RStudio-1.1.383.exe
+</br>
+</br>
+MAC
+</br>
+R: https://cran.r-project.org/bin/macosx/R-3.4.2.pkg
+</br>
+Rstudio: https://download1.rstudio.org/RStudio-1.1.383.dmg 
+</br>
+</br>
+**Write the code below in your Rstudio console:**
+</br>
+</br>
+<div class="code">install.packages("rmarkdown")</div>
+</br>
+</br>
+<p style:"text-align:center;font-weight:bold;">Go here to download the files: https://goo.gl/Y4JNx3</p>
+
+If you do not have R and want to follow the tutorial, go here: https://goo.gl/jC8mnZ

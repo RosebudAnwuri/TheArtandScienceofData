@@ -1,0 +1,2074 @@
+Country,Self.Made,Bachelors.Degree,MBA1,Sector,founding_year,relation,Age.at.start,Cluster
+United States,Y,N,N,Technology,1975,Founder,20,The Consistent
+United States,Y,Y,N,Investments,1839,Founder,-92,The Consistent
+United States,Y,Y,N,Technology,1994,Founder,31,The Consistent
+Spain,Y,N,N,Retail,1975,Founder,40,The Consistent
+United States,Y,N,N,Software,2004,Founder,20,The Consistent
+Mexico,Y,Y,N,Telecom,1990,Founder,51,The Consistent
+United States,Y,N,N,Technology,1977,Founder,33,The Consistent
+United States,Y,Y,N,Diversified,1940,Relation,4,The Consistent
+United States,N,Y,N,Diversified,1940,Relation,-1,The Consistent
+United States,Y,Y,Y,Finance,1981,Founder,40,The Consistent
+France,N,Y,N,Fashion and Retail,1987,Founder,39,The Consistent
+United States,Y,Y,N,Technology,1998,Founder,26,The Consistent
+United States,Y,Y,N,Technology,1998,Founder,25,The Consistent
+France,N,N,N,Fashion and Retail,1909,Relation,-14,The Consistent
+United States,N,Y,N,Fashion and Retail,1962,Relation,17,The Consistent
+United States,N,Y,N,Fashion and Retail,1962,Relation,13,The Consistent
+United States,N,Y,N,Fashion and Retail,1962,Relation,12,The Consistent
+Sweden,Y,N,N,Retail,1943,Founder,17,The Hustler
+China,Y,N,N,Real Estate,1988,NA,34,The Consistent
+Hong Kong,Y,N,N,Diversified,1971,Founder,43,The Consistent
+United States,Y,N,N,Gaming,1988,Founder,55,The Consistent
+United States,Y,Y,N,Technology,1975,NA,20,The Consistent
+Brazil,Y,Y,N,Food and Beverage,1999,Founder,60,The Consistent
+China,Y,Y,N,Software,1999,Founder,35,The Consistent
+Canada,N,N,N,Media,1934,Relation,-24,The Consistent
+United States,N,Y,N,Food and Beverage,1911,Relation,-25,The Consistent
+United States,N,Y,N,Food and Beverage,1911,Relation,-29,The Consistent
+United States,Y,Y,Y,Fashion and Retail,1964,NA,27,The Consistent
+United States,Y,Y,N,Finance,1969,NA,39,The Consistent
+China,Y,Y,N,Software,1998,Founder,27,The Consistent
+Hong Kong,Y,N,N,Real Estate,1976,Founder/Chairman,49,The Consistent
+India,N,Y,N,Energy,1966,Relation,8,The Consistent
+Japan,Y,Y,N,Telecom,1981,Founder/Ceo,24,The Consistent
+Denmark,N,Y,Y,Manufacturing,1949,NA,1,The Consistent
+Germany,N,N,N,Manufacturing,1946,Relation,-19,The Consistent
+Brazil,Y,N,N,Finance,1955,Founder,17,The Consistent
+Germany,N,N,Y,Automotive,1916,Relation,-47,The Consistent
+United States,Y,N,N,Technology,1984,Founder,20,The Consistent
+United States,Y,Y,Y,Energy,1986,Founder,28,The Consistent
+United States,N,Y,Y,Technology,1976,Relation,12,The Consistent
+United States,Y,N,N,Technology,1975,Founder,22,The Consistent
+Sweden,N,N,N,Fashion and Retail,1947,Relation,-1,The Consistent
+Germany,N,N,N,Fashion and Retail,1913,Relation,-38,The Consistent
+Saudi Arabia,Y,Y,N,Investments,1980,Founder,26,The Consistent
+Russia,Y,Y,N,Energy,1994,Chairman,38,The Consistent
+United States,Y,Y,Y,Technology,1980,Founder,28,The Consistent
+Germany,N,N,N,Automotive,1916,Relation,-51,The Consistent
+United States,Y,Y,N,Finance,1982,NA,44,The Consistent
+Italy,Y,N,N,Fashion and Retail,1961,Founder,26,The Consistent
+Russia,Y,Y,Y,Metals and Mining,1955,Chairman,-11,The Consistent
+China,Y,Y,N,Software,1997,NA,26,The Consistent
+Germany,N,N,N,Retail,1930,CEO/Chairman,-10,The Consistent
+United States,Y,Y,Y,Finance,1975,NA,26,The Consistent
+United States,Y,Y,N,Investments,1968,Founder,33,The Consistent
+India,N,Y,N,Metals and Mining,1989,Founder,39,The Consistent
+France,N,Y,N,Manufacturing,1914,Relation,-11,The Consistent
+Russia,Y,Y,N,Metals and Mining,1934,Chairman,-23,The Consistent
+Russia,Y,Y,N,Energy,2000,NA,48,The Consistent
+Japan,Y,Y,N,Fashion and Retail,1963,Founder,14,The Consistent
+China,Y,N,N,Service,1993,Founder,24,The Consistent
+Thailand,Y,N,N,Food and Beverage,1941,Founder,-4,The Consistent
+France,Y,N,N,Fashion and Retail,1963,Founder,26,The Consistent
+United Kingdom,N,N,N,Diversified,NA,Founder,NA,The Consistent
+United Kingdom,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+United States,Y,Y,N,Real Estate,1864,Founder,-69,The Consistent
+Russia,Y,N,N,Metals and Mining,1999,Shareholder,45,The Consistent
+South Korea,N,Y,N,Diversified,1938,NA,-4,The Consistent
+Hong Kong,N,N,N,Real Estate,NA,NA,NA,The Consistent
+Hong Kong,Y,N,N,Real Estate,1978,Founder,27,The Consistent
+Australia,N,N,N,Metals and Mining,1955,Relation,1,The Consistent
+India,N,Y,N,Software,1945,NA,-1,The Consistent
+Brazil,Y,Y,N,Food and Beverage,1885,Founder,-65,The Consistent
+Russia,Y,Y,N,Energy,1990,Founder,40,The Consistent
+United States,N,Y,Y,Finance,1946,Relation,-16,The Consistent
+Russia,Y,Y,N,Energy,1989,Founder,24,The Consistent
+Ireland,N,N,N,Construction and Engineering,1865,NA,-65,The Consistent
+Russia,Y,Y,N,Metals and Mining,1991,Founder,31,The Consistent
+China,Y,N,N,Metals and Mining,1994,Founder,26,The Consistent
+Italy,N,Y,N,Health care,1901,Shareholder/CEO,-41,The Consistent
+United States,Y,Y,N,Automotive,2003,Investor/Founder,31,The Consistent
+United States,Y,N,N,Finance,1994,Founder,49,The Consistent
+Mexico,N,N,N,Metals and Mining,1978,Founder,25,The Consistent
+Chile,N,N,N,Metals and Mining,1888,Relation,-55,The Consistent
+India,Y,Y,N,Health care,1983,NA,28,The Consistent
+Austria,Y,N,Y,Food and Beverage,1984,NA,40,The Consistent
+United States,Y,N,N,Energy,1967,Founder,22,The Consistent
+China,Y,Y,N,Software,2000,Founder,32,The Consistent
+Russia,Y,N,N,Energy,2001,Founder,29,The Consistent
+United States,Y,Y,N,Media,1923,Relation,-8,The Consistent
+Germany,Y,N,N,Construction and Engineering,1905,Chairman/Shareholder,-36,The Consistent
+United States,Y,Y,N,Finance,1992,Founder,36,The Consistent
+France,Y,N,N,Telecom,1994,Founder,31,The Consistent
+Philippines,Y,Y,N,Diversified,1960,Founder,36,The Consistent
+United States,N,Y,N,Media,1898,NA,-22,The Hustler
+United States,N,N,N,Media,1898,Relation,-26,The Ghost
+Netherlands,N,Y,N,Food and Beverage,1864,Relation,-91,The Consistent
+Sweden,N,N,N,Media,1951,Relation,25,The Consistent
+United States,N,Y,N,Investments,NA,Investor,NA,The Consistent
+United States,Y,Y,Y,Finance,1980,Founder,38,The Consistent
+Brazil,Y,Y,N,Food and Beverage,1999,Founder,52,The Consistent
+Germany,N,N,N,Logistics,1890,NA,-48,The Consistent
+Russia,Y,Y,N,Energy,1990,Founder,32,The Consistent
+China,Y,N,N,Manufacturing,1968,NA,26,The Consistent
+India,Y,Y,N,Software,1976,Founder,31,The Consistent
+Japan,Y,N,N,Manufacturing,1974,Founder,29,The Consistent
+United States,N,Y,N,Media,1898,Relation,-50,The Consistent
+United States,N,Y,N,Media,1898,Relation,-53,The Consistent
+Nigeria,Y,Y,N,Manufacturing,1981,Founder,24,The Consistent
+Czech Republic,Y,Y,N,Finance,1991,Founder,26,The Consistent
+United States,N,N,N,Media,1909,Relation,-19,The Consistent
+Hong Kong,Y,N,N,Gaming,1988,Founder/Chairman,59,The Consistent
+United States,N,N,N,Media,1909,Relation,-21,The Consistent
+United States,Y,Y,Y,Investments,1985,NA,39,The Consistent
+France,N,N,N,Fashion and Retail,1909,Relation,-40,The Consistent
+France,N,N,N,Fashion and Retail,1909,NA,-42,The Consistent
+Kuwait,N,N,N,Construction and Engineering,1956,Relation,12,The Ghost
+Malaysia,Y,Y,N,Diversified,1971,NA,48,The Consistent
+France,N,N,N,Food and Beverage,1933,NA,-38,The Consistent
+Germany,Y,N,N,Software,1972,Founder,29,The Consistent
+United States,Y,Y,N,Technology,1998,NA,43,The Consistent
+Sweden,N,N,N,Manufacturing,1943,Relation,19,The Ghost
+Colombia,Y,Y,N,Finance,1994,President,61,The Consistent
+United Kingdom,N,N,N,Real Estate,1677,Relation,-275,The Consistent
+United States,Y,Y,Y,Finance,1993,Founder,36,The Consistent
+Mexico,N,N,N,Metals and Mining,1960,Relation,28,The Consistent
+United States,Y,N,N,Software,2004,Founder,20,The Consistent
+United Arab Emirates,N,N,N,Real Estate,1992,Founder,NA,The Consistent
+Hong Kong,N,N,Y,Real Estate,1955,NA,8,The Consistent
+United States,Y,N,N,Finance,1988,Founder,35,The Consistent
+United States,Y,Y,N,Fashion and Retail,1960,Founder,20,The Consistent
+China,Y,Y,N,Real Estate,1997,NA,39,The Consistent
+Germany,Y,N,N,Manufacturing,1945,Relation,9,The Consistent
+Cyprus,Y,N,N,Logistics,1985,NA,41,The Consistent
+Thailand,N,N,N,Diversified,1921,NA,-19,The Consistent
+Canada,N,Y,N,Retail,1882,Chairman,-59,The Consistent
+New Zealand,Y,N,N,Investments,1987,NA,32,The Consistent
+India,N,Y,Y,Diversified,1857,Relation,-111,The Consistent
+United States,Y,Y,N,Software,1976,NA,34,The Consistent
+Russia,Y,Y,N,Energy,1989,President,27,The Consistent
+Russia,Y,Y,N,Diversified,1988,Founder,22,The Consistent
+Germany,Y,N,N,Software,1972,Founder,32,The Hustler
+Indonesia,N,N,N,Finance,1951,Relation,10,The Consistent
+United Kingdom,Y,N,N,Manufacturing,1998,Founder,46,The Hustler
+United States,Y,N,N,Software,2009,NA,34,The Consistent
+China,N,Y,N,Real Estate,1997,NA,15,The Consistent
+United States,N,Y,N,Fashion and Retail,1946,Relation,9,The Consistent
+Indonesia,N,N,N,Manufacturing,1951,Relation,11,The Consistent
+Israel,N,N,N,Diversified,1960,Relation,9,The Consistent
+Russia,Y,Y,N,Investments,1993,NA,28,The Consistent
+United States,Y,Y,N,Health care,1968,Founder/Relation,30,The Consistent
+Singapore,N,N,N,Real Estate,1970,NA,NA,The Consistent
+United States,Y,Y,N,Health care,1997,NA,45,The Consistent
+Switzerland,N,Y,Y,Health care,1906,Relation,-60,The Consistent
+Australia,Y,Y,N,Real Estate,1968,Founder,36,The Consistent
+Russia,Y,Y,N,Finance,1993,NA,33,The Hustler
+China,Y,Y,N,Software,1998,Founder,27,The Consistent
+United States,Y,Y,Y,Finance,1971,Founder,34,The Consistent
+Russia,Y,Y,N,Manufacturing,1925,General Director,-24,The Consistent
+United States,Y,Y,N,Automotive,1956,Founder,5,The Consistent
+India,N,Y,N,Health care,1966,NA,24,The Consistent
+Saudi Arabia,Y,N,N,Energy,NA,NA,NA,The Consistent
+United States,N,N,N,Service,1972,Chairman,22,The Consistent
+France,Y,N,N,Software,1990,Founder,22,The Consistent
+France,Y,N,N,Food and Beverage,1949,NA,23,The Hustler
+United States,N,Y,N,Manufacturing,1873,Relation,-66,The Consistent
+United States,N,N,N,Diversified,1940,Relation,-3,The Hustler
+India,Y,Y,Y,Finance,1985,Founder,27,The Consistent
+United States,Y,Y,N,Software,1995,NA,28,The Consistent
+United States,Y,Y,N,Finance,1990,NA,22,The Consistent
+United States,N,Y,Y,Energy,1940,NA,-3,The Consistent
+United States,Y,Y,Y,Finance,1994,Founder,39,The Consistent
+Brazil,Y,Y,N,Software,2004,NA,23,The Consistent
+United States,N,Y,N,Finance,1946,Relation,15,The Consistent
+United States,Y,Y,N,Investments,1957,Founder,23,The Consistent
+United States,Y,Y,N,Media,1968,NA,28,The Consistent
+Germany,N,N,N,Retail,1949,Chairman,6,The Consistent
+Spain,Y,N,N,Real Estate,1982,Founder,17,The Hustler
+China,Y,Y,N,Software,2004,Founder,30,The Consistent
+Canada,N,N,N,Diversified,1882,NA,-46,The Consistent
+Germany,Y,Y,N,Energy,1984,Founder,33,The Consistent
+Switzerland,N,N,N,Logistics,1970,Founder,30,The Hustler
+United States,Y,Y,Y,Sports,1999,Founder,51,The Consistent
+Taiwan,Y,N,N,Technology,1974,Founder,24,The Consistent
+India,Y,Y,N,Telecom,1980,Founder,23,The Consistent
+Saudi Arabia,Y,N,N,Investments,1980,Founder,25,The Ghost
+Saudi Arabia,Y,N,N,Finance,1957,NA,37,The Hustler
+Germany,N,N,N,Investments,NA,Relation,NA,The Consistent
+United States,Y,Y,N,Real Estate,1972,Founder,32,The Consistent
+United States,Y,Y,N,Technology,1968,Founder,40,The Consistent
+United States,Y,N,N,Media,1970,Founder,28,The Consistent
+Hong Kong,N,N,N,Real Estate,1963,Relation,12,The Consistent
+Russia,Y,N,N,Manufacturing,1930,NA,-37,The Consistent
+United States,N,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Energy,1996,NA,52,The Consistent
+China,Y,N,N,Food and Beverage,1987,Founder,42,The Consistent
+Austria,Y,N,N,Gaming,1980,Founder,33,The Consistent
+Russia,Y,Y,N,Energy,NA,Founder,NA,The Consistent
+Hong Kong,Y,N,N,Real Estate,1962,Founder,41,The Ghost
+Italy,Y,N,N,Diversified,1978,Founder,42,The Consistent
+South Africa,N,Y,N,Metals and Mining,1888,NA,-58,The Consistent
+Russia,Y,N,N,Metals and Mining,1999,Partner,33,The Consistent
+United Arab Emirates,N,N,N,Diversified,1960,NA,NA,The Consistent
+United States,N,N,N,Food and Beverage,1865,Relation,-69,The Consistent
+Malaysia,N,N,N,Diversified,1968,Founder,26,The Consistent
+Sweden,Y,N,Y,Investments,1987,Founder,40,The Consistent
+Sweden,N,N,N,Medicine,1950,NA,-1,The Consistent
+Russia,Y,Y,N,Fashion and Retail,1994,Founder,26,The Consistent
+China,Y,Y,N,Technology,2010,Founder,41,The Consistent
+United States,Y,Y,Y,Software,1987,Founder,47,The Consistent
+Hong Kong,N,N,N,Diversified,1890,Relation,-52,The Consistent
+China,Y,N,N,Metals and Mining,1994,Founder,48,The Consistent
+South Korea,N,Y,Y,Fashion and Retail,1945,Relation,-18,The Hustler
+China,Y,N,N,Automotive,1986,Founder,23,The Consistent
+Spain,N,N,N,Fashion and Retail,1975,Relation,6,The Consistent
+Italy,Y,N,N,Fashion and Retail,1975,Founder,41,The Consistent
+China,Y,N,N,Agriculture,1982,Founder,34,The Consistent
+Brazil,Y,N,N,Metals and Mining,1984,Founder,27,The Ghost
+Singapore,Y,N,N,Manufacturing,1962,NA,35,The Consistent
+United States,Y,Y,N,Automotive,1960,Founder,30,The Consistent
+Malaysia,Y,Y,Y,Telecom,1984,Founder,47,The Consistent
+United States,N,Y,N,Real Estate,1883,Relation,-63,The Consistent
+Russia,Y,Y,N,Metals and Mining,1999,Founder,35,The Consistent
+United States,Y,Y,N,Real Estate,1979,NA,40,The Consistent
+India,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+France,N,N,N,Energy,1975,Relation,24,The Consistent
+Russia,Y,N,N,Energy,1990,Vice President,34,The Consistent
+Russia,Y,Y,N,Energy,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Investments,1989,NA,24,The Consistent
+China,Y,Y,Y,Diversified,1992,Founder,26,The Ghost
+Denmark,N,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,N,Y,N,Energy,1980,Relation,26,The Consistent
+Taiwan,N,N,N,Food and Beverage,1962,Relation,5,The Consistent
+Singapore,N,N,N,Real Estate,1962,Founder,34,The Ghost
+South Africa,N,N,N,Fashion and Retail,1940,Relation,-11,The Consistent
+Sweden,N,N,N,Food and Beverage,1951,Relation,-9,The Consistent
+Russia,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Russia,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,N,N,Logistics,1964,Founder,30,The Consistent
+United States,N,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+Sweden,N,N,N,Food and Beverage,1951,Relation,-2,The Consistent
+Sweden,N,N,N,Food and Beverage,1951,NA,-4,The Consistent
+Venezuela,N,Y,Y,Retail,1941,Relation,-25,The Consistent
+South Korea,N,Y,Y,Technology,1938,NA,-31,The Consistent
+China,Y,N,N,Manufacturing,1993,Founder,24,The Consistent
+Germany,N,Y,N,Retail,NA,NA,NA,The Consistent
+Hong Kong,Y,N,N,Real Estate,1972,NA,25,The Consistent
+China,Y,Y,N,Automotive,1984,Chairman,20,The Consistent
+Italy,N,N,N,Food and Beverage,1946,NA,NA,The Consistent
+United Kingdom,Y,N,N,Real Estate,1987,NA,NA,The Consistent
+Philippines,N,N,N,Diversified,NA,NA,NA,The Consistent
+United States,N,Y,N,Finance,1947,NA,14,The Consistent
+Nigeria,Y,N,Y,Diversified,NA,NA,NA,The Consistent
+United States,Y,Y,N,Finance,1985,NA,24,The Hustler
+India,Y,N,N,Diversified,1988,Founder,25,The Consistent
+Canada,Y,Y,N,Retail,1999,NA,36,The Consistent
+Mexico,N,Y,N,Food and Beverage,1925,Relation,-39,The Hustler
+Hong Kong,Y,Y,N,Investments,2001,NA,37,The Consistent
+Japan,Y,N,Y,Technology,NA,NA,NA,The Consistent
+China,Y,N,N,Diversified,1969,NA,25,The Consistent
+United States,N,Y,N,Energy,1968,Relation,6,The Consistent
+Australia,Y,Y,N,Metals and Mining,2003,NA,42,The Consistent
+United States,N,N,N,Energy,1968,NA,4,The Consistent
+Germany,N,N,N,Health care,1881,NA,-84,The Consistent
+United States,N,N,N,Energy,1968,Relation,-2,The Consistent
+China,Y,N,Y,Real Estate,2005,Founder,33,The Consistent
+United States,N,N,N,Energy,1968,Relation,-15,The Consistent
+Mexico,N,Y,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,Y,Y,N,Service,1959,Founder,34,The Consistent
+Israel,Y,N,N,Manufacturing,1952,Founder,26,The Consistent
+Canada,Y,N,N,Diversified,1961,NA,33,The Consistent
+United States,N,Y,N,Food and Beverage,1865,Relation,-65,The Consistent
+Australia,Y,N,N,Real Estate,1960,Founder,30,The Consistent
+Canada,N,N,N,Food and Beverage,1954,NA,17,The Consistent
+United Kingdom,Y,N,N,Investments,1975,NA,39,The Consistent
+China,Y,N,N,Real Estate,1988,Founder,48,The Consistent
+South Africa,Y,Y,N,Retail,NA,NA,NA,The Consistent
+Spain,N,N,N,Construction and Engineering,1952,Relation,-2,The Ghost
+Egypt,N,Y,N,Construction and Engineering,1950,NA,-11,The Consistent
+United States,Y,Y,N,Software,2009,Founder,38,The Consistent
+India,N,N,N,Diversified,NA,NA,NA,The Consistent
+Switzerland,Y,N,Y,Health care,1974,NA,40,The Consistent
+Taiwan,Y,N,N,Real Estate,1965,NA,30,The Consistent
+United States,Y,N,N,Fashion and Retail,1967,Founder,28,The Consistent
+Sweden,N,N,N,Diversified,1873,NA,-71,The Consistent
+United States,Y,Y,N,Finance,1983,Founder,39,The Consistent
+United States,Y,Y,Y,Finance,1990,Founder,39,The Consistent
+Germany,N,N,N,Retail,NA,NA,NA,The Ghost
+United States,N,Y,N,Media,1936,Relation,12,The Consistent
+India,N,N,N,Automotive,1948,NA,6,The Consistent
+United States,N,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Finance,1988,Founder,38,The Consistent
+Hong Kong,Y,N,Y,Real Estate,1988,NA,38,The Consistent
+Indonesia,N,Y,N,Manufacturing,1973,NA,20,The Consistent
+Russia,Y,Y,N,Finance,1998,NA,36,The Hustler
+United States,Y,N,N,Real Estate,1952,Founder,27,The Consistent
+United States,Y,Y,N,Retail,NA,NA,NA,The Ghost
+Germany,Y,N,N,Health care,1972,Founder,33,The Consistent
+United States,Y,Y,N,Technology,1987,Founder,46,The Consistent
+United States,Y,Y,N,Media,1971,Founder,27,The Consistent
+Hong Kong,N,N,N,Real Estate,1961,Founder,13,The Consistent
+United States,Y,Y,N,Energy,1994,Founder,43,The Consistent
+United States,Y,Y,N,Technology,1987,NA,36,The Consistent
+Norway,N,N,N,Retail,NA,NA,NA,The Consistent
+Switzerland,N,N,N,Food and Beverage,1851,Relation,-112,The Consistent
+India,N,Y,N,Manufacturing,1918,Relation,-14,The Consistent
+United States,Y,N,N,Retail,NA,NA,NA,The Consistent
+Germany,Y,N,N,Health care,1983,Founder,43,The Consistent
+Germany,N,N,N,Manufacturing,1946,NA,4,The Consistent
+United States,Y,Y,N,Sports,1970,NA,28,The Consistent
+Israel,Y,N,N,Media,1991,Founder,47,The Consistent
+United States,Y,Y,N,Finance,1989,NA,41,The Consistent
+India,N,N,N,Metals and Mining,1969,Relation,19,The Consistent
+United States,Y,Y,Y,Finance,1972,Employee,20,The Consistent
+France,N,N,N,Investments,1822,NA,-130,The Consistent
+India,N,Y,N,Health care,1952,NA,-1,The Consistent
+India,Y,Y,N,Construction and Engineering,NA,NA,NA,The Ghost
+Canada,N,N,N,Finance,1925,Relation,-4,The Hustler
+United Kingdom,N,N,Y,Finance,1800,Relation,-133,The Consistent
+United States,N,Y,N,Finance,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Sports,1972,Founder,31,The Consistent
+Singapore,N,N,N,Real Estate,NA,NA,NA,The Consistent
+Spain,N,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Manufacturing,1979,Founder,29,The Consistent
+Switzerland,Y,Y,Y,Metals and Mining,1974,NA,18,The Consistent
+Russia,Y,Y,N,Metals and Mining,1997,Founder,29,The Consistent
+France,N,N,N,Food and Beverage,NA,NA,NA,The Consistent
+United Kingdom,Y,N,N,Media,NA,Founder,NA,The Consistent
+United States,N,Y,N,Real Estate,NA,NA,NA,The Consistent
+France,Y,N,N,Media,1964,Founder,27,The Consistent
+United States,Y,Y,N,Real Estate,1999,Founder,57,The Consistent
+United States,Y,Y,Y,Finance,1976,Founder,33,The Consistent
+United States,Y,Y,N,Finance,1969,Founder,26,The Consistent
+Sweden,N,N,N,Diversified,1939,NA,-8,The Consistent
+United Kingdom,Y,N,N,Diversified,1972,Founder,22,The Consistent
+United States,N,Y,N,Service,NA,NA,NA,The Consistent
+Belgium,Y,N,N,Investments,1956,Founder,31,The Consistent
+South Korea,N,Y,N,Automotive,1967,Relation,29,The Consistent
+Brazil,N,Y,N,Media,NA,NA,NA,The Ghost
+Hong Kong,Y,Y,N,Finance,1992,NA,35,The Consistent
+Israel,N,N,N,Service,NA,NA,NA,The Consistent
+United Arab Emirates,N,N,N,Diversified,NA,NA,NA,The Ghost
+United States,N,Y,N,Energy,NA,NA,NA,The Consistent
+United Kingdom,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+China,Y,N,N,Diversified,1989,Chairman,36,The Consistent
+United States,N,Y,Y,Investments,1928,Relation,-36,The Consistent
+United States,N,Y,N,Investments,1928,Relation,-39,The Consistent
+United States,N,Y,N,Investments,1927,Relation,-45,The Consistent
+Chile,Y,N,N,Retail,NA,NA,NA,The Consistent
+India,Y,N,N,Health care,1968,Founder,31,The Consistent
+Malaysia,Y,N,N,Manufacturing,NA,NA,NA,The Consistent
+Switzerland,N,Y,N,Construction and Engineering,1912,Relation,-34,The Consistent
+United States,Y,Y,N,Finance,1981,NA,28,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Consistent
+Ireland,Y,N,Y,Telecom,1997,Founder,39,The Consistent
+Russia,Y,N,N,Investments,NA,NA,NA,The Ghost
+United States,N,Y,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,Y,N,N,Media,1972,Founder,46,The Consistent
+United Kingdom,Y,N,N,Fashion and Retail,1960,NA,22,The Consistent
+China,Y,N,N,Agriculture,1982,NA,31,The Consistent
+Russia,Y,N,N,Energy,NA,NA,NA,The Consistent
+Indonesia,Y,N,N,Diversified,1987,NA,25,The Consistent
+Ukraine,Y,Y,N,Metals and Mining,2000,Founder,33,The Consistent
+Switzerland,N,N,N,Manufacturing,1936,NA,-40,The Consistent
+Germany,Y,N,N,Retail,NA,NA,NA,The Consistent
+Canada,N,N,N,Energy,1924,NA,-6,The Consistent
+United States,N,N,N,Real Estate,1977,Founder,56,The Ghost
+United States,N,N,N,Investments,1919,Relation,-7,The Ghost
+United States,Y,Y,N,Software,1962,Founder,31,The Ghost
+United States,Y,N,N,Manufacturing,1959,NA,22,The Consistent
+United Kingdom,Y,N,N,Media,1975,NA,29,The Consistent
+United States,Y,Y,N,Software,1976,Founder,29,The Consistent
+India,N,N,N,Retail,NA,NA,NA,The Consistent
+Ireland,N,N,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,N,Energy,1994,NA,39,The Consistent
+Germany,Y,N,N,Technology,1982,NA,27,The Consistent
+Georgia,Y,N,N,Investments,1990,NA,35,The Consistent
+India,Y,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Manufacturing,1979,Founder,23,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Manufacturing,1929,NA,-31,The Consistent
+China,Y,N,N,Real Estate,1995,NA,32,The Consistent
+United Kingdom,Y,Y,N,Finance,2000,Founder,33,The Consistent
+Switzerland,N,N,N,Manufacturing,1936,Relation And Ceo,-33,The Consistent
+Russia,Y,Y,N,Finance,1996,Founder/Chairman,25,The Consistent
+Italy,N,N,Y,Metals and Mining,1945,Relation,NA,The Consistent
+Japan,Y,Y,N,Retail,NA,NA,NA,The Consistent
+United States,Y,N,N,Real Estate,1974,Founder,46,The Consistent
+Netherlands,Y,N,N,Service,1960,NA,27,The Consistent
+Portugal,N,N,N,Diversified,NA,NA,NA,The Consistent
+Japan,N,N,N,Real Estate,1959,Relation,22,The Consistent
+Germany,N,N,N,Food and Beverage,1949,NA,5,The Consistent
+India,Y,N,N,Media,1976,NA,26,The Consistent
+Germany,N,N,N,Food and Beverage,1949,Relation,-2,The Consistent
+United States,Y,Y,N,Health care,1981,NA,27,The Consistent
+United States,N,Y,N,Health care,1941,Relation,-14,The Consistent
+China,Y,N,N,Real Estate,1992,Chairman,37,The Consistent
+United States,N,Y,N,Service,NA,NA,NA,The Consistent
+Australia,N,Y,N,Manufacturing,1948,Relation,-12,The Consistent
+Germany,N,N,N,Food and Beverage,1903,NA,-64,The Consistent
+Hong Kong,N,N,N,Telecom,1971,NA,4,The Consistent
+China,Y,N,N,Real Estate,1998,Chairman,30,The Consistent
+Japan,N,N,N,Finance,NA,NA,NA,The Ghost
+United States,N,Y,N,Service,NA,NA,NA,The Consistent
+United States,Y,Y,N,Logistics,NA,NA,NA,The Consistent
+Turkey,Y,Y,N,Technology,NA,NA,NA,The Hustler
+United States,N,Y,N,Fashion and Retail,NA,NA,NA,The Consistent
+Germany,N,N,N,Manufacturing,1917,NA,-37,The Consistent
+United Kingdom,N,N,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,N,Energy,1989,Founder,31,The Consistent
+China,Y,Y,N,Health care,1970,Chairman,11,The Consistent
+Russia,Y,Y,N,Metals and Mining,1935,NA,-26,The Consistent
+United States,N,N,N,Food and Beverage,1865,NA,-97,The Consistent
+United States,Y,Y,Y,Technology,1995,President,30,The Consistent
+South Korea,Y,Y,N,Software,1994,NA,27,The Consistent
+Mexico,Y,N,N,Retail,NA,NA,NA,The Consistent
+Japan,Y,N,N,Manufacturing,1961,Founder,31,The Consistent
+United States,Y,Y,N,Energy,NA,NA,NA,The Ghost
+United States,N,Y,N,Media,NA,NA,NA,The Consistent
+United States,N,Y,Y,Real Estate,1920,Relation,-18,The Consistent
+France,N,N,N,Fashion and Retail,1976,Founder,37,The Consistent
+Germany,N,N,N,Food and Beverage,1896,Relation,-44,The Consistent
+Switzerland,Y,N,Y,Manufacturing,1911,Relation,-35,The Consistent
+United Kingdom,Y,N,N,Manufacturing,1993,NA,46,The Consistent
+Canada,Y,Y,N,Technology,1998,NA,48,The Consistent
+Taiwan,N,N,N,Diversified,NA,NA,NA,The Consistent
+Thailand,Y,N,N,Retail,NA,NA,NA,The Consistent
+Hong Kong,N,Y,N,Gaming,1962,Relation,-1,The Consistent
+China,Y,Y,N,Automotive,1995,Founder,29,The Consistent
+United Arab Emirates,N,N,N,Automotive,NA,NA,NA,The Consistent
+United States,N,N,N,Manufacturing,1932,Relation,9,The Ghost
+India,N,Y,N,Real Estate,1946,Relation And Chairman,14,The Consistent
+United States,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Investments,1975,NA,41,The Consistent
+United States,Y,Y,N,Energy,1983,NA,33,The Consistent
+Sweden,N,Y,N,Real Estate,NA,NA,NA,The Consistent
+United States,Y,Y,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,Y,Y,N,Food and Beverage,NA,NA,NA,The Consistent
+Hong Kong,N,N,N,Gaming,NA,NA,NA,The Consistent
+United States,Y,N,N,Gaming,1996,Founder,34,The Consistent
+China,Y,Y,N,Manufacturing,NA,NA,NA,The Consistent
+China,Y,N,N,Manufacturing,2005,Relation,41,The Consistent
+United States,Y,N,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,Y,Y,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Technology,NA,NA,NA,The Consistent
+Canada,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Australia,N,N,N,Real Estate,1939,NA,4,The Consistent
+United States,Y,Y,N,Investments,1974,Investor,42,The Ghost
+France,N,N,N,Health care,1897,Relation,-41,The Consistent
+United States,N,Y,Y,Food and Beverage,NA,NA,NA,The Consistent
+Sweden,Y,N,N,Service,1965,Founder,24,The Consistent
+Hong Kong,Y,N,N,Manufacturing,1994,NA,53,The Consistent
+United States,Y,N,N,Media,1998,CEO,55,The Consistent
+United States,N,Y,Y,Energy,1919,Relation,-29,The Consistent
+United States,Y,Y,N,Retail,NA,NA,NA,The Consistent
+United States,Y,N,N,Fashion and Retail,1975,Founder,25,The Consistent
+Russia,Y,Y,N,Construction and Engineering,1954,Chairman,-8,The Hustler
+United States,Y,Y,N,Software,1999,NA,35,The Consistent
+France,N,N,N,Food and Beverage,1933,NA,-35,The Consistent
+France,N,N,N,Food and Beverage,1933,NA,-48,The Consistent
+Taiwan,Y,N,N,Automotive,1967,NA,42,The Consistent
+Brazil,N,N,N,Diversified,NA,NA,NA,The Consistent
+Swaziland,Y,Y,N,Retail,NA,NA,NA,The Consistent
+Thailand,Y,N,N,Finance,NA,NA,NA,The Consistent
+Brazil,N,Y,N,Manufacturing,1918,Relation,-11,The Hustler
+Japan,N,N,N,Gaming,1889,Relation,-39,The Ghost
+Brazil,N,Y,N,Diversified,NA,NA,NA,The Consistent
+Germany,N,N,N,Media,1946,Relation,3,The Consistent
+United States,Y,N,N,Manufacturing,1982,NA,36,The Consistent
+United States,N,N,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,N,Y,N,Food and Beverage,1869,Relation,-81,The Consistent
+United States,N,Y,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,N,Y,N,Food and Beverage,NA,NA,NA,The Consistent
+Egypt,N,Y,N,Telecom,1950,Relation,-5,The Consistent
+United States,N,Y,N,Diversified,1946,Relation,18,The Consistent
+United States,N,Y,N,Manufacturing,1886,Relation,-45,The Consistent
+United States,Y,Y,N,Energy,NA,NA,NA,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Consistent
+Brazil,Y,N,N,Retail,1927,NA,-8,The Consistent
+Germany,Y,N,N,Manufacturing,1973,Founder,35,The Consistent
+Italy,N,Y,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Food and Beverage,1946,Former Ceo,5,The Consistent
+Denmark,N,N,N,Health care,1957,NA,9,The Consistent
+Brazil,N,N,N,Media,NA,NA,NA,The Consistent
+Japan,N,Y,N,Real Estate,NA,NA,NA,The Ghost
+Taiwan,Y,Y,N,Technology,1988,Founder,39,The Consistent
+Germany,Y,N,N,Retail,NA,NA,NA,The Ghost
+Saudi Arabia,Y,Y,N,Food and Beverage,1997,NA,44,The Consistent
+United States,N,Y,Y,Manufacturing,1886,Relation,-70,The Consistent
+Brazil,N,N,N,Media,1925,NA,-31,The Consistent
+United States,N,Y,N,Manufacturing,1886,Relation,-71,The Consistent
+China,Y,Y,N,Manufacturing,1989,Founder,33,The Consistent
+United States,N,Y,Y,Manufacturing,1886,Relation,-73,The Consistent
+United States,N,Y,N,Manufacturing,1886,Relation,-73,The Consistent
+United States,Y,Y,N,Sports,1983,Founder,23,The Consistent
+Germany,Y,N,N,Technology,1988,NA,25,The Consistent
+India,Y,N,Y,Media,NA,NA,NA,The Consistent
+China,Y,N,N,Technology,2000,NA,28,The Consistent
+France,N,N,N,Construction and Engineering,NA,NA,NA,The Consistent
+United States,Y,N,N,Manufacturing,1949,Founder,20,The Consistent
+United States,N,Y,Y,Investments,NA,NA,NA,The Consistent
+Philippines,Y,Y,N,Diversified,1982,NA,48,The Consistent
+United States,Y,Y,Y,Real Estate,1978,NA,38,The Consistent
+United States,Y,Y,N,Real Estate,1973,NA,31,The Consistent
+United States,Y,Y,N,Service,1973,Founder,28,The Consistent
+United States,Y,Y,N,Media,1994,Founder,48,The Consistent
+United States,Y,Y,Y,Fashion and Retail,NA,NA,NA,The Consistent
+Israel,Y,N,N,Real Estate,1992,NA,44,The Consistent
+Germany,N,N,N,Automotive,1919,NA,-29,The Consistent
+United States,Y,Y,N,Finance,1979,Founder,29,The Consistent
+Germany,N,N,N,Retail,1923,Relation,-29,The Consistent
+Germany,N,N,N,Retail,1923,Relation,-30,The Consistent
+Brazil,N,N,N,Media,1925,Relation,-29,The Consistent
+India,N,Y,Y,Health care,1984,Founder,29,The Consistent
+Australia,Y,Y,N,Automotive,1986,NA,30,The Consistent
+Turkey,N,Y,N,Food and Beverage,1944,NA,-15,The Consistent
+Venezuela,Y,N,N,Finance,1986,NA,27,The Consistent
+Germany,N,N,N,Retail,1923,Relation,-41,The Consistent
+Germany,N,N,N,Retail,1923,Relation,-42,The Consistent
+Russia,Y,Y,N,Investments,NA,NA,NA,The Ghost
+Spain,N,N,N,Real Estate,NA,NA,NA,The Ghost
+Japan,Y,N,N,Retail,NA,NA,NA,The Consistent
+United States,N,Y,N,Finance,NA,NA,NA,The Consistent
+United States,Y,Y,N,Health care,1972,NA,36,The Consistent
+United Kingdom,N,N,N,Real Estate,1712,Relation,-226,The Hustler
+Japan,Y,N,N,Manufacturing,1973,Founder,29,The Consistent
+United States,Y,Y,Y,Investments,1935,Leadership,-12,The Consistent
+China,Y,N,N,Real Estate,1991,NA,40,The Consistent
+United States,N,Y,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Technology,1991,Founder,37,The Consistent
+Japan,Y,Y,N,Fashion and Retail,NA,NA,NA,The Consistent
+Mexico,N,Y,Y,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Real Estate,1994,Founder,35,The Consistent
+United States,N,N,N,Automotive,NA,NA,NA,The Consistent
+United Kingdom,Y,N,N,Gaming,2000,NA,33,The Consistent
+Russia,Y,Y,N,Automotive,1964,NA,-5,The Consistent
+Philippines,N,N,N,Finance,1962,NA,29,The Consistent
+United States,Y,Y,N,Real Estate,1961,Founder,26,The Consistent
+United States,Y,Y,N,Sports,1983,Founder,47,The Consistent
+India,N,N,Y,Automotive,1926,Relation,-13,The Consistent
+Germany,N,N,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,N,Y,N,Technology,1965,Relation,23,The Consistent
+United States,Y,N,N,Food and Beverage,1965,NA,24,The Consistent
+United States,N,N,N,Investments,NA,NA,NA,The Consistent
+United States,N,Y,N,Real Estate,1920,NA,-27,The Consistent
+Denmark,Y,N,N,Retail,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Telecom,1993,Founder/Chairman,45,The Consistent
+Germany,N,N,N,Food and Beverage,1949,NA,-5,The Consistent
+India,Y,N,N,Construction and Engineering,1979,Chairman,25,The Consistent
+China,Y,N,N,Food and Beverage,1720,NA,-236,The Consistent
+Finland,N,N,N,Manufacturing,1910,Relation,-47,The Consistent
+Colombia,N,N,Y,Finance,NA,NA,NA,The Consistent
+Germany,N,N,N,Real Estate,NA,NA,NA,The Consistent
+Russia,Y,Y,Y,Investments,1999,Founder,38,The Consistent
+Mexico,N,N,Y,Food and Beverage,NA,NA,NA,The Ghost
+Chile,N,N,N,Retail,NA,NA,NA,The Ghost
+Chile,N,N,N,Retail,NA,NA,NA,The Ghost
+Japan,Y,N,N,Gaming,NA,NA,NA,The Consistent
+Germany,Y,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Real Estate,NA,NA,NA,The Ghost
+United States,N,Y,N,Investments,1929,CEO/Chairman,-7,The Consistent
+United States,Y,Y,N,Health care,1963,Founder,30,The Hustler
+France,N,N,N,Investments,1851,Relation,-82,The Ghost
+Spain,Y,N,N,Fashion and Retail,NA,NA,NA,The Ghost
+Philippines,Y,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Health care,1984,NA,31,The Consistent
+United States,Y,Y,Y,Real Estate,NA,Founder,NA,The Consistent
+Czech Republic,Y,N,N,Food and Beverage,1993,NA,39,The Consistent
+China,Y,N,N,Manufacturing,1995,NA,39,The Consistent
+United States,Y,Y,N,Media,1995,NA,37,The Consistent
+Philippines,N,N,N,Logistics,NA,NA,NA,The Consistent
+United States,N,Y,Y,Service,NA,NA,NA,The Consistent
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Hustler
+China,Y,N,N,Diversified,1989,Founder,27,The Consistent
+India,Y,Y,N,Diversified,NA,NA,NA,The Ghost
+United States,N,Y,N,Real Estate,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Construction and Engineering,1999,NA,34,The Consistent
+United States,Y,Y,N,Software,1994,Founder,28,The Consistent
+China,Y,N,N,Retail,NA,NA,NA,The Hustler
+Brazil,N,Y,N,Retail,NA,NA,NA,The Consistent
+Sweden,Y,N,Y,Investments,1984,NA,47,The Consistent
+United States,N,N,N,Agriculture,NA,NA,NA,The Ghost
+United States,Y,Y,N,Sports,NA,NA,NA,The Consistent
+Germany,Y,N,Y,Health care,1984,NA,41,The Consistent
+United States,Y,N,N,Energy,NA,NA,NA,The Consistent
+Canada,Y,N,N,Retail,NA,NA,NA,The Consistent
+Hong Kong,Y,N,N,Real Estate,1977,NA,26,The Consistent
+China,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+Israel,Y,N,N,Technology,1961,Founder,6,The Consistent
+Brazil,Y,N,N,Food and Beverage,1994,Founder,39,The Consistent
+China,Y,Y,N,Technology,2000,Chairman,44,The Consistent
+China,Y,Y,N,Diversified,2005,Founder,43,The Consistent
+China,Y,Y,N,Energy,1992,Founder,29,The Consistent
+United States,Y,Y,N,Finance,1995,Founder,31,The Consistent
+Norway,N,N,N,Retail,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Finance,NA,NA,NA,The Hustler
+India,N,Y,N,Diversified,NA,NA,NA,The Hustler
+Switzerland,N,N,N,Retail,1986,Founder,58,The Ghost
+United States,Y,Y,Y,Media,NA,NA,NA,The Consistent
+United States,Y,Y,N,Real Estate,1969,NA,32,The Consistent
+Australia,Y,N,N,Logistics,1956,Founder,19,The Consistent
+United States,Y,Y,N,Health care,1963,Founder,32,The Ghost
+United States,Y,Y,N,Retail,NA,NA,NA,The Hustler
+United States,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,N,Y,N,Fashion and Retail,1946,Relation,2,The Consistent
+Hong Kong,Y,Y,N,Health care,1998,Chairman,54,The Consistent
+Brazil,Y,N,N,Health care,1977,NA,33,The Consistent
+United States,N,Y,N,Food and Beverage,1869,NA,-77,The Consistent
+Italy,Y,N,Y,Fashion and Retail,1913,NA,-33,The Consistent
+Brazil,N,Y,N,Diversified,1924,Relation,-23,The Consistent
+Italy,N,N,N,Fashion and Retail,1913,Relation,-37,The Consistent
+United States,N,Y,Y,Real Estate,1957,Relation,6,The Consistent
+India,Y,N,N,Metals and Mining,1976,Founder,22,The Consistent
+United States,Y,Y,Y,Investments,1972,Partner,17,The Consistent
+Brazil,N,Y,N,Finance,1926,Relation,-30,The Consistent
+Brazil,N,Y,N,Diversified,1924,Relation,-36,The Consistent
+United States,Y,Y,N,Finance,1994,Founder,33,The Consistent
+South Korea,N,Y,N,Diversified,2009,Chairman,48,The Consistent
+Brazil,N,N,N,Diversified,1924,Relation,-38,The Consistent
+China,Y,Y,N,Real Estate,1995,NA,30,The Consistent
+China,Y,Y,Y,Technology,2001,Founder,35,The Consistent
+Chile,N,N,N,Retail,NA,NA,NA,The Ghost
+United States,Y,N,N,Food and Beverage,NA,NA,NA,The Consistent
+Philippines,Y,N,N,Construction and Engineering,1954,NA,33,The Consistent
+United States,N,Y,Y,Construction and Engineering,1898,Relation,-28,The Consistent
+Switzerland,Y,N,N,Service,1928,Relation,0,The Consistent
+Hong Kong,N,N,N,Energy,NA,NA,NA,The Hustler
+Thailand,Y,N,N,Food and Beverage,NA,NA,NA,The Ghost
+United States,N,Y,N,Food and Beverage,NA,NA,NA,The Ghost
+Saudi Arabia,N,N,N,Investments,1953,Relation,24,The Ghost
+United States,N,N,N,Energy,NA,NA,NA,The Consistent
+France,Y,N,N,Finance,1991,Founder/Ceo,51,The Consistent
+United Kingdom,Y,N,N,Real Estate,1979,Founder,41,The Hustler
+United States,Y,N,N,Fashion and Retail,1980,Founder,36,The Consistent
+Algeria,Y,N,N,Food and Beverage,NA,NA,NA,The Consistent
+Chile,Y,N,N,Manufacturing,NA,NA,NA,The Consistent
+Germany,Y,N,N,Health care,1986,NA,37,The Consistent
+Brazil,N,Y,N,Construction and Engineering,1939,Relation,-11,The Consistent
+Germany,Y,N,Y,Health care,1986,Founder,37,The Consistent
+Brazil,N,Y,N,Construction and Engineering,1939,NA,-12,The Consistent
+United States,N,Y,Y,Construction and Engineering,1898,Relation And Chairman,-54,The Consistent
+Brazil,N,N,N,Construction and Engineering,1939,NA,-15,The Consistent
+Israel,N,N,N,Diversified,NA,NA,NA,The Consistent
+China,Y,N,N,Food and Beverage,1951,NA,-6,The Consistent
+Norway,Y,Y,Y,Finance,1999,Founder/Ceo,38,The Consistent
+China,Y,N,N,Manufacturing,1993,Founder/Chairman,30,The Consistent
+United States,Y,Y,N,Software,2002,NA,35,The Consistent
+Israel,Y,N,N,Gaming,NA,NA,NA,The Consistent
+Russia,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+Angola,N,Y,N,Investments,1997,Founder,24,The Consistent
+Japan,Y,N,N,Technology,2004,NA,29,The Consistent
+Germany,Y,N,N,Retail,NA,NA,NA,The Consistent
+Taiwan,Y,N,N,Finance,1961,Founder,32,The Hustler
+United States,N,N,N,Investments,1919,CEO/Chairman,-7,The Ghost
+United States,Y,Y,Y,Investments,1979,Founder,44,The Hustler
+United States,N,N,N,Food and Beverage,1950,NA,12,The Consistent
+India,N,N,N,Media,1838,Relation,-99,The Consistent
+Mexico,Y,N,N,Manufacturing,1998,Honorary President For Life,59,The Consistent
+Hong Kong,N,Y,Y,Real Estate,1958,Relation,19,The Consistent
+United States,Y,Y,N,Media,1964,Founder,27,The Hustler
+United States,Y,Y,N,Service,1971,NA,30,The Consistent
+India,Y,N,N,Construction and Engineering,1975,NA,34,The Consistent
+Canada,Y,Y,N,Health care,1959,Relation,17,The Consistent
+United States,Y,Y,Y,Finance,1991,Founder,48,The Consistent
+Japan,Y,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,N,N,Media,1988,Founder,44,The Consistent
+Turkey,Y,Y,Y,Finance,NA,NA,NA,The Consistent
+United States,N,Y,N,Energy,1919,Relation,-27,The Consistent
+United States,Y,Y,N,Software,2002,NA,55,The Consistent
+United States,Y,Y,N,Food and Beverage,1971,NA,18,The Hustler
+United States,Y,Y,N,Media,2013,Founder,59,The Consistent
+Italy,Y,N,N,Fashion and Retail,1978,NA,23,The Consistent
+United States,Y,Y,N,Technology,1991,Founder,32,The Consistent
+Russia,Y,Y,N,Logistics,1957,NA,-8,The Consistent
+Russia,Y,N,N,Real Estate,NA,Founder,NA,The Consistent
+Russia,Y,N,N,Logistics,1958,Chairman,-10,The Consistent
+Australia,N,N,N,Diversified,1936,Relation,-32,The Consistent
+St. Kitts and Nevis,Y,N,N,Fashion and Retail,1999,NA,28,The Consistent
+United States,Y,Y,N,Finance,2003,Founder,30,The Consistent
+United States,Y,Y,N,Technology,2005,Founder,28,The Consistent
+United Kingdom,Y,N,N,Sports,1974,NA,44,The Consistent
+United States,N,N,N,Retail,1886,Relation,-43,The Hustler
+Morocco,Y,N,N,Diversified,1948,Founder,20,The Hustler
+Spain,Y,N,N,Construction and Engineering,1911,CEO/Chairman,-21,The Consistent
+United States,N,N,N,Retail,1886,NA,-45,The Hustler
+United States,Y,Y,Y,Real Estate,1970,Founder,32,The Consistent
+Brazil,Y,N,N,Finance,1955,Founder,21,The Hustler
+France,N,N,N,Food and Beverage,1936,Relation,-7,The Consistent
+Singapore,Y,Y,N,Technology,1984,NA,40,The Consistent
+United Kingdom,N,Y,N,Construction and Engineering,1945,Relation,-1,The Consistent
+United States,N,Y,N,Real Estate,NA,NA,NA,The Consistent
+United States,Y,Y,N,Manufacturing,1989,NA,41,The Consistent
+United States,N,N,N,Automotive,NA,NA,NA,The Consistent
+United States,N,Y,N,Manufacturing,1670,Relation,-282,The Consistent
+China,Y,N,N,Food and Beverage,1984,Founder,31,The Consistent
+United States,N,Y,Y,Energy,1919,Relation,-38,The Consistent
+United States,Y,N,N,Food and Beverage,NA,NA,NA,The Consistent
+Norway,Y,N,N,Logistics,NA,Founder,NA,The Consistent
+South Korea,Y,Y,N,Finance,1997,NA,39,The Consistent
+United States,Y,Y,N,Finance,1995,NA,34,The Consistent
+Canada,Y,Y,N,Health care,NA,NA,NA,The Consistent
+United States,Y,Y,N,Media,NA,NA,NA,The Consistent
+Norway,N,Y,N,Logistics,NA,NA,NA,The Consistent
+Thailand,Y,N,N,Health care,1969,Founder,37,The Consistent
+United States,Y,Y,N,Service,NA,NA,NA,The Consistent
+United States,Y,Y,N,Real Estate,1960,Founder,26,The Consistent
+Netherlands,Y,N,N,Investments,NA,Relation,NA,The Consistent
+Austria,N,N,N,Retail,NA,NA,NA,The Consistent
+United States,N,Y,N,Health care,1886,Relation,-51,The Ghost
+United States,N,Y,Y,Energy,1919,Relation,-23,The Consistent
+United States,Y,N,N,Media,1986,CEO/Chairman,44,The Consistent
+Chile,N,Y,N,Manufacturing,1920,Relation,-24,The Consistent
+Chile,N,Y,Y,Manufacturing,1920,NA,-26,The Hustler
+United Kingdom,Y,N,N,Finance,1981,Founder,35,The Consistent
+United States,Y,Y,N,Real Estate,1979,NA,30,The Hustler
+Hong Kong,Y,N,N,Real Estate,1990,NA,39,The Consistent
+Indonesia,Y,Y,Y,Diversified,NA,NA,NA,The Consistent
+United States,N,N,N,Health care,1941,Relation,-15,The Consistent
+Chile,N,Y,N,Manufacturing,1920,NA,-36,The Consistent
+Spain,N,Y,Y,Construction and Engineering,1952,Relation,-7,The Hustler
+China,Y,N,Y,Diversified,2000,NA,40,The Consistent
+United States,Y,Y,Y,Investments,2006,NA,45,The Consistent
+United States,N,Y,N,Food and Beverage,1891,Relation,-73,The Consistent
+Israel,Y,N,N,Software,1993,Founder,26,The Consistent
+Germany,N,N,N,Media,1875,Relation,-102,The Consistent
+Germany,N,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,N,N,Food and Beverage,1851,CEO/Chairman,-72,The Consistent
+United States,Y,N,N,Logistics,1961,Founder,30,The Consistent
+United States,Y,Y,N,Health care,1941,NA,6,The Consistent
+Portugal,N,N,N,Retail,NA,NA,NA,The Consistent
+Italy,Y,N,N,Fashion and Retail,1965,Founder,30,The Consistent
+United States,Y,N,N,Investments,1968,Founder,31,The Consistent
+Italy,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+Singapore,N,N,N,Diversified,1948,Relation,7,The Hustler
+United States,Y,N,N,Energy,1995,NA,54,The Consistent
+Italy,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+India,N,Y,N,Manufacturing,1942,NA,-1,The Consistent
+Italy,Y,N,N,Fashion and Retail,NA,Founder,NA,The Consistent
+Ireland,N,N,N,Food and Beverage,1869,Relation,-75,The Consistent
+United States,Y,Y,N,Finance,1977,NA,33,The Consistent
+Canada,Y,Y,N,Technology,NA,NA,NA,The Consistent
+Germany,N,N,N,Manufacturing,1961,Relation,14,The Consistent
+Egypt,Y,N,Y,Diversified,1952,Relation,4,The Consistent
+Germany,N,N,N,Construction and Engineering,1920,NA,-28,The Consistent
+Switzerland,N,N,N,Investments,1912,Relation,-36,The Consistent
+Chile,Y,N,N,Politics,1976,NA,27,The Consistent
+Switzerland,N,N,N,Software,NA,Relation,NA,The Consistent
+Peru,N,Y,Y,Finance,1994,Founder,35,The Consistent
+India,N,Y,Y,Diversified,1980,NA,20,The Consistent
+China,Y,N,N,Real Estate,1993,President,33,The Consistent
+India,N,Y,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,1990,Founder,28,The Consistent
+China,Y,Y,N,Real Estate,1995,Founder,33,The Consistent
+China,Y,N,N,Automotive,1995,NA,33,The Consistent
+Poland,Y,N,N,Investments,1945,Investor,-18,The Consistent
+United States,Y,Y,Y,Finance,1990,NA,26,The Consistent
+Japan,Y,N,N,Telecom,1988,NA,24,The Hustler
+Russia,Y,N,N,Manufacturing,1995,Founder,33,The Hustler
+Russia,Y,Y,N,Manufacturing,1995,Founder,31,The Hustler
+United States,Y,Y,N,Software,NA,Founder,NA,The Consistent
+United States,Y,Y,N,Energy,1976,Founder,57,The Ghost
+Saudi Arabia,Y,N,N,Investments,1979,NA,55,The Consistent
+United States,Y,N,N,Sports,NA,NA,NA,The Consistent
+Colombia,Y,N,N,Food and Beverage,1904,Relation,-27,The Consistent
+United States,Y,Y,N,Fashion and Retail,1969,NA,38,The Consistent
+Canada,Y,Y,N,Retail,NA,NA,NA,The Consistent
+France,Y,N,Y,Service,1996,NA,61,The Consistent
+Canada,N,Y,N,Retail,1956,Founder,27,The Ghost
+Japan,N,N,N,Real Estate,NA,Relation,NA,The Consistent
+Switzerland,N,N,N,Food and Beverage,1931,Relation,-11,The Consistent
+United States,Y,N,N,Health care,1991,NA,47,The Consistent
+Lebanon,Y,Y,N,Telecom,1982,Founder,38,The Consistent
+Philippines,N,N,N,Diversified,NA,NA,NA,The Ghost
+Germany,N,Y,N,Media,NA,NA,NA,The Ghost
+Germany,Y,N,N,Retail,NA,NA,NA,The Consistent
+France,Y,N,N,Food and Beverage,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Construction and Engineering,NA,Founder,NA,The Consistent
+China,Y,Y,N,Health care,1993,Founder,41,The Hustler
+Taiwan,N,N,N,Finance,1962,Relation,9,The Hustler
+India,N,Y,N,Diversified,NA,NA,NA,The Hustler
+United States,Y,Y,Y,Finance,NA,NA,NA,The Consistent
+Lebanon,Y,Y,Y,Telecom,1982,Founder,27,The Consistent
+Canada,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+Australia,Y,N,Y,Manufacturing,1948,NA,-17,The Consistent
+United Kingdom,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+South Korea,N,Y,Y,Automotive,1967,Relation And Chairman,-4,The Consistent
+United States,Y,N,N,Software,NA,Founder,NA,The Consistent
+Spain,N,N,N,Manufacturing,1958,Relation,-3,The Hustler
+Germany,N,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,Y,Y,N,Energy,NA,NA,NA,The Ghost
+United States,Y,N,N,Diversified,NA,NA,NA,The Consistent
+United States,Y,Y,N,Real Estate,1960,NA,24,The Consistent
+United States,Y,Y,N,Technology,NA,NA,NA,The Ghost
+United States,Y,N,N,Energy,1981,NA,44,The Consistent
+United States,Y,Y,Y,Investments,NA,NA,NA,The Consistent
+United States,Y,Y,N,Finance,1982,NA,45,The Consistent
+United States,Y,Y,N,Real Estate,1960,NA,22,The Consistent
+India,N,N,N,Real Estate,1956,Founder,15,The Consistent
+United States,Y,Y,N,Gaming,NA,Founder,NA,The Consistent
+India,N,Y,N,Diversified,1897,Relation,-45,The Consistent
+United States,Y,Y,N,Finance,1992,NA,50,The Consistent
+Australia,N,N,N,Retail,1948,Relation,13,The Ghost
+United States,Y,Y,Y,Finance,1971,Founder,28,The Consistent
+United States,Y,Y,N,Automotive,NA,NA,NA,The Consistent
+United States,Y,N,N,Real Estate,NA,Founder,NA,The Consistent
+United States,Y,Y,Y,Finance,1987,Founder,41,The Consistent
+United States,N,Y,N,Media,NA,NA,NA,The Consistent
+India,N,Y,N,Diversified,1897,NA,-52,The Consistent
+United States,Y,Y,Y,Finance,NA,NA,NA,The Consistent
+United States,Y,N,N,Sports,1981,Founder,32,The Consistent
+United States,Y,Y,N,Finance,1987,NA,38,The Consistent
+Chile,Y,N,N,Finance,1871,NA,-79,The Consistent
+Hong Kong,Y,N,N,Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Technology,1997,Founder,47,The Consistent
+Sweden,Y,N,Y,Investments,1989,Investor,37,The Consistent
+India,N,N,N,Diversified,1897,Relation,-55,The Consistent
+United States,Y,Y,Y,Software,1993,Founder,41,The Consistent
+Philippines,Y,Y,N,Diversified,NA,NA,NA,The Consistent
+Greece,N,N,N,Retail,1952,Relation,-2,The Consistent
+Spain,N,N,N,Investments,1952,Relation,-3,The Consistent
+Romania,Y,N,N,Energy,NA,NA,NA,The Ghost
+United States,N,Y,Y,Finance,1933,NA,-24,The Consistent
+Switzerland,N,N,N,Technology,1976,Relation,19,The Consistent
+Poland,Y,N,N,Media,1992,Founder,36,The Consistent
+United Arab Emirates,Y,N,N,Construction and Engineering,NA,NA,NA,The Ghost
+United States,N,Y,N,Health care,1941,Relation,-18,The Consistent
+United States,N,Y,N,Sports,1953,NA,-7,The Consistent
+United States,N,Y,Y,Real Estate,NA,NA,NA,The Consistent
+Russia,Y,N,N,Investments,1999,NA,40,The Consistent
+United States,N,N,N,Retail,NA,NA,NA,The Ghost
+United States,N,Y,N,Service,NA,NA,NA,The Consistent
+China,Y,Y,N,Technology,2001,NA,34,The Consistent
+Spain,N,N,N,Manufacturing,1958,Relation,-7,The Hustler
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+China,Y,N,Y,Energy,NA,NA,NA,The Ghost
+Brazil,N,Y,N,Finance,1925,Relation,4,The Consistent
+United States,Y,Y,N,Real Estate,1960,NA,37,The Consistent
+Turkey,N,N,N,Diversified,NA,NA,NA,The Consistent
+Turkey,Y,Y,N,Construction and Engineering,1957,Founder,27,The Consistent
+Japan,Y,N,N,Gaming,1973,Founder,31,The Consistent
+United States,Y,Y,N,Health care,1979,Founder,36,The Consistent
+Spain,Y,N,N,Gaming,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Food and Beverage,1990,NA,44,The Consistent
+India,N,N,N,Construction and Engineering,1961,NA,12,The Hustler
+United States,N,N,N,Sports,1944,Relation,-7,The Consistent
+United States,N,Y,N,Real Estate,NA,NA,NA,The Consistent
+United States,Y,Y,N,Media,1981,Founder,27,The Consistent
+Singapore,N,N,N,Real Estate,1947,NA,-8,The Consistent
+Turkey,N,N,N,Media,NA,Chairman,NA,The Ghost
+Denmark,N,N,N,Fashion and Retail,1963,NA,5,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Finance,NA,NA,NA,The Consistent
+China,Y,N,N,Retail,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Fashion and Retail,NA,NA,NA,The Consistent
+India,Y,N,N,Energy,NA,NA,NA,The Ghost
+United Kingdom,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Vietnam,Y,N,N,Real Estate,1993,NA,25,The Consistent
+Czech Republic,Y,N,N,Real Estate,1997,NA,26,The Consistent
+United States,N,Y,N,Food and Beverage,1889,NA,-97,The Hustler
+Taiwan,N,N,N,Finance,1962,NA,NA,The Hustler
+Norway,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Canada,N,Y,N,Food and Beverage,1857,Relation,-75,The Consistent
+Argentina,Y,N,N,Diversified,NA,NA,NA,The Consistent
+United States,N,Y,N,Media,1925,Founder,-9,The Consistent
+Hong Kong,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Media,1970,Founder,32,The Consistent
+South Korea,Y,N,N,Construction and Engineering,1983,Founder,43,The Consistent
+Saudi Arabia,Y,N,Y,Diversified,1969,NA,29,The Consistent
+United States,N,Y,Y,Investments,1975,Founder,34,The Hustler
+France,N,N,N,Fashion and Retail,1837,NA,-106,The Consistent
+China,Y,N,N,Health care,1971,NA,27,The Consistent
+Thailand,N,N,N,Media,NA,Relation,NA,The Consistent
+China,Y,N,N,Diversified,NA,Founder,NA,The Consistent
+Sweden,N,N,N,Diversified,1939,NA,-10,The Consistent
+United States,Y,Y,Y,Software,1983,Founder,31,The Consistent
+China,Y,N,N,Health care,NA,NA,NA,The Consistent
+United States,Y,Y,N,Software,2004,Vice President,49,The Consistent
+United Kingdom,Y,Y,N,Diversified,NA,Founder,NA,The Consistent
+United States,Y,Y,Y,Technology,1935,NA,-22,The Consistent
+Canada,Y,Y,N,Fashion and Retail,1998,Founder,42,The Consistent
+Norway,Y,N,N,Retail,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+Mexico,N,N,N,Retail,1890,NA,-66,The Consistent
+Japan,Y,N,N,Finance,1967,Founder,20,The Ghost
+Kazakhstan,Y,N,N,Metals and Mining,NA,Founder,NA,The Hustler
+China,Y,N,N,Manufacturing,2008,Founder,51,The Consistent
+Spain,Y,Y,N,Construction and Engineering,NA,NA,NA,The Ghost
+China,Y,N,N,Real Estate,1992,Chairman,32,The Hustler
+China,Y,N,Y,Metals and Mining,1989,NA,29,The Consistent
+United States,Y,Y,N,Finance,1995,NA,34,The Consistent
+Canada,Y,Y,N,Real Estate,1990,Founder,28,The Consistent
+Russia,Y,Y,N,Food and Beverage,NA,NA,NA,The Hustler
+Turkey,Y,N,N,Construction and Engineering,1994,NA,27,The Consistent
+China,Y,Y,N,Diversified,1992,NA,25,The Consistent
+Hong Kong,Y,N,N,Energy,NA,NA,NA,The Consistent
+United States,Y,Y,N,Software,1994,Founder,26,The Consistent
+Saudi Arabia,N,Y,N,Construction and Engineering,NA,NA,NA,The Consistent
+United States,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Finance,NA,NA,NA,The Ghost
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Turkey,N,Y,N,Diversified,NA,NA,NA,The Consistent
+Indonesia,Y,N,N,Manufacturing,1980,Founder,50,The Consistent
+Netherlands,N,N,N,Manufacturing,1919,Relation,-16,The Consistent
+United States,Y,Y,N,Real Estate,NA,NA,NA,The Consistent
+United States,Y,Y,N,Retail,1974,Founder,45,The Ghost
+United States,N,Y,N,Retail,NA,NA,NA,The Hustler
+South Africa,Y,N,N,Finance,NA,NA,NA,The Ghost
+Spain,N,Y,N,Finance,1857,Relation,-78,The Ghost
+Italy,Y,N,N,Finance,1982,Founder,42,The Consistent
+United States,N,Y,Y,Real Estate,1927,Relation,-12,The Hustler
+United Kingdom,N,Y,Y,Retail,NA,NA,NA,The Hustler
+United States,Y,Y,N,Finance,1982,Founder,39,The Consistent
+United States,Y,Y,N,Finance,1974,Founder,31,The Consistent
+China,Y,N,N,Manufacturing,NA,NA,NA,The Hustler
+United States,Y,Y,N,Health care,1979,Founder,43,The Ghost
+United States,N,Y,N,Health care,1944,Relation,-2,The Consistent
+China,Y,N,N,Diversified,NA,NA,NA,The Ghost
+Spain,N,Y,Y,Service,1976,Relation,29,The Consistent
+United States,Y,N,N,Finance,NA,NA,NA,The Ghost
+Peru,Y,Y,N,Retail,1967,Founder,24,The Hustler
+China,Y,N,N,Manufacturing,1985,Founder,36,The Consistent
+United Kingdom,Y,N,N,Telecom,1986,NA,34,The Consistent
+China,Y,N,N,Manufacturing,1985,NA,32,The Consistent
+Spain,Y,N,N,Fashion and Retail,1973,Founder,20,The Consistent
+United States,N,Y,N,Manufacturing,1875,CEO/Chairman,-80,The Consistent
+United States,Y,N,N,Real Estate,1991,Founder,35,The Consistent
+United States,Y,Y,Y,Finance,NA,Founder,NA,The Consistent
+South Korea,Y,Y,N,Health care,2002,NA,45,The Consistent
+France,N,N,Y,Retail,NA,NA,NA,The Ghost
+China,Y,Y,N,Software,2001,Founder,43,The Consistent
+United States,N,Y,N,Service,NA,Relation,NA,The Consistent
+India,Y,N,N,Investments,1968,NA,7,The Consistent
+United States,N,Y,Y,Fashion and Retail,1969,Relation,7,The Consistent
+United States,Y,N,N,Agriculture,1985,NA,24,The Consistent
+United States,Y,N,N,Sports,1988,Founder,24,The Consistent
+Israel,Y,Y,N,Software,1993,Founder,28,The Consistent
+Lebanon,N,Y,N,Real Estate,NA,Relation,NA,The Consistent
+Czech Republic,Y,N,N,Energy,1995,NA,27,The Consistent
+China,Y,N,N,Manufacturing,2003,Chairman,33,The Hustler
+Australia,Y,Y,N,Energy,NA,NA,NA,The Ghost
+China,Y,N,N,Metals and Mining,2002,Chairman,28,The Consistent
+Japan,Y,N,N,Gaming,2008,Founder,31,The Consistent
+United Kingdom,Y,N,N,Retail,NA,NA,NA,The Hustler
+Japan,Y,Y,N,Retail,NA,NA,NA,The Hustler
+Taiwan,N,N,N,Finance,1954,NA,NA,The Consistent
+United Arab Emirates,N,N,N,Diversified,1960,Relation,36,The Consistent
+United States,Y,N,N,Food and Beverage,1940,Founder,15,The Consistent
+Germany,Y,N,N,Retail,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Investments,1985,NA,59,The Consistent
+Malaysia,Y,N,N,Diversified,NA,Founder,NA,The Consistent
+Germany,Y,N,N,Finance,1975,NA,47,The Hustler
+United States,N,Y,N,Energy,1904,Relation,-30,The Consistent
+Japan,N,Y,N,Real Estate,1923,Relation,-2,The Ghost
+Turkey,N,Y,N,Diversified,NA,NA,NA,The Hustler
+United States,N,N,N,Real Estate,NA,NA,NA,The Ghost
+Indonesia,N,N,N,Diversified,NA,NA,NA,The Consistent
+United States,Y,Y,N,Sports,1947,NA,0,The Hustler
+Turkey,N,N,N,Diversified,NA,NA,NA,The Ghost
+Singapore,Y,N,N,Food and Beverage,1969,Chairman,20,The Consistent
+Mexico,Y,Y,N,Construction and Engineering,1969,Founder,23,The Hustler
+United States,Y,Y,Y,Investments,NA,NA,NA,The Ghost
+Poland,Y,Y,N,Media,NA,Founder,NA,The Hustler
+United States,Y,Y,N,Finance,1987,NA,35,The Consistent
+South Africa,Y,N,Y,Media,NA,NA,NA,The Consistent
+China,Y,N,N,Real Estate,1994,Chairman,41,The Consistent
+Australia,Y,Y,Y,Finance,1999,NA,46,The Consistent
+Singapore,Y,N,N,Investments,1991,NA,38,The Consistent
+Sweden,Y,N,N,Energy,1997,NA,44,The Consistent
+Switzerland,N,N,N,Health care,1896,NA,-59,The Consistent
+United States,N,Y,N,Media,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,1992,NA,33,The Consistent
+United States,Y,Y,Y,Investments,1972,Partner,12,The Consistent
+South Korea,N,Y,N,Diversified,NA,Relation,NA,The Consistent
+Kazakhstan,Y,N,N,Metals and Mining,1930,Investor,-31,The Consistent
+Greece,Y,Y,N,Metals and Mining,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Energy,1992,NA,31,The Consistent
+United States,Y,Y,N,Investments,NA,NA,NA,The Consistent
+Spain,Y,Y,N,Metals and Mining,1974,NA,10,The Consistent
+China,Y,N,N,Fashion and Retail,1994,NA,31,The Hustler
+Turkey,N,Y,N,Finance,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+China,Y,N,N,Health care,NA,NA,NA,The Consistent
+China,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United Kingdom,Y,N,Y,Finance,2003,Founder,37,The Consistent
+Kazakhstan,Y,Y,N,Finance,1923,NA,-44,The Hustler
+Kazakhstan,N,N,N,Finance,1923,Founder,-45,The Hustler
+Mexico,N,N,N,Media,1955,Relation,-13,The Consistent
+Russia,Y,Y,N,Construction and Engineering,1992,NA,27,The Hustler
+China,Y,N,Y,Fashion and Retail,NA,NA,NA,The Hustler
+United States,Y,Y,Y,Technology,NA,NA,NA,The Ghost
+Switzerland,N,N,N,Manufacturing,NA,NA,NA,The Consistent
+Brazil,N,N,N,Finance,NA,NA,NA,The Hustler
+United States,N,N,N,Construction and Engineering,1898,Relation,NA,The Hustler
+Peru,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+Argentina,N,N,N,Health care,1921,NA,-6,The Consistent
+Taiwan,Y,N,N,Manufacturing,1949,NA,22,The Consistent
+United States,N,N,N,Energy,NA,Relation,NA,The Consistent
+Taiwan,Y,N,N,Manufacturing,1949,Founder,21,The Consistent
+Australia,Y,Y,N,Finance,1980,NA,50,The Consistent
+United States,Y,N,N,Retail,NA,Founder,NA,The Hustler
+United States,N,N,N,Media,NA,NA,NA,The Ghost
+United States,N,N,N,Media,NA,NA,NA,The Ghost
+United States,Y,N,N,Energy,NA,NA,NA,The Ghost
+Malaysia,Y,N,N,Diversified,1975,NA,40,The Consistent
+Mexico,Y,N,N,Finance,1948,Founder,18,The Ghost
+United States,Y,N,N,Real Estate,1979,NA,41,The Consistent
+Germany,N,N,N,Retail,1891,NA,-50,The Consistent
+Spain,N,N,N,Investments,1938,Relation,-4,The Consistent
+Turkey,N,Y,N,Diversified,NA,Relation,NA,The Consistent
+United States,Y,N,N,Manufacturing,1970,Founder,29,The Consistent
+United States,N,Y,N,Technology,1969,Founder,34,The Ghost
+United States,N,Y,N,Real Estate,1938,Relation,-2,The Hustler
+France,Y,N,N,Investments,NA,NA,NA,The Ghost
+United States,Y,Y,N,Software,NA,Founder,NA,The Hustler
+Germany,N,N,N,Retail,1891,Relation,-53,The Consistent
+Indonesia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+United States,N,Y,N,Sports,1947,Relation,2,The Hustler
+Germany,Y,N,N,Automotive,NA,NA,NA,The Consistent
+United States,N,Y,N,Real Estate,NA,NA,NA,The Hustler
+Brazil,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+Germany,N,N,N,Retail,1891,NA,-56,The Consistent
+United States,Y,Y,Y,Finance,1995,Founder,49,The Hustler
+Hong Kong,N,N,N,Retail,1981,Chairman,34,The Consistent
+Hong Kong,N,N,N,Real Estate,1971,Founder,23,The Consistent
+Germany,N,N,N,Retail,1891,Relation,-58,The Consistent
+United States,Y,Y,N,Technology,1975,Leadership,26,The Hustler
+Mexico,Y,Y,N,Metals and Mining,1991,Founder,43,The Consistent
+Brazil,Y,N,N,Fashion and Retail,1971,Founder,22,The Consistent
+United States,Y,Y,N,Technology,1978,NA,29,The Consistent
+Ireland,Y,N,N,Finance,1995,Founder,45,The Consistent
+Canada,Y,N,N,Construction and Engineering,1978,NA,28,The Consistent
+Germany,N,N,N,Retail,1891,NA,-60,The Consistent
+United States,N,N,N,Media,NA,NA,NA,The Ghost
+Switzerland,Y,N,N,Energy,NA,Founder,NA,The Hustler
+Taiwan,N,N,N,Manufacturing,1949,Relation,-4,The Consistent
+Sweden,N,N,N,Retail,1947,Inherited,-3,The Hustler
+China,Y,N,N,Manufacturing,NA,NA,NA,The Ghost
+Canada,N,N,N,Real Estate,1948,Relation,-7,The Consistent
+United States,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Russia,Y,N,N,Real Estate,1992,Investor,40,The Hustler
+United States,Y,Y,N,Finance,1995,Founder,40,The Hustler
+India,Y,N,N,Real Estate,1980,NA,25,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+United States,N,Y,N,Real Estate,NA,NA,NA,The Ghost
+Philippines,Y,N,N,Retail,NA,NA,NA,The Hustler
+United States,Y,Y,N,Finance,1992,NA,36,The Consistent
+Hong Kong,Y,N,N,Real Estate,1994,Founder/Chairman,38,The Consistent
+United States,Y,Y,Y,Finance,1989,Founder,33,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Consistent
+United States,N,Y,N,Media,NA,NA,NA,The Ghost
+Indonesia,N,N,N,Manufacturing,1932,NA,-25,The Consistent
+United States,N,Y,N,Finance,NA,NA,NA,The Ghost
+United States,N,Y,N,Sports,NA,NA,NA,The Hustler
+United States,Y,N,N,Real Estate,2003,Founder,41,The Consistent
+Taiwan,N,N,N,Technology,NA,NA,NA,The Ghost
+China,Y,Y,N,Software,1995,NA,32,The Hustler
+Poland,Y,N,N,Finance,1996,Founder,35,The Hustler
+Ukraine,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+China,Y,Y,N,Health care,1995,NA,31,The Consistent
+Germany,N,N,N,Retail,1891,NA,-76,The Consistent
+Germany,N,Y,N,Investments,1862,NA,-105,The Consistent
+Ukraine,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+United States,N,Y,Y,Sports,NA,NA,NA,The Hustler
+Russia,N,N,N,Energy,NA,NA,NA,The Ghost
+United States,Y,Y,N,Finance,2001,NA,32,The Consistent
+Russia,Y,Y,N,Metals and Mining,1997,NA,27,The Consistent
+Russia,Y,Y,N,Finance,NA,NA,NA,The Consistent
+Russia,Y,N,N,Finance,NA,NA,NA,The Ghost
+Germany,N,N,N,Retail,1891,Relation,-82,The Consistent
+United States,Y,Y,Y,Fashion and Retail,1996,Founder,24,The Consistent
+United States,N,N,N,Construction and Engineering,NA,NA,NA,The Ghost
+India,N,N,N,Energy,NA,NA,NA,The Ghost
+India,N,Y,Y,Health care,NA,NA,NA,The Hustler
+Germany,N,N,N,Retail,1891,NA,-88,The Consistent
+Germany,N,Y,N,Diversified,NA,Relation,NA,The Hustler
+Saudi Arabia,N,N,N,Finance,1957,NA,NA,The Consistent
+Australia,Y,N,N,Real Estate,NA,Investor,NA,The Hustler
+Canada,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+Indonesia,Y,N,N,Diversified,1948,Founder,19,The Consistent
+Morocco,N,Y,N,Finance,NA,NA,NA,The Consistent
+United States,N,Y,Y,Retail,NA,NA,NA,The Consistent
+France,Y,Y,Y,Logistics,1978,NA,42,The Consistent
+United States,Y,Y,N,Service,1975,Founder,34,The Consistent
+Italy,Y,N,N,Construction and Engineering,NA,NA,NA,The Hustler
+United States,Y,Y,N,Sports,NA,NA,NA,The Hustler
+Indonesia,N,Y,N,Diversified,NA,NA,NA,The Consistent
+Sweden,N,N,N,Diversified,1939,Relation,-6,The Consistent
+Greece,N,N,N,Finance,NA,Relation,NA,The Consistent
+Mexico,N,Y,N,Finance,1992,Founder,45,The Consistent
+China,Y,N,N,Construction and Engineering,1993,NA,46,The Consistent
+Monaco,Y,N,N,Fashion and Retail,1960,NA,12,The Consistent
+United States,Y,Y,N,Media,1981,Founder,34,The Consistent
+Chile,N,N,Y,Finance,1937,NA,-14,The Consistent
+United Kingdom,Y,N,N,Real Estate,NA,Founder,NA,The Consistent
+United States,N,N,N,Health care,1979,Founder,38,The Ghost
+Russia,Y,Y,N,Energy,1993,President,41,The Consistent
+Hong Kong,N,N,N,Real Estate,1961,NA,9,The Consistent
+China,Y,Y,N,Real Estate,1990,Chairman,38,The Consistent
+Guernsey,Y,N,N,Finance,1981,Founder,29,The Consistent
+Brazil,N,N,N,Retail,NA,NA,NA,The Hustler
+Singapore,Y,N,N,Real Estate,1995,Founder,42,The Consistent
+Kazakhstan,Y,N,N,Metals and Mining,NA,NA,NA,The Consistent
+Israel,Y,N,N,Metals and Mining,NA,NA,NA,The Consistent
+South Korea,N,N,N,Finance,1958,NA,4,The Consistent
+Switzerland,Y,N,N,Energy,NA,NA,NA,The Ghost
+United States,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+India,N,N,N,Service,1959,Chairman,1,The Consistent
+Indonesia,N,N,N,Retail,1958,Relation,10,The Ghost
+New Zealand,N,N,N,Investments,1986,Founder,28,The Consistent
+United States,Y,N,N,Energy,1985,Founder,27,The Consistent
+China,Y,Y,N,Construction and Engineering,1994,Investor,34,The Consistent
+China,Y,N,N,Manufacturing,1996,Founder,35,The Consistent
+China,Y,N,Y,Health care,1998,NA,37,The Hustler
+France,N,N,N,Health care,1929,NA,-35,The Consistent
+China,Y,Y,N,Investments,NA,NA,NA,The Consistent
+France,Y,Y,N,Health care,1988,Founder,25,The Consistent
+Switzerland,N,N,N,Health care,1954,Relation,-10,The Hustler
+Hong Kong,Y,N,N,Manufacturing,1992,Founder,28,The Consistent
+France,N,N,N,Health care,1929,NA,-37,The Consistent
+Turkey,N,N,N,Finance,NA,Relation,NA,The Consistent
+China,Y,N,N,Software,2012,Founder,49,The Hustler
+China,Y,N,N,Energy,1994,NA,27,The Consistent
+United Kingdom,N,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+China,Y,N,Y,Media,1999,Chairman,29,The Consistent
+Hong Kong,Y,N,N,Manufacturing,1990,Founder/Chairman,21,The Consistent
+Brazil,N,Y,Y,Finance,1966,NA,-4,The Consistent
+United States,Y,Y,N,Technology,2008,Founder,39,The Consistent
+China,Y,Y,N,Manufacturing,2002,NA,32,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Consistent
+Brazil,N,N,N,Manufacturing,1967,Relation,NA,The Hustler
+United States,Y,Y,Y,Investments,1964,Founder,38,The Consistent
+Egypt,Y,N,N,Retail,NA,NA,NA,The Consistent
+France,Y,N,N,Construction and Engineering,1957,Founder,26,The Consistent
+United States,Y,Y,Y,Technology,1984,NA,51,The Consistent
+Brazil,Y,N,N,Finance,1960,Founder,25,The Consistent
+Taiwan,Y,N,N,Real Estate,1965,NA,30,The Consistent
+Spain,N,N,N,Finance,1857,NA,-80,The Consistent
+South Africa,Y,N,N,Finance,1973,Founder,36,The Consistent
+Germany,Y,N,N,Technology,NA,NA,NA,The Consistent
+Australia,Y,N,N,Retail,NA,NA,NA,The Consistent
+Austria,N,Y,N,Logistics,1955,Relation,15,The Consistent
+Australia,Y,N,N,Diversified,NA,Investor,NA,The Hustler
+Mexico,Y,Y,N,Finance,1884,Former Ceo,-58,The Consistent
+Spain,Y,N,N,Real Estate,1980,Founder,39,The Consistent
+Canada,Y,N,Y,Finance,1983,Founder,42,The Consistent
+United States,Y,Y,N,Gaming,NA,Founder,NA,The Consistent
+United States,N,N,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,N,N,N,Manufacturing,1947,Relation,2,The Consistent
+South Korea,N,Y,N,Technology,1938,NA,-8,The Consistent
+Hong Kong,Y,N,N,Automotive,1987,CEO,40,The Consistent
+India,Y,N,N,Software,1981,NA,35,The Consistent
+Spain,Y,N,N,Construction and Engineering,1983,CEO/Chairman,36,The Consistent
+Brazil,Y,N,N,Health care,NA,Founder,NA,The Consistent
+China,Y,Y,N,Health care,1992,NA,44,The Hustler
+United States,N,Y,N,Media,1987,Founder,38,The Consistent
+United States,Y,Y,N,Service,NA,NA,NA,The Ghost
+United States,N,Y,N,Service,NA,NA,NA,The Consistent
+Malaysia,Y,N,N,Construction and Engineering,NA,Founder,NA,The Consistent
+United States,N,Y,N,Sports,NA,NA,NA,The Hustler
+Belgium,Y,N,N,Metals and Mining,NA,Founder,NA,The Consistent
+Macau,Y,N,N,Real Estate,1997,CEO/Chairman,47,The Hustler
+Portugal,Y,N,N,Investments,NA,NA,NA,The Ghost
+Austria,Y,N,N,Construction and Engineering,1852,President And Ceo,-102,The Consistent
+United States,N,N,N,Service,NA,NA,NA,The Consistent
+China,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+Germany,N,N,N,Fashion and Retail,1927,Relation,-29,The Consistent
+United States,Y,Y,Y,Finance,1989,Founder,33,The Consistent
+Hong Kong,Y,N,Y,Real Estate,1994,Founder,38,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+Germany,N,N,N,Retail,1876,NA,-82,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,1991,Founder,32,The Consistent
+Canada,Y,Y,N,Energy,1989,Chairman,29,The Consistent
+Poland,Y,N,N,Investments,NA,NA,NA,The Ghost
+Brazil,Y,Y,N,Construction and Engineering,1979,Founder,23,The Hustler
+United Kingdom,Y,N,N,Finance,1998,NA,38,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+United States,N,Y,N,Investments,1988,Founder,27,The Consistent
+Egypt,Y,Y,N,Diversified,1952,Relation,-10,The Consistent
+South Africa,Y,N,N,Metals and Mining,1997,Founder/Chairman,36,The Consistent
+China,Y,Y,Y,Real Estate,NA,NA,NA,The Hustler
+Australia,N,N,N,Manufacturing,1948,NA,-15,The Consistent
+Russia,Y,N,N,Metals and Mining,NA,NA,NA,The Consistent
+China,Y,Y,N,Architecture,1992,Founder,27,The Hustler
+China,Y,Y,N,Media,2000,Chairman,34,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+China,N,Y,N,Investments,1994,NA,25,The Consistent
+Brazil,Y,Y,N,Finance,2008,NA,40,The Consistent
+United States,Y,Y,N,Finance,1985,Leadership,15,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Canada,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+United Kingdom,Y,N,N,Retail,1979,Founder,32,The Hustler
+Germany,N,N,N,Automotive,1958,Relation,NA,The Consistent
+United States,Y,Y,N,Automotive,NA,NA,NA,The Consistent
+Spain,Y,N,N,Service,1956,Founder,22,The Hustler
+France,Y,N,N,Food and Beverage,1959,NA,23,The Consistent
+Peru,Y,N,N,Diversified,1967,Founder,29,The Consistent
+United States,N,N,N,Agriculture,NA,NA,NA,The Ghost
+Ireland,Y,Y,N,Manufacturing,1973,Founder,34,The Consistent
+United States,N,Y,N,Food and Beverage,1869,Relation,-74,The Consistent
+United States,Y,Y,N,Health care,1990,NA,47,The Consistent
+Singapore,Y,N,N,Energy,1963,Founder,20,The Consistent
+South Korea,N,N,N,Diversified,1947,Relation,2,The Consistent
+India,Y,N,N,Real Estate,1969,NA,25,The Consistent
+Germany,N,N,N,Manufacturing,1950,NA,4,The Consistent
+Japan,Y,N,N,Real Estate,1974,Founder,29,The Consistent
+Ireland,Y,Y,N,Media,1904,Chairman,-33,The Ghost
+Chile,N,Y,N,Diversified,NA,Relation,NA,The Consistent
+United States,Y,Y,N,Health care,1949,NA,0,The Consistent
+United States,Y,Y,N,Retail,1938,Relation,-12,The Hustler
+Thailand,Y,N,N,Investments,1986,Founder,37,The Consistent
+Indonesia,Y,N,N,Investments,1980,Founder,30,The Consistent
+United States,Y,Y,N,Finance,1977,Founder,35,The Ghost
+Cyprus,Y,N,N,Real Estate,NA,Founder,NA,The Hustler
+Spain,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Mexico,N,N,N,Construction and Engineering,1906,Relation,-39,The Ghost
+Colombia,Y,N,N,Food and Beverage,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Fashion and Retail,1998,Founder,43,The Consistent
+United States,N,Y,N,Food and Beverage,NA,NA,NA,The Hustler
+United States,Y,Y,Y,Finance,1992,NA,35,The Consistent
+United States,N,N,N,Retail,1973,Founder,25,The Ghost
+Russia,Y,N,N,Logistics,NA,NA,NA,The Hustler
+India,N,N,N,Manufacturing,1988,NA,29,The Consistent
+United States,N,Y,Y,Media,1969,Relation,9,The Consistent
+Italy,Y,Y,N,Retail,1987,Founder,28,The Consistent
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+United States,Y,Y,N,Media,1995,Founder,35,The Consistent
+China,Y,N,N,Education,1993,Founder,32,The Hustler
+Greece,Y,Y,N,Logistics,NA,NA,NA,The Ghost
+China,Y,Y,N,Health care,NA,NA,NA,The Hustler
+China,Y,N,N,Real Estate,NA,NA,NA,The Hustler
+United States,Y,Y,N,Metals and Mining,1974,Employee,9,The Consistent
+China,Y,N,N,Technology,2004,Founder,39,The Consistent
+India,N,Y,N,Real Estate,1993,NA,27,The Consistent
+United States,Y,Y,N,Finance,2001,Founder,39,The Hustler
+Russia,Y,Y,N,Manufacturing,2002,President,35,The Hustler
+China,Y,N,Y,Technology,2004,Chairman,36,The Consistent
+Canada,Y,Y,N,Technology,NA,NA,NA,The Ghost
+India,N,N,N,Fashion and Retail,1999,NA,28,The Consistent
+United States,N,N,N,Technology,1985,Founder,23,The Ghost
+India,N,N,N,Service,1953,NA,-20,The Consistent
+Turkey,Y,N,N,Food and Beverage,2005,NA,33,The Consistent
+Brazil,N,N,N,Finance,1966,NA,-8,The Consistent
+Switzerland,Y,N,N,Finance,1969,NA,40,The Consistent
+United States,Y,Y,N,Finance,1961,Founder,40,The Consistent
+United States,Y,N,N,Media,NA,Founder,NA,The Consistent
+United States,N,Y,Y,Finance,1958,Relation,29,The Hustler
+United States,N,Y,N,Retail,NA,NA,NA,The Hustler
+France,Y,N,N,Retail,NA,NA,NA,The Consistent
+Indonesia,N,Y,N,Real Estate,1961,Founder,30,The Consistent
+Japan,Y,N,N,Technology,1961,Founder,35,The Ghost
+Italy,Y,N,N,Construction and Engineering,1936,Relation,3,The Hustler
+United States,Y,N,N,Automotive,1965,Founder,29,The Consistent
+United States,N,Y,N,Real Estate,NA,NA,NA,The Hustler
+France,Y,N,N,Metals and Mining,1990,NA,55,The Consistent
+United States,Y,N,N,Investments,1962,Investor,24,The Consistent
+United Kingdom,N,N,N,Retail,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Technology,NA,NA,NA,The Consistent
+Turkey,Y,N,N,Media,1961,Founder,25,The Hustler
+Germany,N,Y,N,Media,1898,NA,-42,The Consistent
+United States,Y,Y,N,Technology,1989,Founder,52,The Hustler
+United States,N,Y,N,Food and Beverage,1947,Relation,4,The Consistent
+Germany,Y,N,N,Manufacturing,1985,Founder,41,The Consistent
+United Kingdom,Y,N,N,Technology,1972,Founder,27,The Consistent
+United States,Y,Y,Y,Finance,1981,NA,36,The Consistent
+Germany,Y,N,N,Health care,1987,Founder,41,The Consistent
+Brazil,Y,Y,N,Real Estate,1962,Founder,19,The Hustler
+Malaysia,Y,N,N,Gaming,1995,Founder,48,The Hustler
+Turkey,Y,N,N,Diversified,NA,NA,NA,The Consistent
+Oman,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+Australia,Y,Y,N,Investments,1994,Founder,45,The Consistent
+Nigeria,Y,N,N,Energy,1991,NA,41,The Consistent
+India,Y,N,N,Health care,1990,Founder,40,The Consistent
+United States,N,Y,N,Energy,NA,Founder,NA,The Consistent
+Turkey,Y,N,N,Diversified,NA,NA,NA,The Hustler
+United States,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+Indonesia,N,Y,N,Metals and Mining,NA,NA,NA,The Hustler
+United States,N,Y,N,Energy,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Investments,1985,NA,34,The Hustler
+United States,N,Y,Y,Metals and Mining,NA,NA,NA,The Consistent
+Italy,Y,N,N,Fashion and Retail,1995,Founder,43,The Consistent
+Italy,N,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+India,N,N,N,Technology,1979,Relation,27,The Hustler
+China,Y,Y,N,Retail,NA,NA,NA,The Hustler
+United States,Y,Y,Y,Investments,1982,Founder,28,The Consistent
+Turkey,Y,Y,N,Diversified,NA,NA,NA,The Hustler
+India,Y,N,N,Software,1981,Founder/Chairman,26,The Consistent
+India,Y,Y,N,Software,1981,NA,26,The Consistent
+India,N,N,N,Fashion and Retail,NA,NA,NA,The Hustler
+China,Y,N,N,Manufacturing,1995,Founder,39,The Consistent
+Germany,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Finance,1986,NA,29,The Hustler
+Canada,Y,Y,N,Finance,1950,Relation,-1,The Ghost
+United States,N,Y,N,Real Estate,NA,NA,NA,The Consistent
+Russia,Y,N,N,Energy,NA,NA,NA,The Ghost
+United States,Y,Y,N,Finance,1995,Founder,35,The Consistent
+China,Y,N,N,Diversified,1992,Chairman,30,The Consistent
+Norway,Y,N,N,Service,1996,NA,34,The Consistent
+China,Y,Y,N,Health care,NA,NA,NA,The Consistent
+Spain,Y,N,N,Construction and Engineering,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,1995,NA,31,The Consistent
+United States,Y,Y,N,Finance,1995,NA,31,The Consistent
+China,Y,N,Y,Retail,NA,NA,NA,The Ghost
+Canada,Y,Y,Y,Technology,NA,NA,NA,The Ghost
+United Kingdom,N,N,N,Media,1894,Relation,-74,The Hustler
+United States,Y,N,N,Energy,NA,NA,NA,The Ghost
+China,Y,N,N,Retail,NA,NA,NA,The Hustler
+United States,N,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+South Korea,N,Y,N,Diversified,1938,Relation,-33,The Consistent
+United States,N,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+China,Y,N,N,Retail,NA,NA,NA,The Hustler
+Russia,Y,N,N,Retail,NA,NA,NA,The Ghost
+Hong Kong,N,Y,N,Gaming,NA,NA,NA,The Consistent
+India,Y,N,N,Gaming,NA,NA,NA,The Ghost
+Saudi Arabia,N,N,N,Construction and Engineering,NA,NA,NA,The Consistent
+China,Y,Y,Y,Metals and Mining,NA,NA,NA,The Ghost
+Lebanon,N,N,N,Construction and Engineering,NA,Relation,NA,The Consistent
+Brazil,Y,Y,N,Construction and Engineering,1976,Founder,NA,The Hustler
+Saudi Arabia,N,N,N,Finance,NA,NA,NA,The Ghost
+Canada,Y,N,N,Real Estate,1958,Founder,38,The Hustler
+United States,Y,N,N,Investments,1962,Vice Chairman,38,The Consistent
+United States,Y,Y,N,Logistics,1970,NA,43,The Consistent
+United States,Y,N,N,Media,1956,Founder,27,The Consistent
+United States,N,N,N,Media,1912,Relation,-10,The Ghost
+Canada,Y,N,N,Automotive,1956,Founder,24,The Consistent
+United States,N,Y,Y,Media,NA,NA,NA,The Ghost
+Argentina,Y,N,N,Energy,1968,Relation,32,The Consistent
+United States,Y,Y,N,Technology,NA,NA,NA,The Ghost
+United States,Y,N,N,Retail,NA,NA,NA,The Ghost
+Brazil,Y,Y,N,Construction and Engineering,1944,Founder,11,The Hustler
+India,N,N,N,Health care,1935,Relation,-2,The Consistent
+Portugal,Y,Y,Y,Diversified,NA,NA,NA,The Consistent
+India,Y,Y,N,Diversified,NA,NA,NA,The Ghost
+Australia,Y,N,N,Health care,1964,Founder,29,The Hustler
+United States,N,Y,N,Finance,1922,Relation,-18,The Hustler
+United States,Y,Y,N,Logistics,1965,NA,26,The Hustler
+Brazil,Y,Y,N,Retail,1975,Founder,35,The Consistent
+United States,Y,N,N,Investments,1974,Founder,40,The Ghost
+United States,N,N,N,Gaming,NA,NA,NA,The Ghost
+United States,N,N,N,Other,1947,Relation,15,The Ghost
+United States,Y,Y,Y,Finance,1977,NA,35,The Hustler
+United States,Y,N,N,Investments,2005,Founder,63,The Consistent
+United Kingdom,N,N,N,Energy,1912,NA,-31,The Consistent
+Hong Kong,Y,N,N,Diversified,NA,NA,NA,The Consistent
+Taiwan,Y,N,N,Real Estate,1969,NA,26,The Consistent
+Taiwan,N,N,N,Diversified,1940,NA,-3,The Hustler
+Japan,Y,N,N,Retail,NA,NA,NA,The Hustler
+Brazil,N,Y,Y,Finance,1945,NA,-1,The Hustler
+Italy,N,N,N,Energy,1962,Relation,16,The Consistent
+Monaco,N,N,N,Retail,1960,NA,14,The Consistent
+China,Y,N,N,Metals and Mining,1975,Chairman,29,The Consistent
+South Africa,N,Y,N,Metals and Mining,1928,Relation,-15,The Hustler
+India,N,N,Y,Health care,NA,NA,NA,The Ghost
+India,Y,Y,N,Construction and Engineering,NA,NA,NA,The Ghost
+Thailand,Y,N,N,Investments,NA,NA,NA,The Consistent
+France,Y,N,N,Real Estate,1994,Founder,47,The Consistent
+Hong Kong,N,Y,Y,Service,1906,Relation,-43,The Consistent
+United States,Y,N,N,Retail,NA,NA,NA,The Ghost
+Turkey,N,Y,N,Diversified,NA,Relation,NA,The Consistent
+United States,Y,Y,Y,Technology,1979,NA,30,The Consistent
+Indonesia,Y,N,N,Diversified,1973,NA,24,The Consistent
+China,Y,N,N,Health care,1992,Founder,43,The Consistent
+Japan,Y,Y,N,Fashion and Retail,NA,NA,NA,The Consistent
+Brazil,N,N,N,Construction and Engineering,1948,NA,0,The Hustler
+South Korea,Y,N,N,Service,1985,NA,35,The Consistent
+United States,N,Y,N,Construction and Engineering,1941,Relation,-10,The Hustler
+United States,Y,N,N,Investments,NA,NA,NA,The Consistent
+Philippines,N,N,N,Energy,NA,NA,NA,The Consistent
+United States,N,Y,N,Food and Beverage,NA,NA,NA,The Ghost
+Brazil,Y,Y,N,Retail,1969,Chairman,19,The Hustler
+United States,Y,Y,Y,Investments,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,1988,Chairman,38,The Hustler
+China,Y,N,N,Energy,NA,NA,NA,The Hustler
+United States,N,Y,Y,Fashion and Retail,1969,Relation,15,The Consistent
+China,Y,N,N,Agriculture,NA,NA,NA,The Hustler
+United States,Y,Y,N,Energy,1983,Founder,30,The Consistent
+Netherlands,Y,N,N,Media,1994,NA,40,The Consistent
+Turkey,N,N,N,Diversified,NA,NA,NA,The Consistent
+Germany,N,Y,N,Finance,1904,Relation,-51,The Consistent
+India,N,N,N,Food and Beverage,1960,NA,5,The Consistent
+South Korea,N,Y,Y,Fashion and Retail,NA,NA,NA,The Consistent
+Brazil,N,Y,N,Construction and Engineering,1945,Relation,-11,The Consistent
+Taiwan,Y,Y,N,Technology,NA,NA,NA,The Ghost
+United States,N,Y,Y,Retail,1969,Relation,11,The Hustler
+United States,Y,Y,Y,Investments,1982,Founder,25,The Consistent
+Singapore,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+Egypt,N,Y,N,Real Estate,NA,Relation,NA,The Hustler
+China,Y,N,Y,Diversified,NA,NA,NA,The Ghost
+Indonesia,Y,N,N,Manufacturing,1991,Founder,32,The Consistent
+Morocco,N,N,Y,Energy,NA,Relation,NA,The Consistent
+China,Y,N,N,Investments,NA,NA,NA,The Consistent
+India,N,Y,N,Food and Beverage,NA,NA,NA,The Ghost
+United Kingdom,Y,N,N,Finance,1997,NA,36,The Consistent
+China,Y,N,N,Health care,2005,Founder,43,The Consistent
+China,Y,N,N,Energy,1996,NA,35,The Consistent
+United States,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Manufacturing,NA,Founder,NA,The Hustler
+China,Y,N,Y,Real Estate,NA,NA,NA,The Hustler
+Brazil,Y,N,N,Manufacturing,1995,Founder,33,The Hustler
+China,Y,N,N,Real Estate,NA,NA,NA,The Hustler
+Russia,Y,Y,N,Finance,1991,Founder,31,The Hustler
+Switzerland,N,N,N,Finance,1953,Relation,-11,The Consistent
+United Kingdom,Y,N,N,Telecom,1989,Founder,26,The Hustler
+Peru,N,Y,N,Metals and Mining,NA,Relation,NA,The Hustler
+China,Y,N,N,Manufacturing,1999,Founder,36,The Consistent
+United States,N,Y,N,Real Estate,NA,NA,NA,The Ghost
+United States,N,Y,Y,Finance,NA,NA,NA,The Ghost
+China,N,Y,N,Manufacturing,NA,NA,NA,The Consistent
+China,Y,Y,N,Software,1988,Chairman,23,The Hustler
+United States,Y,Y,N,Energy,NA,NA,NA,The Ghost
+United Kingdom,Y,N,N,Real Estate,2007,Founder,44,The Hustler
+United States,Y,Y,N,Finance,1996,Founder,28,The Consistent
+Hong Kong,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Retail,NA,NA,NA,The Ghost
+Indonesia,N,N,N,Metals and Mining,NA,NA,NA,The Ghost
+India,N,Y,N,Real Estate,NA,NA,NA,The Hustler
+China,Y,N,N,Software,2005,Founder,35,The Consistent
+Russia,Y,Y,N,Manufacturing,2004,Founder,36,The Hustler
+Russia,Y,Y,N,Finance,NA,Founder,NA,The Hustler
+Kazakhstan,Y,N,N,Finance,NA,NA,NA,The Ghost
+South Korea,N,Y,N,Service,1938,Relation,-36,The Consistent
+Spain,N,N,N,Retail,NA,NA,NA,The Hustler
+Kuwait,Y,N,N,Finance,NA,NA,NA,The Ghost
+Saudi Arabia,N,N,N,Diversified,NA,NA,NA,The Ghost
+Peru,N,N,N,Diversified,NA,Relation,NA,The Consistent
+Japan,Y,N,N,Retail,NA,NA,NA,The Hustler
+United States,N,Y,N,Diversified,1946,Relation,18,The Consistent
+United States,N,N,N,Retail,1973,Founder,53,The Ghost
+Japan,Y,N,N,Finance,NA,Founder,NA,The Hustler
+Canada,Y,N,N,Diversified,NA,NA,NA,The Consistent
+India,N,Y,N,Automotive,1969,Founder,39,The Consistent
+United States,Y,N,N,Manufacturing,1955,NA,23,The Consistent
+Taiwan,Y,N,N,Technology,1971,Founder,36,The Consistent
+Canada,Y,Y,N,Energy,1978,NA,41,The Hustler
+United States,Y,N,N,Media,1977,CEO/Chairman,48,The Ghost
+United States,N,Y,N,Finance,NA,NA,NA,The Ghost
+Turkey,Y,N,N,Energy,NA,NA,NA,The Ghost
+Spain,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Italy,N,N,N,Construction and Engineering,1936,Relation,0,The Hustler
+Germany,Y,N,N,Software,1972,Founder,33,The Consistent
+United Kingdom,Y,N,N,Real Estate,1971,Founder,30,The Consistent
+United States,Y,Y,N,Real Estate,1980,Investor,38,The Consistent
+United States,N,Y,N,Real Estate,NA,NA,NA,The Consistent
+United States,N,N,N,Retail,NA,NA,NA,The Ghost
+Australia,N,N,N,Metals and Mining,1955,Relation,10,The Hustler
+Kuwait,N,Y,N,Diversified,1932,Relation,-14,The Hustler
+Venezuela,N,Y,N,Media,1929,Relation,-17,The Consistent
+United States,N,Y,N,Logistics,1906,Relation,-40,The Consistent
+Russia,Y,Y,N,Investments,1989,CEO,43,The Hustler
+Austria,Y,N,Y,Fashion and Retail,1976,NA,29,The Consistent
+India,Y,N,N,Fashion and Retail,1993,NA,46,The Consistent
+United States,Y,Y,N,Telecom,1988,Founder,41,The Consistent
+Peru,Y,N,N,Retail,1967,Founder,22,The Hustler
+Belgium,N,N,N,Retail,NA,NA,NA,The Hustler
+Thailand,Y,N,N,Real Estate,1992,NA,43,The Consistent
+Russia,Y,Y,N,Manufacturing,1925,NA,-25,The Consistent
+Taiwan,Y,N,N,Retail,NA,NA,NA,The Consistent
+Brazil,N,Y,N,Energy,NA,Chairman,NA,The Hustler
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Consistent
+Netherlands,N,N,N,Retail,NA,NA,NA,The Hustler
+Kuwait,N,Y,N,Diversified,1932,Relation,-20,The Hustler
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Consistent
+United Kingdom,Y,N,N,Media,1974,NA,23,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Brazil,Y,Y,N,Diversified,2001,Founder,49,The Consistent
+Russia,Y,Y,N,Metals and Mining,1992,Founder,39,The Consistent
+United States,Y,Y,N,Health care,1988,NA,36,The Consistent
+China,Y,N,N,Real Estate,1996,Founder,43,The Hustler
+United States,Y,Y,N,Retail,1984,Founder,31,The Consistent
+United States,N,N,N,Media,NA,Relation,NA,The Consistent
+Brazil,Y,N,N,Investments,1988,Founder,35,The Consistent
+Portugal,Y,N,N,Finance,NA,NA,NA,The Ghost
+China,Y,N,N,Health care,1996,Founder,45,The Hustler
+Turkey,Y,N,N,Diversified,NA,Relation,NA,The Consistent
+United States,Y,Y,N,Energy,1997,Founder,40,The Hustler
+Finland,N,N,N,Manufacturing,NA,Relation,NA,The Consistent
+Canada,Y,N,N,Media,1984,Founder,25,The Consistent
+United States,N,N,N,Service,1973,Relation,13,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+Russia,Y,N,N,Finance,NA,NA,NA,The Ghost
+Ukraine,Y,N,N,Diversified,NA,Founder,NA,The Consistent
+China,Y,N,N,Health care,2005,NA,44,The Consistent
+Italy,Y,N,N,Fashion and Retail,1954,Founder,-8,The Consistent
+China,Y,N,N,Service,2001,Founder,40,The Consistent
+United States,Y,Y,Y,Investments,NA,NA,NA,The Ghost
+China,Y,N,N,Manufacturing,1956,Chairman,-7,The Consistent
+China,Y,N,Y,Health care,2001,NA,39,The Hustler
+Finland,N,N,N,Manufacturing,NA,NA,NA,The Consistent
+United Kingdom,Y,N,N,Finance,2002,Founder,39,The Consistent
+Russia,Y,N,N,Metals and Mining,1934,Former Ceo,-30,The Hustler
+China,Y,N,N,Health care,2001,Founder,37,The Consistent
+United States,Y,Y,N,Energy,NA,NA,NA,The Ghost
+Russia,Y,N,Y,Diversified,NA,NA,NA,The Consistent
+China,Y,N,N,Fashion and Retail,2005,NA,41,The Hustler
+South Korea,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+India,N,Y,N,Construction and Engineering,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,2005,Founder,39,The Consistent
+United Kingdom,Y,N,N,Metals and Mining,1974,Leadership,6,The Consistent
+Canada,Y,Y,N,Technology,NA,NA,NA,The Ghost
+Russia,Y,N,Y,Diversified,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Logistics,NA,Founder,NA,The Hustler
+United States,Y,Y,Y,Software,2004,Coo,34,The Consistent
+Belize,Y,N,N,Retail,NA,NA,NA,The Ghost
+China,Y,Y,N,Manufacturing,NA,NA,NA,The Ghost
+United States,Y,N,N,Software,2006,Founder,34,The Consistent
+China,Y,N,N,Energy,1997,Founder,28,The Hustler
+China,N,N,N,Diversified,NA,NA,NA,The Ghost
+United Kingdom,Y,N,N,Telecom,NA,NA,NA,The Ghost
+Russia,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Russia,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Peru,N,N,N,Metals and Mining,NA,NA,NA,The Hustler
+United States,N,N,N,Technology,2010,Founder,40,The Hustler
+Germany,N,N,N,Technology,NA,NA,NA,The Consistent
+Australia,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+Greece,Y,N,N,Logistics,NA,NA,NA,The Ghost
+Kuwait,N,N,N,Diversified,1956,NA,NA,The Consistent
+Kuwait,N,N,N,Diversified,1956,NA,NA,The Consistent
+Canada,Y,Y,Y,Finance,1955,Founder,30,The Consistent
+United States,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,N,N,N,Food and Beverage,NA,NA,NA,The Hustler
+Brazil,Y,N,N,Retail,NA,NA,NA,The Consistent
+United States,N,N,N,Agriculture,NA,NA,NA,The Ghost
+Brazil,Y,N,N,Manufacturing,1961,Founder,33,The Hustler
+Brazil,Y,N,N,Manufacturing,1961,Founder,32,The Hustler
+United States,Y,Y,N,Technology,1985,Founder,52,The Consistent
+United States,N,N,N,Real Estate,NA,NA,NA,The Ghost
+Spain,Y,N,N,Construction and Engineering,1960,Founder,26,The Consistent
+Brazil,Y,N,N,Media,NA,NA,NA,The Ghost
+India,Y,Y,N,Diversified,NA,NA,NA,The Ghost
+Italy,N,N,N,Energy,1962,NA,25,The Consistent
+Brazil,N,N,N,Finance,1943,Relation,5,The Consistent
+Italy,N,N,N,Fashion and Retail,1884,NA,-54,The Consistent
+Monaco,N,N,N,Finance,1955,Relation,17,The Consistent
+United States,Y,Y,N,Sports,NA,NA,NA,The Ghost
+Brazil,N,N,N,Manufacturing,1961,Relation,26,The Hustler
+United States,N,N,N,Media,1923,Relation,-7,The Ghost
+Italy,N,N,N,Fashion and Retail,1884,NA,-57,The Consistent
+United States,N,Y,N,Energy,NA,Relation,NA,The Consistent
+United States,N,N,N,Retail,1869,Relation,-66,The Ghost
+United States,Y,Y,N,Real Estate,1997,Founder,59,The Ghost
+United States,N,Y,Y,Logistics,1935,Relation,-1,The Ghost
+India,N,N,N,Health care,NA,NA,NA,The Hustler
+Brazil,Y,N,N,Fashion and Retail,1969,NA,27,The Consistent
+Netherlands,Y,N,N,Media,1993,Founder,52,The Hustler
+United States,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Switzerland,N,N,N,Automotive,NA,NA,NA,The Consistent
+South Korea,N,Y,N,Retail,NA,NA,NA,The Consistent
+United States,N,N,N,Finance,NA,NA,NA,The Ghost
+United States,N,N,N,Technology,1979,Founder,44,The Ghost
+Turkey,Y,N,N,Diversified,1953,NA,8,The Consistent
+United States,Y,Y,N,Health care,1976,Founder,31,The Consistent
+United States,Y,Y,N,Sports,1952,Relation,6,The Hustler
+Australia,Y,N,N,Real Estate,1972,Founder,27,The Consistent
+United States,N,Y,Y,Retail,NA,NA,NA,The Ghost
+United States,N,N,N,Energy,NA,NA,NA,The Ghost
+Austria,N,N,N,Retail,1895,Relation,-49,The Hustler
+Spain,N,N,N,Retail,NA,NA,NA,The Consistent
+Hong Kong,Y,N,N,Health care,NA,NA,NA,The Ghost
+United States,Y,N,N,Fashion and Retail,NA,NA,NA,The Ghost
+China,Y,N,Y,Manufacturing,NA,NA,NA,The Hustler
+Indonesia,Y,N,N,Retail,NA,NA,NA,The Consistent
+Brazil,Y,Y,N,Real Estate,1966,Founder,20,The Hustler
+United States,Y,N,N,Finance,NA,NA,NA,The Ghost
+United Kingdom,Y,Y,N,Retail,NA,NA,NA,The Ghost
+Germany,N,N,N,Food and Beverage,NA,NA,NA,The Consistent
+United States,Y,Y,N,Metals and Mining,NA,NA,NA,The Hustler
+Hong Kong,Y,Y,N,Manufacturing,1976,NA,26,The Consistent
+Italy,N,Y,N,Fashion and Retail,1924,NA,-28,The Consistent
+United States,Y,N,N,Energy,2002,Founder,51,The Consistent
+Mexico,Y,N,N,Food and Beverage,NA,NA,NA,The Ghost
+Israel,Y,Y,N,Health care,1983,NA,31,The Consistent
+United States,Y,N,N,Manufacturing,NA,Founder,NA,The Consistent
+United States,N,Y,N,Finance,NA,NA,NA,The Ghost
+China,Y,N,N,Health care,1985,NA,32,The Consistent
+South Korea,N,Y,Y,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Chile,N,N,N,Diversified,NA,Relation,NA,The Consistent
+Russia,Y,N,N,Energy,1993,NA,38,The Hustler
+Nepal,N,N,N,Diversified,1970,NA,14,The Consistent
+Russia,Y,N,N,Energy,1995,NA,40,The Consistent
+India,Y,N,N,Finance,NA,NA,NA,The Ghost
+Taiwan,Y,N,N,Food and Beverage,NA,Founder,NA,The Consistent
+United States,Y,N,N,Energy,2002,Founder,46,The Consistent
+United States,Y,N,N,Food and Beverage,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+United States,Y,N,N,Finance,NA,NA,NA,The Ghost
+United States,Y,Y,N,Software,1985,CEO/Chairman,26,The Consistent
+Russia,Y,Y,N,Real Estate,2010,Founder,51,The Consistent
+Thailand,Y,N,N,Real Estate,1993,Founder,35,The Consistent
+Taiwan,N,N,N,Food and Beverage,NA,Founder,NA,The Consistent
+India,Y,N,N,Automotive,NA,NA,NA,The Ghost
+United Kingdom,Y,N,N,Finance,NA,NA,NA,The Ghost
+United States,Y,N,N,Service,1982,Founder,23,The Hustler
+United Kingdom,Y,N,N,Finance,NA,NA,NA,The Ghost
+China,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+Sweden,Y,Y,Y,Finance,1988,Founder,28,The Consistent
+China,Y,N,Y,Health care,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Metals and Mining,NA,Founder,NA,The Hustler
+Russia,Y,Y,N,Construction and Engineering,1999,Founder,36,The Consistent
+China,Y,N,N,Real Estate,1997,Chairman,33,The Consistent
+United States,Y,Y,Y,Energy,NA,NA,NA,The Consistent
+China,Y,N,Y,Diversified,NA,NA,NA,The Consistent
+Czech Republic,Y,N,N,Metals and Mining,1995,Investor,30,The Consistent
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+China,Y,N,N,Metals and Mining,1993,Founder,29,The Hustler
+United States,Y,Y,Y,Software,1965,NA,-1,The Consistent
+United States,Y,Y,Y,Finance,NA,NA,NA,The Ghost
+China,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+South Korea,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Finance,NA,Founder,NA,The Consistent
+United States,N,Y,N,Finance,NA,NA,NA,The Ghost
+Russia,Y,N,N,Energy,1990,Founder,25,The Hustler
+China,Y,Y,Y,Food and Beverage,1995,NA,27,The Consistent
+China,Y,N,Y,Medicine,1998,Founder,29,The Consistent
+Turkey,Y,N,N,Logistics,1998,Founder,30,The Hustler
+Russia,Y,Y,N,Construction and Engineering,1993,Founder,22,The Hustler
+Russia,Y,Y,N,Manufacturing,NA,NA,NA,The Ghost
+China,Y,N,Y,Retail,2003,Chairman,33,The Hustler
+India,Y,Y,N,Finance,NA,NA,NA,The Hustler
+India,Y,N,N,Energy,NA,NA,NA,The Ghost
+United States,Y,N,N,Software,2006,NA,30,The Consistent
+United States,Y,Y,N,Technology,2002,NA,27,The Hustler
+Russia,Y,N,N,Finance,NA,NA,NA,The Ghost
+India,Y,N,N,Energy,NA,NA,NA,The Ghost
+Hong Kong,N,N,N,Real Estate,1996,Relation,6,The Hustler
+Russia,Y,Y,N,Agriculture,NA,Founder,NA,The Hustler
+China,Y,Y,N,Manufacturing,1997,NA,34,The Hustler
+United States,Y,Y,N,Service,NA,NA,NA,The Ghost
+China,Y,N,N,Construction and Engineering,NA,NA,NA,The Ghost
+Hong Kong,Y,N,N,Media,NA,NA,NA,The Ghost
+United States,Y,N,N,Manufacturing,1950,NA,25,The Consistent
+Indonesia,N,N,N,Fashion and Retail,1950,Founder,24,The Consistent
+Egypt,Y,N,N,Construction and Engineering,1950,NA,21,The Consistent
+Philippines,Y,N,N,Real Estate,1955,Founder,28,The Hustler
+United States,N,Y,N,Automotive,NA,NA,NA,The Hustler
+United States,N,Y,N,Retail,NA,NA,NA,The Consistent
+United States,N,Y,N,Media,1962,NA,26,The Consistent
+Philippines,Y,Y,N,Food and Beverage,NA,NA,NA,The Hustler
+United States,N,Y,N,Retail,NA,NA,NA,The Consistent
+Canada,Y,N,N,Media,1971,Founder,38,The Hustler
+United States,N,Y,N,Investments,NA,Relation,NA,The Hustler
+Indonesia,Y,N,N,Manufacturing,NA,NA,NA,The Hustler
+Germany,N,N,N,Media,1948,NA,9,The Consistent
+India,Y,N,N,Manufacturing,1987,Founder,51,The Hustler
+Australia,Y,N,N,Construction and Engineering,1960,Founder,24,The Hustler
+United States,Y,N,N,Automotive,NA,NA,NA,The Ghost
+United States,Y,N,N,Technology,NA,NA,NA,The Consistent
+France,N,N,N,Construction and Engineering,1853,Relation,-86,The Hustler
+Italy,Y,N,N,Automotive,1961,NA,21,The Consistent
+Spain,Y,N,N,Investments,1952,NA,9,The Consistent
+United States,Y,Y,N,Finance,1974,Founder,32,The Consistent
+Mexico,Y,N,N,Finance,1884,NA,-60,The Consistent
+Australia,Y,N,N,Retail,NA,NA,NA,The Ghost
+United States,N,N,N,Energy,1974,Founder,39,The Ghost
+South Korea,Y,N,N,Retail,NA,NA,NA,The Hustler
+Australia,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Media,NA,NA,NA,The Ghost
+Indonesia,N,N,N,Retail,1951,Founder,10,The Ghost
+Japan,N,N,Y,Food and Beverage,1899,NA,-47,The Hustler
+Australia,Y,N,N,Real Estate,NA,Founder,NA,The Hustler
+United Kingdom,N,N,N,Food and Beverage,1887,NA,-57,The Hustler
+Canada,Y,Y,N,Real Estate,1975,CEO/Chairman,28,The Consistent
+Japan,Y,Y,N,Gaming,NA,NA,NA,The Hustler
+United States,Y,Y,N,Fashion and Retail,1970,NA,23,The Consistent
+India,Y,Y,N,Real Estate,NA,NA,NA,The Hustler
+Brazil,Y,N,N,Fashion and Retail,1977,NA,28,The Consistent
+China,Y,N,N,Food and Beverage,1989,Founder,40,The Hustler
+United States,N,N,N,Agriculture,NA,NA,NA,The Hustler
+Russia,Y,Y,N,Investments,1994,NA,45,The Consistent
+Iceland,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Australia,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Indonesia,Y,N,N,Metals and Mining,1973,Founder,25,The Consistent
+Turkey,Y,N,N,Diversified,NA,NA,NA,The Ghost
+Japan,N,N,N,Construction and Engineering,1610,Relation,-333,The Ghost
+Turkey,N,N,Y,Food and Beverage,NA,NA,NA,The Ghost
+United States,N,Y,N,Investments,2001,NA,48,The Consistent
+Taiwan,N,N,N,Food and Beverage,NA,Founder,NA,The Consistent
+Turkey,N,N,N,Retail,1944,NA,-7,The Hustler
+China,Y,N,N,Technology,1990,Founder,36,The Consistent
+Oman,Y,N,N,Energy,1982,Founder,31,The Hustler
+Malaysia,Y,N,N,Diversified,1985,Founder,34,The Hustler
+India,Y,N,N,Software,NA,NA,NA,The Consistent
+Singapore,N,N,N,Real Estate,1947,Relation,-8,The Consistent
+United States,Y,Y,N,Retail,NA,NA,NA,The Consistent
+Taiwan,N,N,N,Food and Beverage,NA,Founder,NA,The Consistent
+United States,N,N,N,Service,NA,NA,NA,The Ghost
+Israel,Y,N,N,Metals and Mining,1934,Founder,-22,The Consistent
+China,Y,N,N,Real Estate,1992,NA,37,The Consistent
+Russia,Y,N,N,Metals and Mining,NA,NA,NA,The Hustler
+United States,Y,N,N,Agriculture,NA,NA,NA,The Ghost
+South Korea,N,Y,Y,Diversified,NA,NA,NA,The Ghost
+Italy,Y,N,N,Fashion and Retail,1987,Founder,29,The Consistent
+Turkey,N,N,Y,Construction and Engineering,1957,NA,-2,The Consistent
+China,Y,N,N,Retail,NA,NA,NA,The Ghost
+United States,N,N,N,Agriculture,NA,NA,NA,The Hustler
+Russia,Y,N,N,Energy,NA,Founder,NA,The Hustler
+Russia,Y,Y,N,Diversified,2004,NA,47,The Hustler
+United States,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,N,Finance,NA,NA,NA,The Hustler
+India,Y,Y,N,Energy,1998,Founder,38,The Hustler
+Russia,Y,Y,N,Energy,1989,Supervisory Board Or Directors,28,The Consistent
+United States,Y,Y,N,Finance,1992,NA,34,The Hustler
+Hong Kong,Y,Y,N,Automotive,NA,NA,NA,The Hustler
+Nigeria,N,N,N,Retail,NA,NA,NA,The Consistent
+Italy,Y,Y,N,Fashion and Retail,1987,Founder,25,The Consistent
+Russia,Y,Y,N,Health care,NA,NA,NA,The Hustler
+Ukraine,Y,Y,N,Finance,NA,Founder,NA,The Hustler
+Germany,N,N,N,Media,1948,Relation,-16,The Consistent
+Nigeria,Y,N,N,Service,NA,NA,NA,The Hustler
+China,Y,N,Y,Health care,NA,NA,NA,The Ghost
+Malaysia,N,Y,N,Energy,1975,Founder,14,The Hustler
+United States,Y,Y,N,Technology,NA,NA,NA,The Ghost
+Czech Republic,Y,Y,Y,Metals and Mining,1994,Founder,34,The Hustler
+Russia,Y,Y,Y,Diversified,NA,NA,NA,The Hustler
+Finland,N,N,N,Manufacturing,NA,Relation,NA,The Consistent
+China,Y,Y,N,Health care,NA,NA,NA,The Hustler
+South Africa,Y,Y,N,Health care,1997,Founder,33,The Consistent
+Russia,Y,Y,N,Construction and Engineering,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Software,2007,Founder,42,The Hustler
+China,Y,Y,N,Service,1993,Founder,28,The Consistent
+China,Y,N,N,Health care,1999,Chairman,33,The Hustler
+Greece,N,N,N,Logistics,NA,NA,NA,The Ghost
+China,Y,Y,Y,Energy,NA,NA,NA,The Ghost
+Italy,Y,Y,N,Telecom,1999,Founder,41,The Ghost
+China,Y,N,N,Retail,NA,NA,NA,The Hustler
+Russia,Y,N,N,Telecom,NA,Founder,NA,The Consistent
+South Korea,Y,Y,N,Gaming,NA,NA,NA,The Consistent
+Russia,Y,N,N,Finance,1990,Founder,23,The Hustler
+Russia,Y,Y,N,Manufacturing,1999,Founder,35,The Hustler
+United States,Y,Y,N,Energy,NA,NA,NA,The Ghost
+China,Y,Y,N,Manufacturing,NA,NA,NA,The Ghost
+Ukraine,Y,Y,N,Food and Beverage,1998,NA,30,The Consistent
+China,Y,N,N,Automotive,2004,Founder,35,The Consistent
+India,Y,N,N,Energy,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Health care,NA,NA,NA,The Hustler
+China,Y,N,N,Telecom,1995,Chairman,22,The Consistent
+Turkey,N,N,N,Diversified,NA,NA,NA,The Ghost
+Switzerland,Y,N,Y,Finance,NA,NA,NA,The Consistent
+Israel,N,N,N,Metals and Mining,1996,Founder,23,The Consistent
+Ukraine,Y,Y,N,Metals and Mining,1960,CEO,-14,The Hustler
+China,Y,Y,N,Gaming,1999,Founder,27,The Hustler
+China,Y,N,N,Retail,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Energy,NA,Chairman,NA,The Hustler
+Russia,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Norway,Y,N,N,Logistics,1959,Founder,28,The Hustler
+Brazil,N,N,N,Service,NA,NA,NA,The Ghost
+Malaysia,Y,N,N,Real Estate,1990,NA,35,The Hustler
+Russia,Y,Y,N,Real Estate,1991,Founder,23,The Hustler
+China,Y,Y,Y,Software,2005,Founder,35,The Hustler
+China,Y,N,N,Retail,1999,CEO,NA,The Hustler
+Australia,Y,N,N,Gaming,1953,Founder,30,The Consistent
+Brazil,N,N,N,Energy,NA,Relation,NA,The Consistent
+Japan,N,N,N,Medicine,1912,Relation,-16,The Hustler
+United States,Y,Y,N,Energy,NA,NA,NA,The Ghost
+India,N,Y,N,Diversified,NA,NA,NA,The Ghost
+Brazil,Y,N,N,Metals and Mining,1966,Founder,39,The Hustler
+Hong Kong,N,N,N,Retail,1888,Relation,-42,The Consistent
+Indonesia,Y,N,N,Metals and Mining,1996,Founder,69,The Hustler
+United States,Y,Y,N,Finance,NA,Founder,NA,The Hustler
+United States,N,N,N,Retail,NA,NA,NA,The Hustler
+Turkey,Y,N,N,Food and Beverage,NA,NA,NA,The Ghost
+Australia,N,N,N,Retail,1918,Relation,-14,The Hustler
+Hong Kong,Y,Y,N,Real Estate,1972,NA,37,The Hustler
+United Kingdom,N,N,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,1969,Founder,33,The Consistent
+Philippines,Y,N,Y,Diversified,NA,NA,NA,The Hustler
+United States,N,Y,N,Investments,NA,NA,NA,The Ghost
+United States,Y,N,N,Energy,1920,Former Ceo,-15,The Hustler
+Brazil,N,N,N,Finance,1943,Relation,5,The Consistent
+South Korea,N,Y,N,Automotive,1941,Relation,3,The Consistent
+Japan,N,N,N,Technology,1959,Founder,28,The Ghost
+Israel,Y,N,N,Finance,1955,Founder,20,The Hustler
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+Romania,Y,N,N,Finance,NA,NA,NA,The Hustler
+France,N,N,Y,Automotive,1957,NA,18,The Consistent
+Japan,Y,Y,N,Gaming,NA,NA,NA,The Hustler
+Australia,Y,N,N,Construction and Engineering,NA,NA,NA,The Ghost
+Israel,N,N,N,Food and Beverage,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Real Estate,NA,NA,NA,The Hustler
+United States,N,Y,N,Media,NA,NA,NA,The Ghost
+United Kingdom,Y,N,N,Metals and Mining,1989,NA,50,The Hustler
+United States,N,N,N,Fashion and Retail,1948,NA,6,The Consistent
+United States,Y,Y,Y,Investments,NA,NA,NA,The Ghost
+India,N,Y,N,Construction and Engineering,NA,NA,NA,The Hustler
+Peru,Y,Y,N,Fashion and Retail,1988,NA,43,The Consistent
+Spain,Y,N,N,Investments,1952,NA,6,The Consistent
+Japan,N,N,N,Service,1955,Relation,9,The Consistent
+Egypt,Y,Y,Y,Diversified,1952,NA,6,The Consistent
+Turkey,N,N,N,Finance,NA,Relation,NA,The Consistent
+France,N,N,N,Media,1926,Relation,-18,The Hustler
+United States,Y,Y,N,Food and Beverage,NA,NA,NA,The Ghost
+Turkey,N,N,N,Finance,NA,NA,NA,The Consistent
+Taiwan,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+United Kingdom,Y,Y,N,Telecom,1998,NA,52,The Consistent
+Brazil,Y,N,N,Energy,NA,NA,NA,The Ghost
+Brazil,Y,N,N,Media,1953,NA,8,The Hustler
+Australia,Y,N,N,Real Estate,1976,Founder,32,The Hustler
+Germany,N,N,N,Media,1948,Relation,6,The Ghost
+Spain,Y,N,N,Construction and Engineering,NA,NA,NA,The Ghost
+Canada,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Taiwan,Y,N,N,Technology,1997,CEO,46,The Consistent
+United States,N,N,N,Energy,NA,NA,NA,The Hustler
+France,N,N,N,Automotive,1957,Relation,7,The Consistent
+South Korea,N,N,N,Manufacturing,1967,NA,15,The Consistent
+China,Y,N,Y,Fashion and Retail,1975,NA,24,The Consistent
+United States,Y,Y,Y,Real Estate,NA,NA,NA,The Ghost
+South Korea,N,Y,N,Technology,1947,Relation,-3,The Hustler
+Turkey,N,N,N,Logistics,NA,NA,NA,The Ghost
+China,Y,N,N,Manufacturing,NA,NA,NA,The Hustler
+Australia,Y,N,N,Real Estate,1913,Relation,-40,The Consistent
+Russia,Y,N,N,Automotive,1996,Founder,47,The Hustler
+India,N,N,Y,Telecom,NA,NA,NA,The Ghost
+Russia,Y,N,N,Automotive,NA,NA,NA,The Ghost
+Brazil,Y,N,N,Service,NA,NA,NA,The Ghost
+United States,Y,N,N,Manufacturing,1979,Founder,25,The Hustler
+India,Y,N,N,Software,NA,NA,NA,The Hustler
+China,Y,N,N,Health care,NA,NA,NA,The Hustler
+Denmark,N,Y,N,Technology,1907,Relation,-45,The Hustler
+United States,Y,N,N,Media,NA,NA,NA,The Ghost
+China,N,N,N,Manufacturing,NA,NA,NA,The Ghost
+Australia,Y,N,N,Construction and Engineering,NA,NA,NA,The Ghost
+United States,Y,Y,N,Media,NA,NA,NA,The Ghost
+United States,Y,N,N,Service,NA,NA,NA,The Ghost
+Spain,N,Y,N,Construction and Engineering,1952,NA,-4,The Consistent
+Russia,Y,Y,N,Energy,1991,Founder,38,The Hustler
+China,N,N,N,Manufacturing,NA,NA,NA,The Ghost
+United States,Y,Y,N,Media,1980,Founder,34,The Ghost
+China,N,N,N,Fashion and Retail,NA,NA,NA,The Ghost
+Japan,N,N,N,Retail,1934,Relation,-13,The Ghost
+United States,N,N,N,Retail,1923,Relation,-34,The Consistent
+Israel,N,N,N,Metals and Mining,NA,NA,NA,The Consistent
+Malaysia,Y,N,N,Software,1989,NA,35,The Hustler
+Romania,Y,N,N,Agriculture,1995,Founder,41,The Hustler
+United States,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+Japan,Y,Y,N,Retail,NA,NA,NA,The Ghost
+Turkey,N,Y,N,Health care,NA,NA,NA,The Ghost
+China,Y,Y,N,Diversified,2007,Chairman,52,The Hustler
+United States,Y,Y,Y,Finance,1993,NA,36,The Hustler
+China,Y,N,Y,Diversified,1990,Chairman,32,The Consistent
+China,Y,N,N,Media,2005,NA,48,The Consistent
+Russia,Y,Y,N,Retail,NA,NA,NA,The Consistent
+Morocco,Y,N,N,Real Estate,1988,Founder,31,The Hustler
+Uganda,Y,N,N,Real Estate,1985,NA,30,The Hustler
+United Kingdom,Y,N,Y,Energy,1981,CEO,22,The Consistent
+United Kingdom,Y,N,N,Real Estate,NA,NA,NA,The Consistent
+Singapore,Y,N,N,Fashion and Retail,NA,NA,NA,The Consistent
+Cyprus,N,N,N,Service,NA,NA,NA,The Consistent
+Switzerland,Y,N,N,Retail,1984,Founder,25,The Consistent
+Hong Kong,Y,N,N,Real Estate,NA,NA,NA,The Hustler
+China,Y,N,N,Manufacturing,NA,NA,NA,The Ghost
+Ukraine,Y,N,N,Metals and Mining,NA,Founder,NA,The Consistent
+China,Y,Y,N,Real Estate,NA,Chairman,NA,The Consistent
+Russia,Y,Y,N,Energy,NA,Founder,NA,The Consistent
+United States,Y,Y,Y,Energy,NA,Founder,NA,The Hustler
+China,N,N,Y,Logistics,NA,NA,NA,The Ghost
+Spain,N,N,N,Metals and Mining,1902,Relation,-61,The Hustler
+Spain,N,Y,Y,Construction and Engineering,1952,Relation,-11,The Consistent
+Ukraine,Y,N,N,Diversified,NA,NA,NA,The Consistent
+Singapore,Y,N,N,Real Estate,NA,Founder,NA,The Consistent
+Russia,Y,Y,N,Finance,1991,Founder,28,The Consistent
+Russia,Y,Y,N,Media,1997,Founder,34,The Hustler
+United States,Y,Y,N,Media,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,1999,Founder,35,The Consistent
+China,Y,Y,N,Service,2001,NA,37,The Consistent
+Russia,Y,Y,N,Energy,NA,Founder,NA,The Consistent
+Russia,Y,N,N,Agriculture,NA,NA,NA,The Hustler
+United Kingdom,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Italy,N,N,N,Fashion and Retail,1920,NA,-46,The Consistent
+Indonesia,Y,N,N,Media,1989,Founder,24,The Consistent
+United States,Y,Y,Y,Telecom,NA,NA,NA,The Ghost
+Hong Kong,Y,N,Y,Fashion and Retail,NA,NA,NA,The Ghost
+India,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+China,Y,Y,N,Manufacturing,NA,NA,NA,The Ghost
+Turkey,N,Y,Y,Diversified,NA,NA,NA,The Ghost
+China,Y,Y,N,Retail,1994,NA,29,The Hustler
+China,Y,N,N,Manufacturing,NA,NA,NA,The Ghost
+China,Y,N,N,Retail,NA,NA,NA,The Ghost
+China,Y,N,N,Manufacturing,NA,NA,NA,The Hustler
+China,Y,Y,N,Real Estate,NA,NA,NA,The Hustler
+South Korea,Y,Y,N,Software,1999,Founder,31,The Hustler
+Poland,Y,N,N,Retail,NA,NA,NA,The Consistent
+South Korea,N,Y,N,Retail,NA,NA,NA,The Hustler
+Hong Kong,Y,N,Y,Logistics,2005,CEO,36,The Consistent
+Russia,Y,Y,N,Telecom,NA,Founder,NA,The Hustler
+Romania,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+New Zealand,Y,Y,N,Finance,NA,NA,NA,The Ghost
+United States,Y,Y,N,Fashion and Retail,2000,Founder,30,The Consistent
+United Kingdom,Y,N,N,Investments,NA,NA,NA,The Ghost
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+Turkey,N,Y,Y,Diversified,NA,NA,NA,The Ghost
+Hong Kong,Y,N,Y,Energy,NA,NA,NA,The Ghost
+Brazil,N,N,N,Logistics,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Real Estate,NA,Founder,NA,The Hustler
+Russia,Y,Y,N,Real Estate,NA,Founder,NA,The Hustler
+Russia,Y,Y,N,Real Estate,NA,Founder,NA,The Hustler
+India,Y,N,N,Investments,NA,NA,NA,The Ghost
+Brazil,N,N,N,Logistics,NA,NA,NA,The Ghost
+India,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Japan,Y,N,N,Software,NA,Founder,NA,The Consistent
+Turkey,N,N,N,Diversified,NA,NA,NA,The Hustler
+Ukraine,Y,Y,N,Agriculture,NA,NA,NA,The Ghost
+Brazil,N,N,N,Logistics,NA,NA,NA,The Ghost
+Brazil,N,Y,Y,Automotive,NA,NA,NA,The Ghost
+Lebanon,N,N,N,Diversified,NA,NA,NA,The Ghost
+Brazil,N,N,Y,Media,1950,Relation,-8,The Hustler
+Brazil,N,Y,N,Media,1950,Relation,NA,The Hustler
+Brazil,N,Y,N,Media,1950,Relation,NA,The Hustler
+Austria,N,N,N,Manufacturing,1932,Relation,-10,The Hustler
+China,Y,N,N,Retail,1992,Founder,50,The Hustler
+Israel,Y,N,N,Finance,NA,Founder,NA,The Hustler
+Brazil,N,N,Y,Diversified,NA,Relation,NA,The Hustler
+Brazil,N,Y,N,Diversified,NA,Relation,NA,The Hustler
+Brazil,N,N,N,Diversified,NA,Relation,NA,The Hustler
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+China,Y,N,Y,Software,2004,Founder,34,The Hustler
+Turkey,N,N,N,Media,NA,NA,NA,The Ghost
+Kazakhstan,Y,N,N,Finance,NA,NA,NA,The Ghost
+Germany,Y,N,N,Service,NA,NA,NA,The Ghost
+Macau,Y,N,N,Real Estate,1997,Vice Chairman,72,The Hustler
+Chile,N,N,N,Diversified,NA,NA,NA,The Ghost
+Lebanon,N,N,N,Diversified,NA,NA,NA,The Ghost
+China,Y,N,N,Retail,1999,Founder,NA,The Hustler
+United States,N,Y,N,Energy,NA,NA,NA,The Hustler
+United States,Y,N,N,Automotive,NA,NA,NA,The Hustler
+Israel,Y,N,N,Software,1982,NA,53,The Consistent
+United States,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+United States,N,N,N,Retail,NA,NA,NA,The Ghost
+United States,Y,N,N,Media,NA,NA,NA,The Ghost
+United States,N,Y,N,Media,NA,NA,NA,The Ghost
+United States,N,Y,N,Media,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Media,1928,Relation,5,The Ghost
+United States,Y,Y,Y,Investments,1961,Founder,35,The Ghost
+United States,N,N,N,Finance,NA,NA,NA,The Hustler
+United States,Y,Y,Y,Manufacturing,1982,Founder,45,The Hustler
+United States,N,N,N,Media,1984,Relation,55,The Ghost
+Australia,Y,N,N,Media,NA,NA,NA,The Ghost
+France,N,N,N,Health care,1968,NA,31,The Hustler
+Austria,N,N,N,Manufacturing,1969,Relation,33,The Hustler
+Japan,N,Y,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,N,N,Finance,NA,NA,NA,The Consistent
+United States,N,N,N,Food and Beverage,NA,NA,NA,The Ghost
+United Arab Emirates,Y,N,N,Diversified,NA,NA,NA,The Ghost
+United States,Y,Y,N,Manufacturing,NA,NA,NA,The Ghost
+Turkey,Y,N,N,Diversified,NA,NA,NA,The Ghost
+France,N,N,N,Metals and Mining,NA,Relation,NA,The Hustler
+United States,Y,N,N,Fashion and Retail,NA,NA,NA,The Hustler
+Turkey,Y,N,N,Food and Beverage,NA,Founder,NA,The Consistent
+United States,Y,N,N,Finance,NA,NA,NA,The Ghost
+France,N,N,N,Metals and Mining,NA,NA,NA,The Hustler
+Russia,Y,Y,N,Food and Beverage,NA,Founder,NA,The Consistent
+Indonesia,Y,N,N,Metals and Mining,NA,NA,NA,The Hustler
+United States,N,N,N,Technology,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Energy,1983,NA,38,The Consistent
+Indonesia,Y,N,N,Real Estate,NA,NA,NA,The Hustler
+India,Y,Y,N,Health care,NA,NA,NA,The Ghost
+United States,N,Y,N,Manufacturing,NA,NA,NA,The Ghost
+United States,Y,Y,N,Sports,NA,NA,NA,The Ghost
+Turkey,Y,N,N,Telecom,1994,NA,47,The Consistent
+United Kingdom,Y,N,N,Retail,NA,NA,NA,The Hustler
+Germany,Y,N,N,Fashion and Retail,NA,NA,NA,The Ghost
+United States,N,Y,N,Food and Beverage,NA,NA,NA,The Ghost
+United States,Y,Y,N,Investments,NA,NA,NA,The Hustler
+United States,N,Y,N,Construction and Engineering,NA,NA,NA,The Ghost
+Thailand,N,N,N,Diversified,1983,Founder,33,The Consistent
+Israel,Y,N,N,Service,NA,NA,NA,The Ghost
+United States,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+India,Y,N,N,Finance,1986,Vice Chairman,35,The Hustler
+China,Y,N,N,Food and Beverage,1986,Founder,36,The Consistent
+United States,N,N,N,Manufacturing,NA,NA,NA,The Ghost
+United States,Y,Y,N,Media,NA,NA,NA,The Ghost
+United States,N,Y,N,Sports,NA,NA,NA,The Ghost
+Russia,Y,N,N,Finance,NA,Chairman,NA,The Hustler
+United States,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Service,NA,NA,NA,The Consistent
+United States,Y,Y,Y,Retail,1984,Founder,35,The Hustler
+Turkey,Y,N,N,Construction and Engineering,1981,NA,28,The Consistent
+Italy,Y,N,N,Fashion and Retail,1978,Founder,25,The Consistent
+Australia,Y,N,N,Manufacturing,1983,Founder,30,The Consistent
+Russia,Y,Y,N,Energy,NA,Founder,NA,The Consistent
+Turkey,N,N,N,Media,NA,NA,NA,The Ghost
+China,Y,N,Y,Retail,NA,NA,NA,The Hustler
+Russia,Y,Y,N,Diversified,NA,Founder,NA,The Consistent
+Norway,N,Y,N,Finance,1980,NA,25,The Consistent
+Pakistan,N,N,N,Diversified,NA,NA,NA,The Ghost
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+South Korea,N,Y,N,Diversified,NA,Relation,NA,The Consistent
+China,Y,N,N,Real Estate,NA,Founder,NA,The Hustler
+Serbia,Y,N,N,Finance,NA,NA,NA,The Ghost
+United States,Y,Y,N,Technology,NA,NA,NA,The Consistent
+Russia,Y,Y,N,Construction and Engineering,NA,Founder,NA,The Consistent
+China,Y,N,N,Manufacturing,NA,NA,NA,The Consistent
+United States,Y,N,N,Retail,2004,Founder,51,The Hustler
+Hong Kong,N,N,N,Real Estate,1962,Relation,8,The Hustler
+United States,Y,Y,Y,Finance,NA,NA,NA,The Ghost
+China,Y,N,N,Finance,2000,Chairman,42,The Hustler
+Japan,N,N,N,Investments,1978,President,30,The Ghost
+South Korea,N,Y,Y,Manufacturing,NA,NA,NA,The Ghost
+Taiwan,N,N,N,Manufacturing,1991,NA,32,The Consistent
+Turkey,Y,N,N,Energy,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Finance,NA,NA,NA,The Ghost
+Brazil,Y,N,N,Education,1987,Founder,31,The Hustler
+China,Y,N,N,Automotive,NA,NA,NA,The Ghost
+United States,N,Y,N,Finance,NA,NA,NA,The Hustler
+China,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+Mexico,Y,N,N,Retail,NA,NA,NA,The Ghost
+Israel,Y,N,N,Diversified,NA,NA,NA,The Ghost
+China,Y,Y,N,Investments,NA,NA,NA,The Ghost
+United States,N,Y,N,Finance,NA,NA,NA,The Hustler
+Russia,Y,Y,N,Finance,1992,Founder,34,The Hustler
+Russia,Y,N,N,Finance,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Construction and Engineering,1991,NA,29,The Consistent
+United States,Y,Y,N,Investments,1993,Founder,31,The Consistent
+China,Y,N,N,Real Estate,1995,NA,33,The Consistent
+South Korea,N,N,N,Manufacturing,NA,NA,NA,The Ghost
+United States,Y,N,N,Retail,NA,NA,NA,The Hustler
+China,Y,Y,N,Agriculture,NA,NA,NA,The Hustler
+China,Y,N,N,Manufacturing,1984,Chairman,20,The Consistent
+Hong Kong,Y,N,Y,Retail,NA,NA,NA,The Ghost
+Taiwan,N,Y,N,Media,NA,NA,NA,The Ghost
+Russia,Y,N,N,Manufacturing,NA,NA,NA,The Ghost
+Turkey,N,N,N,Diversified,NA,NA,NA,The Ghost
+Turkey,N,N,N,Energy,NA,NA,NA,The Ghost
+Poland,Y,N,N,Manufacturing,NA,NA,NA,The Ghost
+United States,N,N,N,Technology,1966,Founder,10,The Ghost
+Cyprus,N,Y,N,Service,NA,NA,NA,The Consistent
+China,Y,N,Y,Construction and Engineering,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Retail,NA,NA,NA,The Hustler
+United Kingdom,N,N,N,Technology,1996,Founder,32,The Hustler
+Russia,Y,Y,N,Metals and Mining,NA,NA,NA,The Ghost
+Tanzania,Y,N,N,Media,1999,Investor,34,The Hustler
+United States,Y,Y,N,Finance,NA,NA,NA,The Ghost
+Turkey,N,N,N,Diversified,NA,NA,NA,The Hustler
+China,Y,Y,N,Diversified,1993,Founder,29,The Hustler
+China,Y,N,N,Manufacturing,NA,NA,NA,The Hustler
+Russia,Y,Y,N,Retail,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Retail,NA,NA,NA,The Hustler
+United States,N,Y,N,Finance,NA,NA,NA,The Ghost
+China,Y,N,N,Health care,2000,Founder,32,The Consistent
+Russia,Y,Y,N,Food and Beverage,NA,NA,NA,The Ghost
+Turkey,N,Y,N,Finance,NA,NA,NA,The Ghost
+China,Y,N,N,Logistics,NA,NA,NA,The Ghost
+Ukraine,Y,Y,N,Food and Beverage,1993,Founder,28,The Hustler
+Indonesia,N,Y,N,Agriculture,NA,NA,NA,The Ghost
+China,Y,Y,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,N,Retail,2004,NA,38,The Hustler
+Russia,Y,N,N,Diversified,1993,Founder,27,The Hustler
+Lithuania,Y,N,N,Retail,NA,NA,NA,The Hustler
+Turkey,N,Y,N,Diversified,NA,NA,NA,The Ghost
+Belgium,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Diversified,NA,NA,NA,The Consistent
+China,Y,N,N,Metals and Mining,NA,NA,NA,The Ghost
+United States,Y,Y,N,Technology,NA,NA,NA,The Ghost
+United States,Y,Y,N,Technology,NA,NA,NA,The Ghost
+United States,Y,Y,Y,Investments,NA,NA,NA,The Ghost
+Russia,Y,N,N,Logistics,NA,NA,NA,The Ghost
+Turkey,N,N,N,Diversified,NA,NA,NA,The Ghost
+United Kingdom,N,Y,N,Retail,NA,NA,NA,The Ghost
+Brazil,Y,N,N,Manufacturing,NA,NA,NA,The Ghost
+United States,Y,Y,N,Technology,2003,NA,29,The Consistent
+Russia,Y,Y,N,Finance,NA,NA,NA,The Ghost
+United Kingdom,N,N,N,Finance,1811,Relation,-161,The Ghost
+United States,Y,Y,N,Media,2004,Founder,30,The Hustler
+Turkey,N,Y,N,Finance,NA,NA,NA,The Ghost
+India,N,Y,N,Construction and Engineering,NA,NA,NA,The Ghost
+Turkey,N,Y,N,Media,NA,NA,NA,The Ghost
+Turkey,N,N,Y,Media,NA,NA,NA,The Ghost
+Russia,Y,Y,N,Retail,NA,NA,NA,The Ghost
+Ukraine,Y,N,N,Food and Beverage,NA,NA,NA,The Ghost
+India,Y,N,N,Real Estate,NA,NA,NA,The Ghost
+United States,Y,Y,N,Software,2007,Founder,25,The Consistent
+Turkey,N,Y,Y,Media,NA,NA,NA,The Ghost
+China,N,N,N,Metals and Mining,NA,NA,NA,The Ghost

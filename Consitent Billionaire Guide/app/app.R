@@ -10,13 +10,34 @@ library(scales)
 library(lubridate)
 library(shinysky)
 library(stringr)
-h2o.init()
-df = read.csv("billionaire_data.csv")
-dat = df %>% 
-  filter(Cluster !="The Newbie") %>%
-  filter(is.na(Age)==F)
+library(lime)
+library(ggplot2)
 
-model = h2o.loadModel("GBM_Model")
+h2o.init()
+dat = read.csv("billionaire_data_for_ml.csv")
+model = h2o.loadModel("C:/Users/rose.anwuri/Documents/TheArtandScienceofData/Consitent Billionaire Guide/app/GBM_Model")
+model_type.H2OMultinomialModel <<- function(x, ...) "classification"
+  
+
+
+predict_model.H2OMultinomialModel <<- function(x, newdata, type, ...) {
+  # Function performs prediction and returns dataframe with Response
+  #
+  # x is h2o model
+  # newdata is data frame
+  # type is only setup for data frame
+  
+  pred <- h2o.predict(x, as.h2o(newdata))
+  
+  # return classification probabilities only
+  return(as.data.frame(pred[,-1]))
+  
+}
+explainer <- lime::lime(
+  dat, 
+  model          = model, 
+  bin_continuous = T)
+
 Countries=levels(dat$Country)
 Sectors = levels(dat$Sector)
 Relations = levels(dat$relation)
@@ -41,7 +62,7 @@ busyIndicators <- function(text = "Calculation in progress..",img = "shinysky/bu
       ",wait)
     )
   )	
-  }
+}
 ui = shinyUI(
   navbarPage("Billion Dollar Questions",inverse = F,collapsible = T,fluid = T,
              theme=shinytheme("flatly"),
@@ -206,9 +227,9 @@ display:none;
                                               
                                               busyIndicators(text = h4("Running Model...",style="font-size: 40px; font-family:Papyrus;"),img = "Loading2.gif"),
                                               
-                                              textOutput("prefix_final"),
+                                             conditionalPanel("!$('html').hasClass('shiny-busy')",textOutput("prefix_final"),
                                               div(imageOutput("image_final"), style="text-align: center;"),
-                                              textOutput("prediction_final"),
+                                              textOutput("prediction_final")),
                                               br(),
                                               tags$head(tags$style("#prefix_final{
                                                                     font-size: 6vh; text-align:center;
@@ -228,7 +249,11 @@ display:none;
                                                                    border-bottom-color: #546e7a;
                                                                    border-radius: 0}")),
                                               
-                                              conditionalPanel("typeof output.image_final !== 'undefined' &&!$('html').hasClass('shiny-busy')",div(uiOutput("urlInput"),style="text-align:center;"))
+                                             conditionalPanel("typeof output.image_final !== 'undefined' &&!$('html').hasClass('shiny-busy')", div(uiOutput("urlInput"),style="text-align:center;")),
+                                             br(),
+                                             
+                                             conditionalPanel("!$('html').hasClass('shiny-busy')",
+                                             plotOutput("limePlot"))
                                               
                                               ))),
              tabPanel("About", icon = icon("info"),
@@ -247,23 +272,47 @@ display:none;
 server = shinyServer(function(input, output, session){
   toggleModal(session, "startupMessage", toggle = "open")
   
-  category_predictors = function(){
+  feature_processing=function(){
     self_made=ifelse(input$selfMade=="Yes","Y","N")
     year_born = year(Sys.Date())-input$Age
-    age_at_start = ifelse(input$founding_year<year_born,0,input$founding_year-year(Sys.Date())+input$Age)
+    age_at_start = input$founding_year-year(Sys.Date())+input$Age
     bachelors_degree=ifelse(input$Bsc=="Yes","Y","N")
     MBA=ifelse(input$MBA=="Yes","Y","N")
     relationship = ifelse(input$selfMade=="Yes",input$relation,input$buffer)
     data_list = list(input$Country,self_made,bachelors_degree,MBA,input$Sector,
-                     input$founding_year,relationship,age_at_start,input$Age)
+                     input$founding_year,relationship,age_at_start)
     names(data_list)=model@parameters$x
-    data_list =as.h2o(data_list)
+    return(data_list)
+  }
+  category_predictors = function(){
+    
+    df=feature_processing()
+    data_list=as.h2o(df)
     prediction = predict(model,data_list)$predict
     prediction = as.vector(prediction)
     prediction=sub("The","A",paste(prediction,"Billionaire"))
     
     return(prediction)
   }
+  lime_explainer=function(){
+    df=feature_processing()
+    df_lime = as.data.frame(df)
+    explanation <- lime::explain(
+      df_lime, 
+      explainer    = explainer, 
+      n_labels     = 1, 
+      n_features   = 8,
+      kernel_width = 0.5)
+    
+    return(plot_features(explanation)+
+             labs(title="Feature Importance Visualisation",
+           subtitle="Example: If Sector is Retail, the bar is green and the prediction is Ghost:\nIt simply means that Retail is one factor that supports you being classfied as a ghost.")+
+             theme(text=element_text(size = 16)))
+  }
+  lime_plot=eventReactive(input$run, {
+    lime_explainer()
+  })
+  output$limePlot = renderPlot({lime_plot()})
   prediction_reactive= eventReactive(input$run, {
     paste(category_predictors())
   })
@@ -271,7 +320,7 @@ server = shinyServer(function(input, output, session){
   output$urlInput = renderUI({
     a(p(icon("twitter"),"SHARE ON TWITTER",style="padding-top:5%"),type="button",class = "waves-effect waves-light btn shiny-material-button z-depth-5 animated infinite pulse" , 
       style = "fontweight:600; background-color: #4099FF; color: #FFFFFF; border-radius: 0;border-width: 0;padding:5px 10px", target = "_blank",href=paste0(sprintf('https://twitter.com/intent/tweet?text=I+am+going+to+be+%s', 
-                                                                                                                  str_replace_all(prediction_reactive()," ","+")),"!+Check+yours+out+at:&url=https%3A%2F%2Ftheartandscienceofdata.shinyapps.io%2FBillionDollarQuestions") )
+                                                                                                                  str_replace_all(prediction_reactive()," ","+")),"!+Check+yours+out+at:&url=https://goo.gl/jFsjbD") )
   })
   
   

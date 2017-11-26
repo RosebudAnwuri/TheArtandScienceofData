@@ -138,7 +138,7 @@ education_columns_creator=function(df){
 }
 
 #Extract Model ID from model
-getID = function(model,newID){
+getID = function(model){
   ID=model@model_id
   return(ID)
 }
@@ -150,12 +150,12 @@ test_accuracy = function(model){
 }
 
 
-model_type.H2OBinomialModel <- function(x, ...) {
+model_type.H2OMultinomialModel = function(x, ...) {
   return("classification")
   
 }
 
-predict_model.H2OBinomialModel <- function(x, newdata, type, ...) {
+predict_model.H2OMultinomialModel = function(x, newdata, type, ...) {
   # Function performs prediction and returns dataframe with Response
   #
   # x is h2o model
