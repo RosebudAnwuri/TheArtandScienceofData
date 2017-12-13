@@ -1497,7 +1497,7 @@ Yakir Gabay,1.7,50,Cyprus,Y,N,N,N,N,N,N,N,2017,1,0,0,0,Real Estate,male,"real es
 Kim Beom-Su,1.7,50,South Korea,Y,N,Y,Y,N,N,N,N,2015,3,0,0,0,Service,male,"online services, Self Made","Bachelor of Science in Engineering, Seoul National University; Master of Science, Seoul National University",2,1,Asia,2017,NA,NA,NA,The Newbie,NA
 Shuai Fangwen,1.7,50,China,Y,N,N,N,N,N,N,N,2015,3,0,0,0,Health care,male,"pharmaceuticals, Self Made",NA,0,1,Asia,2017,NA,NA,NA,The Newbie,NA
 Wang Laichun,1.7,49,China,Y,N,N,N,Y,N,N,N,2014,4,0,0,0,Technology,female,"electronics components, Self Made","EMBA, Tsinghua University",1,1,Asia,2017,NA,2004,Chairman,The Consistent,36
-Mike Lazaridis,1.7,49,Canada,Y,N,Y,N,N,N,N,N,2007,5,1,0,0,Technology,male,"Research in Motion, Self Made","Bachelor of Arts / Science, University of Waterloo",1,0.45,North America,2011,2012,NA,NA,The Ghost,NA
+Mike Lazaridis,1.7,56,Canada,Y,N,Y,N,N,N,N,N,2007,5,1,0,0,Technology,male,"Research in Motion, Self Made","Bachelor of Arts / Science, University of Waterloo",1,0.45,North America,2011,2012,1984,Founder,The Ghost,23
 Nirav Modi,1.7,46,India,N,N,N,N,N,N,N,N,2013,5,0,0,0,Fashion and Retail,female,diamond jewelry,NA,0,1,Asia,2017,NA,1999,NA,The Consistent,28
 Theodore Waitt,1.7,46,United States,N,N,N,N,N,N,N,N,2007,3,1,0,0,Technology,male,NA,NA,0,0.27,North America,2009,2010,1985,Founder,The Ghost,23
 Ranjan Pai,1.7,44,India,N,N,N,N,N,N,N,N,2013,5,0,0,0,Service,male,education,NA,0,1,Asia,2017,NA,1953,NA,The Consistent,-20
@@ -1602,7 +1602,7 @@ O. Francis Biondi,1.6,52,United States,Y,N,Y,N,Y,N,N,N,2014,4,0,0,0,Finance,male
 Brian Higgins,1.6,52,United States,Y,N,Y,N,N,N,N,N,2014,4,0,0,0,Finance,male,"hedge funds, Self Made","Bachelor of Arts / Science, Villanova University",1,1,North America,2017,NA,1995,NA,The Consistent,31
 Chen Yihong,1.6,52,China,Y,N,N,N,Y,N,N,N,2008,3,2,1,1,Retail,male,"retail, Self Made","EMBA, Lincoln University",1,0.3,Asia,2011,2012,NA,NA,The Ghost,NA
 Chen Qingzhou,1.6,51,China,Y,N,N,N,N,N,N,N,2016,2,0,0,0,Media,male,"communications equipment, Self Made",NA,0,1,Asia,2017,NA,NA,NA,The Newbie,NA
-James Balsillie,1.6,50,Canada,Y,N,Y,N,Y,N,N,N,2007,5,1,0,0,Technology,male,"Research in Motion, Self Made","Master of Business Administration, Harvard University; Bachelor of Arts / Science, University of Toronto",2,0.45,North America,2011,2012,NA,NA,The Ghost,NA
+James Balsillie,1.6,57,Canada,Y,N,Y,N,Y,N,N,N,2007,5,1,0,0,Technology,male,"Research in Motion, Self Made","Master of Business Administration, Harvard University; Bachelor of Arts / Science, University of Toronto",2,0.45,North America,2011,2012,1984,CEO,The Ghost,24
 Alexander Karp,1.6,49,United States,Y,N,Y,N,N,Y,Y,N,2015,3,0,0,0,Software,male,"software firm, Self Made","Doctor of Jurisprudence, Stanford University; Bachelor of Arts / Science, Haverford College",2,1,North America,2017,NA,NA,NA,The Newbie,NA
 Ma Hong,1.6,49,China,Y,N,N,N,N,N,N,N,2015,3,0,0,0,Fashion and Retail,male,"fashion retail, Self Made",NA,0,1,Asia,2017,NA,NA,NA,The Newbie,NA
 Yuri Shefler,1.6,49,Russia,Y,N,Y,N,N,N,N,N,2015,3,0,0,0,Food and Beverage,male,"alcohol, Self Made","Bachelor of Arts / Science, Plekhanov Russian University of Economics",1,1,Europe,2017,NA,NA,NA,The Newbie,NA
@@ -1876,7 +1876,7 @@ Mika Anttonen,1.4,50,Finland,Y,N,N,N,N,N,N,N,2017,1,0,0,0,Energy,male,"oil & gas
 Ji Qi,1.4,50,China,Y,N,N,N,N,N,N,N,2017,1,0,0,0,Real Estate,male,"hotels, motels, Self Made",NA,0,1,Asia,2017,NA,NA,NA,The Newbie,NA
 Peter Leibinger,1.4,50,Germany,N,N,N,N,N,N,N,N,2016,2,0,0,0,Construction and Engineering,male,machine tools,NA,0,1,Europe,2017,NA,NA,NA,The Newbie,NA
 Alex Beard,1.4,49,United Kingdom,Y,N,N,Y,N,N,N,N,2012,5,1,1,1,Metals and Mining,male,"mining, commodities, Self Made","Master of Science, Oxford University",1,0.83,Europe,2017,2016,1974,Leadership,The Consistent,6
-Douglas Fregin,1.4,49,Canada,Y,N,Y,N,N,N,N,N,2008,2,2,1,1,Technology,male,"Research in Motion, Self Made","Bachelor of Arts / Science, University of Waterloo",1,0.2,North America,2010,2011,NA,NA,The Ghost,NA
+Douglas Fregin,1.4,56,Canada,Y,N,Y,N,N,N,N,N,2008,2,2,1,1,Technology,male,"Research in Motion, Self Made","Bachelor of Arts / Science, University of Waterloo",1,0.2,North America,2010,2011,1984,Founder,The Ghost,23
 Dmitry Ananyev,1.4,48,Russia,Y,N,N,N,Y,N,N,N,2007,10,1,1,1,Diversified,male,"banking, IT, real estate, Self Made","Master of Business Administration, University of Chicago",1,0.91,Europe,2017,2009,NA,NA,The Consistent,NA
 Huang Wenji,1.4,48,China,Y,N,N,N,N,N,N,N,2016,2,0,0,0,Manufacturing,male,"umbrellas, Self Made",NA,0,1,Asia,2017,NA,NA,NA,The Newbie,NA
 Liu Bing,1.4,48,China,Y,N,N,N,N,N,N,N,2017,1,0,0,0,Retail,male,"retail, Self Made",NA,0,1,Asia,2017,NA,NA,NA,The Newbie,NA
