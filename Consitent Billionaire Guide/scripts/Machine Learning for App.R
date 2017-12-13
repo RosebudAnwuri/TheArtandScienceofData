@@ -59,9 +59,9 @@ model = do.call(h2o.gbm,
                 })
 
 #Save Model to be loaded into Shiny App!
-h2o.saveMojo(model,"local_model1")
-model = h2o.loadModel()
-#Lime
+h2o.saveModel(model,"local_model1")
+
+#Lime Predictions [Optional]
 df_lime = as.data.frame(data)[,c(features,response)]
 df_lime=read.csv("C:/Users/rose.anwuri/Documents/TheArtandScienceofData/Consitent Billionaire Guide/app/billionaire_data_for_ml.csv")
 model=h2o.loadModel("C:/Users/rose.anwuri/Documents/TheArtandScienceofData/Consitent Billionaire Guide/app/local_model")

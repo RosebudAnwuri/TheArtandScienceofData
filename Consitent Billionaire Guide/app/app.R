@@ -131,10 +131,6 @@ ui = shinyUI(
             h4("Do you have an MBA?", style = "font-size: 10pt;font-family: 'Raleway';text-transform: uppercase;"),
             choices = c("Yes", "No")
           ),
-          
-          tags$head(tags$style(HTML(
-            '#run{border-radius: 0px;}'
-          ))),
           div(
             conditionalPanel(
               "!$('html').hasClass('shiny-busy')",
@@ -154,60 +150,11 @@ ui = shinyUI(
         mainPanel(
           position = "left",
           
-          tags$head(tags$style(
-            HTML(
-              "
-              @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
-              
-              .navbar-default {
-              background-color: teal;
-              border-color: #E7E7E7;
-              }
-              .navbar-default .navbar-nav > li > a {
-              color: white;
-              }
-              .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-              background-color: #00897b;
-              color: white;
-              }
-              body > nav > div{
-              background-color: #009688;
-              }
-              body{
-              font-family:'Raleway', sans-serif;
-              }
-              .selectize-input {border-radius:0px;
-              background-color: rgba(236, 240, 241,0) !important;
-              border-width:1px;
-              
-              border-top: none;
-              border-right: none;
-              border-left: none;
-              border-bottom-color: #546e7a;
-              border-radius: 0;}
-              
-              .selectize-input.dropdown-active {border-radius:0px;
-              background-color: rgba(236, 240, 241,0);
-              border-width:1px;
-              border-top: none;
-              border-right: none;
-              border-left: none;
-              border-bottom-color: #546e7a;
-              border-radius: 0}
-              .selectize-dropdown {border-radius:0px;
-              background-color: rgba(236, 240, 241,0);
-              border-width:1px;
-              border-top: none;
-              border-right: none;
-              border-left: none;
-              border-bottom-color: #546e7a;
-              border-radius: 0}
-              
-              "
-            )
-            )),
+          
           tags$head(
             tags$link(rel = "stylesheet", type = "text/css", href = "animate.min.css")
+          ),tags$head(
+            tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
           ),
           bsModal(
             id = "startupMessage",
@@ -241,76 +188,7 @@ ui = shinyUI(
               ">GET STARTED!</button></div>'
             )
             ),
-          HTML(
-            '<style>
-            .card-action {
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            height:50px;
-            text-align:center;
-            }
-            .card-action:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-            }
-            @media only screen and (max-width : 500px) {
-            img{
-            width:100%;
-            min-width:100%;
-            }
-            }
-            
-            #run{
-            animation-duration:2s;
-            -moz-animation-duration: 2s;
-            -webkit-animation-duration: 2s;
-            -o-animation-duration:.2s;
-            -ms-animation-duration:.2s;
-            }
-#run1{
-            animation-duration:2s;
-            -moz-animation-duration: 2s;
-            -webkit-animation-duration: 2s;
-            -o-animation-duration:.2s;
-            -ms-animation-duration:.2s;
-            }
-            .pulse{
-            animation-duration:2s;
-            -moz-animation-duration: 2s;
-            -webkit-animation-duration: 2s;
-            -o-animation-duration:.2s;
-            -ms-animation-duration:.2s;
-            }
-            #close-button{
-            animation-duration:2s;
-            -moz-animation-duration: 2s;
-            -webkit-animation-duration: 2s;
-            -o-animation-duration:.2s;
-            -ms-animation-duration:.2s;
-            }
-            .modal-content{
-            background: none;
-            border: none;
-            box-shadow: none;
-            }
-            .modal-header{
-            border:none;
-            }
-            .modal .close{
-            color:white;
-            }
-            .modal-body{
-            display:none;
-            }
-            .modal-footer{
-            display:none;
-            }
-            
-            </style>
-            
-            '),
-          
-          
-          busyIndicators(
+                    busyIndicators(
             text = h4("Running Model...", style = "font-size: 40px; font-family:Papyrus;"),
             img = "Loading2.gif"
           ),
@@ -323,27 +201,7 @@ ui = shinyUI(
             textOutput("prediction_final")
           ),
           br(),
-          tags$head(
-            tags$style(
-              "#prefix_final{
-              font-size: 6vh; text-align:center;
-              }
-              #prediction_final{
-              font-size: 6vh; text-align:center;
-              }
-              #sidebar{background-color: rgba(236, 240, 241,0.4);}
-              form-group label{}
-              .form-group{color: #90a4ae ;text-transform:uppercase;font-size:10pt;}
-              #Age,#founding_year{background-color: rgba(236, 240, 241,0);
-              border-width:1px;
-              
-              border-top: none;
-              border-right: none;
-              border-left: none;
-              border-bottom-color: #546e7a;
-              border-radius: 0}"
-            )
-            ),
+          
           
           conditionalPanel(
             "typeof output.image_final !== 'undefined' &&!$('html').hasClass('shiny-busy')",
