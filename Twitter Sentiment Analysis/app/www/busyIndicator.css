@@ -1,0 +1,27 @@
+div.shinysky-busy-indicator {
+  
+  top: 20% !important;
+  left: 3% !important;
+  position:absolute;
+  margin-left:  auto;
+  display:none;
+  background: NA;
+  text-align: center;
+  margin-top: 0% !important;
+  margin-left: auto;
+  display: none;
+  background: NA;
+  text-align: center;
+  padding-top: 0% !important;
+  padding-left: 0% !important;
+  padding-bottom: 0% !important;
+  padding-right: 0% !important;
+  border-radius: 5px;
+  
+ 
+  
+}
+#shiny-tab-Table > div > div:nth-child(2) > div > div.box-body > div.shinysky-busy-indicator > img{
+	
+	width:500px;
+}

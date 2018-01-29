@@ -31,9 +31,39 @@ api_secret <- "C9OxWPmBAOwzQ6G4VXbCKeXd3XEHG5XvJjzTA1AVLoKbtwnpJy" # From dev.tw
 token <- "370018889-WKxIRFsc8OJhvdtW3BOOdgIy1qGco48d7QlUO0in" # From dev.twitter.com
 token_secret <- "7Ah8qplWJf5ey4zB4IPTTBlypMCUenXnQsrCH7808UbRE" # From dev.twitter.com
 
-# Create Twitter Connection
+busyIndicators <-
+  function(text = "Calculation in progress..",
+           img = "shinysky/busyIndicator/ajaxloaderq.gif",
+           wait = 1000) {
+    tagList(
+      singleton(tags$head(
+        tags$link(rel = "stylesheet", type = "text/css", href = "busyIndicator.css")
+      ))
+      ,
+      div(class = "shinysky-busy-indicator", p(text), img(src = img))
+      ,
+      tags$script(
+        sprintf(
+          "	setInterval(function(){
+          if ($('html').hasClass('shiny-busy')) {
+          setTimeout(function() {
+          if ($('html').hasClass('shiny-busy') ) {
+          $('div.shinysky-busy-indicator').show()
+          }
+          }, %d)
+          } else {
+          $('div.shinysky-busy-indicator').hide()
+          }
+  },100)
+          ",
+          wait
+      )
+      )
+      )
+    }
 
 ui = dashboardPage(skin = "blue",
+                   
   dashboardHeader(title = "Sentiment Analysis"),
   dashboardSidebar(sidebarMenu(
     menuItem("Getting Started",tabName = "Start", icon = icon("toggle-on") ),
@@ -71,7 +101,7 @@ ui = dashboardPage(skin = "blue",
                                         ")),
                box(solidHeader = T,width = 12,
                    status = "info",
-                   title=h1(strong('Getting Started with the Twitter Sentiment Analysis App'),style ="font-family = Lucida Calligraphy;font-size: 22pt;text-align:center;vertical-align: middle"),
+                   title=h1(strong('Getting Started with the Twitter Sentiment Analysis App'),style ="font-size: 22pt;text-align:center;vertical-align: middle"),
                    #br(),
                    h2("Hello There! Welcome to the Twitter Sentiment Analysis App! Now, you may ask what exactly does that mean? Well, it's simple! This app helps you understand how Twitter users feel about a certain topic. The great thing about this is that the topic can be anything of your choice. You can search for the sentiment towards a person like Obama, a place like Seychelles or even a movie like Mad Max!","This easy-to-use app has lots of interesting features and even lets you download the data it uses for all of its analysis. So the next time you want to get a review of a movie before heading to the cinemas, you can simply get on this app and get a 'Twitter Review' here! :-)",style= "font-size: 14pt"),
                    h2("I hope that by now you are as excited about the app as I am! I'd give a brief tutorial on how to get started with the app and create your first sentiment dashboard!",style= "font-size: 14pt"),
@@ -124,13 +154,39 @@ ui = dashboardPage(skin = "blue",
      
      tabItem(tabName = "Table",
              fluidRow(
-               box(title = strong("Search Bar"),height = 700,dateRangeInput("daterange1",label = h4("Select time range"),max = Sys.Date(),min = Sys.Date()-10,start = Sys.Date()-10,end=Sys.Date()),
+               box(title = strong("Search Bar"),height = 700,dateRangeInput("daterange1",label = h4("Select time range"),max = Sys.Date(),min = Sys.Date()-10,start = Sys.Date()-10,end=Sys.Date()), 
+                   tags$head(
+                 tags$link(rel = "stylesheet", type = "text/css", href = "animate.min.css")
+               ),tags$head(
+                 tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
+               ),
                    textInput('search1',h4("Enter search keyword:"),value = ""),
+               
                    #em(h4("Tip: To make your twitter search faster, shorten the search time range")),
-                   actionButton("Sarch1","Search"),solidHeader = T,status = "primary",
-                   textInput('sarch5',h4("Optional: Would you like to exclude tweets from a specific user(s)? Enter username(s):"),value=""),
+               actionLink("hider","Show Advanced Search"),   
+                div(actionButton(
+                     "Sarch1",
+                     div("SEARCH", icon("search"), style = "text-align:center;font-size:10pt;width: 150px;"),
+                     styleclass = "success",
+                     size = "mini",
+                     css.class = "animated infinite pulse"
+                   ),style="text-align:center;"),
+                   solidHeader = T,status = "primary",
+                   
+                   div(id="advanced",style="display:none;",textInput('sarch5',h4("Optional: Would you like to exclude tweets from a specific user(s)? Enter username(s):"),value=""),
                    em(h5("If you are not sure of the full username or you want to remove all usernames with a certain keyword, simply put the text in this format %searchWord% e.g %etisalat% will remove all screenNames containing Etisalat")),
-                   textInput('sarch6',h4('Optional: Would you like to exclude tweets with certain key words? Enter below:'),value = ""),
+                   textInput('sarch6',h4('Optional: Would you like to exclude tweets with certain key words? Enter below:'),value = ""))
+                   ,HTML("<script> $('#hider').click( function (event) {
+                          var hide_link =document.getElementById('hider').innerHTML
+                          if(hide_link=='Show Advanced Search'){
+                              document.getElementById('hider').innerHTML='Hide Advanced Search';
+                              document.getElementById('advanced').style.display='block';
+                          }
+                          if(hide_link=='Hide Advanced Search'){
+                              document.getElementById('hider').innerHTML='Show Advanced Search';
+                         document.getElementById('advanced').style.display='none';
+                         }
+                   })</script>"),
                    selectizeInput('palette1',h4("Select Dashboard Theme:"),choices = c("GrandBudapest","Moonrise1","Royal1","Moonrise2","Cavalcanti","Royal2","GrandBudapest2","Moonrise3","Chevalier","Zissou","FantasticFox","Darjeeling","Rushmore"),selected = "Rushmore"),
                    footer = 
                      em(h4('You can seperate the keywords by either spaces or commas.'))
@@ -138,18 +194,22 @@ ui = dashboardPage(skin = "blue",
                ),
                
                box(title = strong("Twitter Trends"),height = 700,conditionalPanel("typeof output.severalPlots !== 'undefined'",box(width = 5,solidHeader = T,height = 100,selectizeInput('graphs',h4('Variables to visualize'),choices = c("Number of Tweets","score","statusSource","Hourly score"),selected = "score"))
-                                                                                   , conditionalPanel("input.graphs == 'score'",box(width = 5,height = 100,solidHeader = T,selectizeInput('Aggregation',h4('Level of aggregation'),choices = c("sum","mean"),selected = "mean")))),conditionalPanel("input.graphs == 'statusSource'",
-                                                                                                                                                                                                                                                                                                    box(checkboxInput('showSent',h4("Show Average Sentiment for each Channel"),value = F),solidHeader = T,width = 5,height = 100)),
-                    div(plotlyOutput('severalPlots',height = "500px"),style="padding-top:25%"),solidHeader = T,status = "success"
-               ),
+                                                                                  , conditionalPanel("input.graphs == 'score'",box(width = 5,height = 100,solidHeader = T,selectizeInput('Aggregation',h4('Level of aggregation'),choices = c("sum","mean"),selected = "mean")))),conditionalPanel("input.graphs == 'statusSource'",
+                                                                                                                                                                                                                                                                                                   box(checkboxInput('showSent',h4("Show Average Sentiment for each Channel"),value = F),solidHeader = T,width = 5,height = 100)),
+                   div(plotlyOutput('severalPlots',height = "100%"),style="padding-top:25%"),solidHeader = T,status = "success"
+                   ,busyIndicators(
+                     text = h4("Running...", style = "font-size: 40px; font-family:Papyrus;"),
+                     img = "Loading1.gif"
+                   )),
                valueBoxOutput('tweetno',width = 3),
                valueBoxOutput("averageSentiment",width = 3),
                valueBoxOutput("users1",width = 3),
                valueBoxOutput("souRce",width = 3),
                box(title = strong("Sentiment Distribution"),height = 700,conditionalPanel("typeof output.distribution !== 'undefined'",checkboxInput('showz',h4("Exclude tweets with no sentiment?"),value = FALSE)),plotOutput("distribution"),solidHeader = T,status = "warning"),
                
-             box(dataTableOutput('twitterTable'),height = 700,title = strong("Sentiment Scoring Table"),solidHeader = T,status = "info",conditionalPanel(condition = "typeof output.twitterTable !=='undefined'",downloadButton("downloadtable",label = "Download Full CSV")))
-             ,busyIndicator(text = "Creating Dashboard...",wait = 1000)
+             box(div(dataTableOutput('twitterTable'), style = "font-size: 90%; width: 90%"),height = 700,title = strong("Sentiment Scoring Table"),solidHeader = T,status = "info",conditionalPanel(condition = "typeof output.twitterTable !=='undefined'",downloadButton("downloadtable",label = "Download Full CSV"))
+                 )
+             
              
      )),
       tabItem(tabName = "wordCloud",
@@ -198,7 +258,7 @@ ui = dashboardPage(skin = "blue",
                           }
                           
                           ")),
-      box(title=strong("Search Bar"),solidHeader = TRUE,status = "primary",dateRangeInput('daterange',h4('Select a Date Range'),max = Sys.Date(),min = Sys.Date()-10,start = Sys.Date()-10),
+      box(title=strong("Search Bar"),solidHeader = TRUE,status = "primary",dateRangeInput('daterange',h4('Select a Date Range'),max = Sys.Date(),min = Sys.Date()-10,start = Sys.Date()-10,end=Sys.Date()),
           textInput('search',h4('Enter your search term'),value = ""),
           #em(h4("Tip: To make your twitter search faster, shorten the search time range")),
          footer = selectizeInput('palette',h4("Select Dashboard Theme:"),choices = c("GrandBudapest","Moonrise1","Royal1","Moonrise2","Cavalcanti","Royal2","GrandBudapest2","Moonrise3","Chevalier","Zissou","FantasticFox","Darjeeling","Rushmore"),selected = "Rushmore"),
@@ -207,7 +267,13 @@ ui = dashboardPage(skin = "blue",
                           textInput('sarch3',h4('Would you like to exclude tweets with certain key words? Enter below:'),value = ""),
                           textInput('sarch4',h4('Would you want to exclude certain words from your wordcloud? Enter below:'),value = ""),
                           em(h4('You can seperate the keywords by either spaces or commas'))),
-         actionButton("Sarch","Search")
+         div(actionButton(
+           "Sarch",
+           div("SEARCH", icon("search"), style = "text-align:center;font-size:10pt;width: 150px;"),
+           styleclass = "success",
+           size = "mini",
+           css.class = "animated infinite pulse"
+         ),style="text-align:center;")
           ),
       box(title = strong("Word Cloud"), 
           plotOutput("Cloud",height = "490px"),
@@ -525,8 +591,8 @@ server = shinyServer(function(input, output, session){
     return(wordTweet)
 } 
   Clouding = eventReactive(input$Sarch,{cloudCreator(df=tablecreator(input$search))})
-  output$Cloud = renderPlot({ wordcloud(colnames(Clouding()),colSums(Clouding()),colors = wes_palette(name = input$palette,type = "discrete"),max.words = 300,rot.per = 0,family="Trebuchet MS",font = 2)})
-  wordCloud = reactive({wordcloud(colnames(Clouding()),colSums(Clouding()),colors = wes_palette(name = input$palette,type = "discrete"),max.words  = 300,rot.per = 0,family="Trebuchet MS",font = 2)})
+  output$Cloud = renderPlot({ wordcloud(colnames(Clouding()),colSums(Clouding()),colors = wes_palette(name = input$palette,type = "discrete"),max.words = 300,rot.per = 0,font = 2)})
+  wordCloud = reactive({wordcloud(colnames(Clouding()),colSums(Clouding()),colors = wes_palette(name = input$palette,type = "discrete"),max.words  = 300,rot.per = 0,font = 2)})
   
  topWords = function(){
    x1= Clouding()%>%
@@ -553,7 +619,7 @@ server = shinyServer(function(input, output, session){
  }
  output$topWords = renderPlotly({topWords()})
   output$downloadtable <- downloadHandler(
-    filename = function() { paste("Tweets on",input$search,'_',Sys.time(), '.pdf', sep='') },
+    filename = function() { paste("Tweets on",input$search,'_',Sys.time(), '.csv', sep='') },
     content = function(file) {
       write.csv(tableReact(), file,row.names = F)
     }
@@ -561,7 +627,10 @@ server = shinyServer(function(input, output, session){
  
   
 tableReact = eventReactive(input$Sarch1,{tablecreator1(input$search1)})
-output$twitterTable =renderDataTable({tableReact()[,c("created","text","statusSource","screenName","score")]},options = list(pageLength = 5))
+output$twitterTable =renderDataTable({
+  tableReact() %>%
+    mutate(text=substr(text,1,45)) %>%
+    select(created,text,statusSource,screenName,score)},options = list(pageLength = 5))
              
 output$averageSentiment =renderValueBox({if(mean(tableReact()$score)>0) return(valueBox(value=round(mean(tableReact()$score),2),subtitle = h5("Average Sentiment Score"),color = "green",icon = icon("thumbs-o-up"),width = 4))
                             else if(mean(tableReact()$score)<0) return(valueBox(round(mean(tableReact()$score),2),subtitle = "Average Sentiment Score",color = "red",icon = icon("thumbs-o-down"),width = 4))
@@ -586,8 +655,8 @@ output$tweetno = renderValueBox({
 topphone = reactive({gsub('Twitter for ','',tableReact() %>% group_by(statusSource) %>% dplyr::summarise(scored = mean(score),N=n()) %>% arrange(-N) %>% top_n(1) %>% select(statusSource))
 })
 output$souRce = renderValueBox({valueBox(value = paste0(round(as.numeric(tableReact() %>% group_by(statusSource) %>% dplyr::summarise(scored = mean(score),N=n()) %>% arrange(-N) %>% top_n(1) %>% select(N)/nrow(tableReact()))*100,2),"%"),subtitle = paste0("Percent of people tweeting from ",topphone(),"s"),icon = icon("mobile"),color = "purple")})
-output$distribution = renderPlot({if(input$showz == F) return(hist(tableReact()$score,main="Distribution of Sentiment",xlab = "Sentiment Score",col = wes_palette(input$palette1)[floor(runif(1,1,length(wes_palette(input$palette1))))],family = "Trebuchet MS" ,font = 14))
-  hist(tableReact()$score[tableReact()$score != 0],main="Distribution of Sentiment",xlab = "Sentiment Score",col = wes_palette(input$palette1)[floor(runif(1,1,length(wes_palette(input$palette1))))],family = "Trebuchet MS",font = 14)
+output$distribution = renderPlot({if(input$showz == F) return(hist(tableReact()$score,main="Distribution of Sentiment",xlab = "Sentiment Score",col = wes_palette(input$palette1)[floor(runif(1,1,length(wes_palette(input$palette1))))] ,font = 14))
+  hist(tableReact()$score[tableReact()$score != 0],main="Distribution of Sentiment",xlab = "Sentiment Score",col = wes_palette(input$palette1)[floor(runif(1,1,length(wes_palette(input$palette1))))],font = 14)
   })
 severalPlot = function(){
   if(input$graphs == "Number of Tweets"){
@@ -599,7 +668,7 @@ severalPlot = function(){
           theme_classic()+
           xlab("Date")+ylab(paste("Total", input$graphs))+
           ggtitle(paste('Trend of Total', input$graphs))+
-          theme(text=element_text(size = 14,family = "Trebuchet MS"))
+          theme(text=element_text(size = 14))
       )
     }
     else {
@@ -608,7 +677,7 @@ severalPlot = function(){
               theme_classic()+
               xlab("Date")+ylab(paste("Total", input$graphs))+
               ggtitle(paste('Trend of Total', input$graphs))+
-              theme(text=element_text(size = 14,family = "Trebuchet MS")))
+              theme(text=element_text(size = 14)))
     }
   }
   else if(input$graphs == "Hourly score"){
@@ -620,7 +689,7 @@ severalPlot = function(){
       ylab('Average Sentiment Score')+
       theme_classic()+
       ggtitle("Average Sentiment Score per Hour")+
-      theme(text=element_text(size = 14,family = "Trebuchet MS"),panel.background = element_rect(colour = "white"),plot.background = element_rect(colour = "white"))
+      theme(text=element_text(size = 14),panel.background = element_rect(colour = "white"),plot.background = element_rect(colour = "white"))
       
     )
   }
@@ -636,11 +705,12 @@ severalPlot = function(){
         transform(statusSource = reorder(statusSource,-N)) %>%
         ggplot+
         stat_summary(aes(statusSource,N,fill = Sentiment),geom = "bar",fun.y = "sum")+
-        stat_sum(aes(statusSource,N,fill = Sentiment,label = round(scored,2)),geom = "text",vjust = -0.35,show.legend = F)+
+        geom_text(aes(x=statusSource,y=N,label=round(scored,2)))+
         theme_classic()+
-        xlab("Source of Tweet")+ylab(paste("Number of Tweets"))+
-        ggtitle(paste('Number of Tweets for each Channel\n\n'))+
-        theme(text=element_text(size = 14,family = "Trebuchet MS"),axis.text.x = element_text(angle = 60, hjust = 1),panel.background = element_rect(colour = "white"),plot.background = element_rect(colour = "white"))+
+        xlab("Source of Tweet")+ylab("Number of Tweets")+
+        ggtitle(paste('Number of Tweets for each Channel'))+
+        theme(text=element_text(size = 14),legend.title=element_blank(),axis.text.x = element_text(angle = 90, hjust = 1),panel.background = element_rect(colour = "white"),plot.background = element_rect(colour = "white"))+
+        
         scale_fill_manual(values = c('Positive' = "seagreen3","Negative" = "firebrick3","Neutral"="ivory3"))
       )
     }
@@ -656,7 +726,7 @@ severalPlot = function(){
              xlab('Source of Tweet')+
              ylab('Number of Tweets')+
              ggtitle("Number of Tweets for each Channel")+
-             theme(text=element_text(size = 14,family = "Trebuchet MS"),axis.text.x = element_text(angle = 60, hjust = 1),panel.background = element_rect(colour = "white"),plot.background = element_rect(colour = "white"))
+             theme(text=element_text(size = 14),axis.text.x = element_text(angle = 90, hjust = 1),panel.background = element_rect(colour = "white"),plot.background = element_rect(colour = "white"))
     )
     
     }
@@ -668,19 +738,15 @@ severalPlot = function(){
                 theme_classic()+
                 xlab("Date")+ylab(paste("Total", input$graphs))+
                 ggtitle(paste('Trend of Total', input$graphs))+
-                theme(text=element_text(size = 14,family = "Trebuchet MS")))
+                theme(text=element_text(size = 14)))
     }
     else {
-   return( tableReact() %>%
-             mutate(Day= date(created)) %>%
-             group_by(Day) %>%
-             dplyr::summarise(avg_score=mean(score)) %>%
-             plot_ly(x=~Day,y=~avg_score,mode="lines",type="scatter",hoverinfo = 'text',text=~paste("Day: ",as.Date(Day),
-                                                                                                    "</br> \n Sentiment: ",round(avg_score,2)), line = list(color=wes_palette(input$palette1)[runif(1,1,length(wes_palette(input$palette1)))], width = 4)) %>%
-             layout(title = paste(ifelse(input$Aggregation=="sum","Total","Average"),"Sentiment Score per day"),
-                                  xaxis = list(title = "Days",showline=F,zeroline=F, gridcolor = '#ffffff'),
-                                  yaxis = list (title = paste(ifelse(input$Aggregation=="sum","Total","Average"),"Sentiment Score"),showline=F,zeroline=F, gridcolor = '#ffffff')
-             ))
+   return(ggplot(tableReact(),aes_string("as.Date(created)",input$graphs))+
+            stat_summary(fun.y = input$Aggregation,geom = "line",size =1.1,color = wes_palette(input$palette1)[floor(runif(1,1,length(wes_palette(input$palette1))))])+
+            theme_classic()+
+            xlab("Date")+ylab(paste("Average",input$graphs))+
+            ggtitle(paste('Trend of Average',input$graphs))+
+            theme(text=element_text(size = 14)))
     }
   }
   
@@ -688,8 +754,15 @@ severalPlot = function(){
   
   
 
-output$severalPlots = renderPlotly({severalPlot()})
+output$severalPlots = renderPlotly({ggplotly(severalPlot(),tooltip="y")})
 vars = reactiveValues(counter = 0)
+
+label = reactive({
+  if(vars$counter%%2 == 0)label = 'Show Advanced Search'
+  else label = 'Hide Advanced Search'
+  
+})
+
 output$advButton = renderUI({
   actionLink("click", label = label())
 })
@@ -698,17 +771,15 @@ observeEvent(input$click,{
 }
 
 )
-label = reactive({
-  if(vars$counter%%2 == 0)label = 'Show Advanced Search'
-  else label = 'Hide Advanced Search'
-  
-})
+
 output$labella = reactive({
   vars$counter%%2 == 0
   
 })
 
 outputOptions(output, "labella", suspendWhenHidden = FALSE)
+
+
 
 
   

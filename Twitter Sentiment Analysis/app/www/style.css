@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+body{
+ font-family:'Raleway', sans-serif ;
+ }
+.logo{
+	font-family:'Raleway', sans-serif !important;
+}
+ h1,h2,h3,h4,h5,h6{
+	 font-family:'Raleway', sans-serif ;
+ 
+ }
+#Sarch1, #Sarch{
+	border-radius:0px;
+	border-color:#689FB0;
+	background-color:#689FB0;
+	animation-duration:2s;
+-moz-animation-duration: 2s;
+-webkit-animation-duration: 2s;
+-o-animation-duration:.2s;
+-ms-animation-duration:.2s;
+	
+}
+#hider{
+	font-size:14pt;
+}
+#severalPlot{
+	box-sizing:unset;
+}
+
+#twitterTable{
+	margin-left: 5%;
+}

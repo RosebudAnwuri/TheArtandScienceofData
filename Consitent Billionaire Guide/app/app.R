@@ -12,7 +12,7 @@ library(shinysky)
 library(stringr)
 library(lime)
 library(ggplot2)
-library(shinyjqui)
+
 
 dat = read.csv("billionaire_data_for_ml.csv")
 
