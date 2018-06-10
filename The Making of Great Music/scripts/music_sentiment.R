@@ -178,7 +178,7 @@ music_df = music_df %>% mutate(year_bin= case_when(
 #Feature1 to Feature6. Feature6 because that's highest number of features for any
 #song in this dataset
 music_df_with_features=music_df %>%
-  select(artist,artist_with_features)%>%
+  select(artist,title,artist_with_features)%>%
   separate(artist_with_features,paste0("Features",1:6),";")
 
 #We will then gather this into an an "artist, featured artist" key-value pair
