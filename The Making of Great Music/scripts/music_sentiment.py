@@ -76,7 +76,7 @@ def get_spotify_features(track, artist):
 
 music_df.loc[:,features]= music_df.loc[:,].apply(lambda row: pd.Series(get_spotify_features(row["Song"],row["artist_shortened"]),index=features) ,axis=1)
             
-ind=np.linspace(311,5100,num=5101-311)
+ind=np.linspace(0,5100,num=5101-1)
 for i in ind:
     music_df.loc[i,features]=pd.Series(get_spotify_features(music_df.loc[i,"Song"],music_df.loc[i,"artist_shortened"]),index=features)
     print i
