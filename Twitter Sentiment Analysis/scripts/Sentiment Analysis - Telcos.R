@@ -251,6 +251,7 @@ write.csv(tweetDataFinal,'etisalat.csv',row.names = F)
 
 
 #Let's create a term-frequency document using the tm package by creating a corpus of all the words in our data
+
 corpus = Corpus(VectorSource(tweetDataFinal$text[tweetDatafinal$score !=0]))
 corpus = tm_map(corpus, PlainTextDocument)
 corpus = tm_map(corpus, removeNumbers)

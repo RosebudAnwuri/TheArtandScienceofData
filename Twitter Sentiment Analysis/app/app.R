@@ -45,9 +45,9 @@ busyIndicators <-
       tags$script(
         sprintf(
           "	setInterval(function(){
-          if ($('html').hasClass('shiny-busy')) {
+          if ($('html').hasClass('shiny-busy')  && !document.getElementById('shiny-notification-panel') ) {
           setTimeout(function() {
-          if ($('html').hasClass('shiny-busy') ) {
+          if ($('html').hasClass('shiny-busy') && !document.getElementById('shiny-notification-panel') ) {
           $('div.shinysky-busy-indicator').show()
           }
           }, %d)
@@ -343,7 +343,7 @@ server = shinyServer(function(input, output, session){
           while (date_time <= input$daterange[2]){
             date_time = as.character.Date(date_time+1)
             
-            tweetdetails <- searchTwitter(word, n=50, lang="en", since = paste(input$daterange[1]),until = date_time, geocode = '10,9, 200km')
+            tweetdetails <- searchTwitter(word, n=500, lang="en", since = paste(input$daterange[1]),until = date_time, geocode = '10,9, 200km')
             
             tweetData = append(tweetData, tweetdetails)
             i = i+1
@@ -417,7 +417,7 @@ server = shinyServer(function(input, output, session){
           while (date_time <= input$daterange1[2]){
             date_time = as.character.Date(date_time+1)
             
-            tweetdetails <- searchTwitter(word, n=50, lang="en", since = paste(input$daterange1[1]),until=date_time,geocode = '10,9, 200km')
+            tweetdetails <- searchTwitter(word, n=500, lang="en", since = paste(input$daterange1[1]),until=date_time,geocode = '10,9, 200km')
             
             tweetData = append(tweetData, tweetdetails)
             i = i+1

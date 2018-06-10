@@ -25,8 +25,8 @@ train = h2o.getFrame("train")
 val = h2o.getFrame("valid")
 test = h2o.getFrame("test")
 #After some feature selection, these are the final features
-features=c(4,5,7,9,18,25,26,28)
-response=27
+features=2:21
+response=22
 
 
 ##########################################
@@ -36,7 +36,7 @@ response=27
 
 #Select best model (already tuned) using the automl fuction
 #Fix maximum number of models to be trained as 10
-model_selection=h2o.automl(x=features,y=response,training_frame = train,validation_frame = val,max_models = 10,stopping_metric = "misclassification")
+model_selection=h2o.automl(x=features,y=response,training_frame = train,validation_frame = val,max_models = 10,stopping_metric = "AUC")
 
 
 #Extract the best model

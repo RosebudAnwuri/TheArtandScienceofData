@@ -30,3 +30,7 @@ body{
 #twitterTable{
 	margin-left: 5%;
 }
+.shinysky-busy-indicator{
+	width:300;
+	height:300;
+}
