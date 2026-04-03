@@ -30,7 +30,14 @@ from scrapers.jsearch import JSearchScraper
 from scrapers.base import JobListing
 from utils.dedup import DeduplicationTracker
 from utils.emailer import send_job_digest
-from utils.gsheets import save_to_gsheet
+from utils.csv_export import save_to_csv
+
+# Try to import Google Sheets - optional dependency
+try:
+    from utils.gsheets import save_to_gsheet
+    GSHEET_AVAILABLE = True
+except ImportError:
+    GSHEET_AVAILABLE = False
 
 # ── Logging Setup ───────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -112,8 +119,10 @@ def run_pipeline(dry_run: bool = False):
     # 4. Print summary to console
     _print_summary(new_scored)
 
-    # 5. Save to Google Sheet (if configured)
-    save_to_gsheet(new_scored)
+    # 5. Save to CSV (always) and Google Sheet (if configured)
+    save_to_csv(new_scored)
+    if GSHEET_AVAILABLE:
+        save_to_gsheet(new_scored)
 
     # 6. Send email
     success = send_job_digest(new_scored, dry_run=dry_run)
