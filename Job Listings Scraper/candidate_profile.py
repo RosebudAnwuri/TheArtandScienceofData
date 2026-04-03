@@ -90,9 +90,9 @@ CANDIDATE_PROFILE = {
             "start": "2018-11",
             "end": "2019-08",
             "highlights": [
-                "Delivered €400M working capital impact for FTSE 500 client",
+                "Delivered EUR 400M working capital impact for FTSE 500 client",
                 "Designed Organisational Design Optimisation model reducing timelines by 80%",
-                "Led inventory optimisation across three continents, £100M+ stock reduction",
+                "Led inventory optimisation across three continents, GBP 100M+ stock reduction",
                 "Built in-database late-payment risk model using R and SQL with ~90% accuracy",
             ],
         },

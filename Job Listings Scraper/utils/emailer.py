@@ -4,8 +4,7 @@ Email notification module — sends weekly job digest via SMTP (Gmail).
 
 import logging
 import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+from email.message import EmailMessage
 
 from config import EMAIL_CONFIG
 
@@ -23,13 +22,13 @@ def send_job_digest(scored_jobs: list, dry_run: bool = False) -> bool:
         return False
 
     subject = f"{len(scored_jobs)} New Data Science Jobs This Week"
-    html_body = _build_html(scored_jobs)
+    html_body = _force_ascii(_build_html(scored_jobs))
 
     if dry_run:
         print("\n" + "=" * 70)
         print(f"SUBJECT: {subject}")
         print("=" * 70)
-        print(_force_ascii(html_body[:3000]))
+        print(html_body[:3000])
         print("... (truncated for dry-run)")
         return True
 
@@ -37,18 +36,21 @@ def send_job_digest(scored_jobs: list, dry_run: bool = False) -> bool:
 
 
 def _send_smtp(subject: str, html_body: str) -> bool:
-    """Send email via Gmail SMTP."""
+    """Send email via Gmail SMTP using raw sendmail for maximum compatibility."""
     cfg = EMAIL_CONFIG
+    sender = cfg["sender_email"]
+    recipient = cfg["recipient_email"]
 
-    # Force everything to pure ASCII to prevent encoding errors
-    subject = _force_ascii(subject)
-    html_body = _force_ascii(html_body)
-
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"] = cfg["sender_email"]
-    msg["To"] = cfg["recipient_email"]
-    msg.attach(MIMEText(html_body, "html", "utf-8"))
+    # Build raw email string — pure ASCII, no encoding issues
+    raw_email = (
+        f"From: {sender}\r\n"
+        f"To: {recipient}\r\n"
+        f"Subject: {subject}\r\n"
+        f"MIME-Version: 1.0\r\n"
+        f"Content-Type: text/html; charset=us-ascii\r\n"
+        f"\r\n"
+        f"{html_body}"
+    )
 
     try:
         print(f"\n[EMAIL] Connecting to {cfg['smtp_server']}:{cfg['smtp_port']}...")
@@ -57,13 +59,13 @@ def _send_smtp(subject: str, html_body: str) -> bool:
             print("[EMAIL] Starting TLS...")
             server.starttls()
             server.ehlo()
-            print(f"[EMAIL] Logging in as {cfg['sender_email']}...")
-            server.login(cfg["sender_email"], cfg["sender_password"])
-            print(f"[EMAIL] Sending to {cfg['recipient_email']}...")
-            server.send_message(msg)
+            print(f"[EMAIL] Logging in as {sender}...")
+            server.login(sender, cfg["sender_password"])
+            print(f"[EMAIL] Sending to {recipient}...")
+            server.sendmail(sender, recipient, raw_email)
 
         print("[EMAIL] SUCCESS -- email sent!")
-        logger.info("Email sent to %s.", cfg["recipient_email"])
+        logger.info("Email sent to %s.", recipient)
         return True
     except Exception as exc:
         print(f"\n[EMAIL] FAILED: {type(exc).__name__}: {exc}")
@@ -91,7 +93,6 @@ def _build_html(scored_jobs: list) -> str:
         penalties_str = "<br>".join(f"* {_esc(r)}" for r in sj.penalty_reasons) if sj.penalty_reasons else ""
 
         stock_badge = "Yes" if sj.has_stock else "No"
-
         score_color = '#27ae60' if sj.match_score >= 90 else '#f39c12'
 
         rows += f"""

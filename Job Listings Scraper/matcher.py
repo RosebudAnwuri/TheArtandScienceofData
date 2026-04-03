@@ -14,28 +14,28 @@ from scrapers.base import JobListing
 # ── Salary Estimation Table (London, annual GBP) ────────────────────────────
 # Based on 2024-2025 market data for top-1% paying tech companies in London.
 SALARY_ESTIMATES = {
-    "Google / Alphabet":  {"base": "£120k–£180k", "total": "£180k–£350k+", "stock": True},
-    "Meta":               {"base": "£130k–£190k", "total": "£200k–£400k+", "stock": True},
-    "Apple":              {"base": "£110k–£170k", "total": "£160k–£300k+", "stock": True},
-    "Amazon":             {"base": "£100k–£150k", "total": "£140k–£280k+", "stock": True},
-    "Netflix":            {"base": "£150k–£250k", "total": "£150k–£250k",  "stock": False},
-    "Anthropic":          {"base": "£130k–£200k", "total": "£200k–£450k+", "stock": True},
-    "OpenAI":             {"base": "£130k–£200k", "total": "£200k–£500k+", "stock": True},
-    "DeepMind":           {"base": "£120k–£200k", "total": "£180k–£400k+", "stock": True},
-    "Mistral AI":         {"base": "£100k–£160k", "total": "£150k–£300k+", "stock": True},
-    "Cohere":             {"base": "£100k–£150k", "total": "£130k–£250k+", "stock": True},
-    "Stability AI":       {"base": "£90k–£150k",  "total": "£120k–£250k+", "stock": True},
-    "Spotify":            {"base": "£100k–£150k", "total": "£130k–£230k+", "stock": True},
-    "Stripe":             {"base": "£120k–£180k", "total": "£180k–£350k+", "stock": True},
-    "Palantir":           {"base": "£100k–£160k", "total": "£150k–£300k+", "stock": True},
-    "Databricks":         {"base": "£110k–£170k", "total": "£160k–£350k+", "stock": True},
-    "Snowflake":          {"base": "£100k–£160k", "total": "£150k–£300k+", "stock": True},
-    "Airbnb":             {"base": "£110k–£170k", "total": "£160k–£320k+", "stock": True},
-    "Uber":               {"base": "£100k–£160k", "total": "£150k–£300k+", "stock": True},
-    "Two Sigma":          {"base": "£120k–£200k", "total": "£200k–£500k+", "stock": False},
-    "Citadel":            {"base": "£130k–£220k", "total": "£250k–£600k+", "stock": False},
-    "Jane Street":        {"base": "£150k–£250k", "total": "£300k–£700k+", "stock": False},
-    "Bloomberg":          {"base": "£90k–£150k",  "total": "£120k–£250k+", "stock": False},
+    "Google / Alphabet":  {"base": "GBP 120k-180k", "total": "GBP 180k-350k+", "stock": True},
+    "Meta":               {"base": "GBP 130k-190k", "total": "GBP 200k-400k+", "stock": True},
+    "Apple":              {"base": "GBP 110k-170k", "total": "GBP 160k-300k+", "stock": True},
+    "Amazon":             {"base": "GBP 100k-150k", "total": "GBP 140k-280k+", "stock": True},
+    "Netflix":            {"base": "GBP 150k-250k", "total": "GBP 150k-250k",  "stock": False},
+    "Anthropic":          {"base": "GBP 130k-200k", "total": "GBP 200k-450k+", "stock": True},
+    "OpenAI":             {"base": "GBP 130k-200k", "total": "GBP 200k-500k+", "stock": True},
+    "DeepMind":           {"base": "GBP 120k-200k", "total": "GBP 180k-400k+", "stock": True},
+    "Mistral AI":         {"base": "GBP 100k-160k", "total": "GBP 150k-300k+", "stock": True},
+    "Cohere":             {"base": "GBP 100k-150k", "total": "GBP 130k-250k+", "stock": True},
+    "Stability AI":       {"base": "GBP 90k-150k",  "total": "GBP 120k-250k+", "stock": True},
+    "Spotify":            {"base": "GBP 100k-150k", "total": "GBP 130k-230k+", "stock": True},
+    "Stripe":             {"base": "GBP 120k-180k", "total": "GBP 180k-350k+", "stock": True},
+    "Palantir":           {"base": "GBP 100k-160k", "total": "GBP 150k-300k+", "stock": True},
+    "Databricks":         {"base": "GBP 110k-170k", "total": "GBP 160k-350k+", "stock": True},
+    "Snowflake":          {"base": "GBP 100k-160k", "total": "GBP 150k-300k+", "stock": True},
+    "Airbnb":             {"base": "GBP 110k-170k", "total": "GBP 160k-320k+", "stock": True},
+    "Uber":               {"base": "GBP 100k-160k", "total": "GBP 150k-300k+", "stock": True},
+    "Two Sigma":          {"base": "GBP 120k-200k", "total": "GBP 200k-500k+", "stock": False},
+    "Citadel":            {"base": "GBP 130k-220k", "total": "GBP 250k-600k+", "stock": False},
+    "Jane Street":        {"base": "GBP 150k-250k", "total": "GBP 300k-700k+", "stock": False},
+    "Bloomberg":          {"base": "GBP 90k-150k",  "total": "GBP 120k-250k+", "stock": False},
 }
 
 # ── Benefits by Company (commonly reported) ─────────────────────────────────
@@ -196,7 +196,7 @@ def _score_seniority(title_lower: str, combined: str) -> tuple[int, str]:
         if years_req <= 12:
             return (15, f"Experience requirement ({years_req}+ yrs) fits your profile")
         else:
-            return (5, f"High experience bar ({years_req}+ yrs) — may still fit")
+            return (5, f"High experience bar ({years_req}+ yrs) - may still fit")
 
     return (10, "")  # Neutral — no seniority signal
 
@@ -232,10 +232,10 @@ def _score_work_mode(listing: JobListing) -> tuple[int, str, str]:
 
     # Check for explicit 5-days-in-office
     if re.search(r"5\s*days?\s*(?:in[- ]?office|on[- ]?site|per\s*week)", desc_lower):
-        return (-15, "poor", "5 days in office — does not meet your preference")
+        return (-15, "poor", "5 days in office - does not meet your preference")
 
     if wm == "remote":
-        return (10, "great", "Remote role — ideal match")
+        return (10, "great", "Remote role - ideal match")
     if wm == "hybrid":
         return (5, "good", "Hybrid role")
     if wm == "onsite":
