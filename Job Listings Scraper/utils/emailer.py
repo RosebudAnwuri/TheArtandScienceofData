@@ -42,7 +42,9 @@ def _send_smtp(subject, html_body):
     cfg = EMAIL_CONFIG
     sender = _to_ascii(cfg["sender_email"])
     recipient = _to_ascii(cfg["recipient_email"])
-    password = cfg["sender_password"]
+    # Strip non-breaking spaces and regular spaces from password
+    # (Google shows app passwords as "abcd efgh ijkl mnop" but they should be "abcdefghijklmnop")
+    password = cfg["sender_password"].replace("\xa0", "").replace(" ", "")
     smtp_server = _to_ascii(cfg["smtp_server"])
     smtp_port = cfg["smtp_port"]
 
