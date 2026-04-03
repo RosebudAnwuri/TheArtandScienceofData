@@ -36,7 +36,11 @@ from utils.csv_export import save_to_csv
 try:
     from utils.gsheets import save_to_gsheet
     GSHEET_AVAILABLE = True
-except ImportError:
+except ImportError as exc:
+    print("[GSHEET] Google Sheets not available (missing packages). Run: pip install gspread google-auth")
+    GSHEET_AVAILABLE = False
+except Exception as exc:
+    print("[GSHEET] Failed to load Google Sheets module: " + str(exc))
     GSHEET_AVAILABLE = False
 
 # ── Logging Setup ───────────────────────────────────────────────────────────

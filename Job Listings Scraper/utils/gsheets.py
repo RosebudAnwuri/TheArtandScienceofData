@@ -49,8 +49,11 @@ def save_to_gsheet(scored_jobs):
     Returns the number of jobs successfully added.
     """
     if not GSHEET_CREDENTIALS_FILE or not GSHEET_SPREADSHEET_NAME:
-        logger.warning("Google Sheets not configured - skipping.")
+        print("[GSHEET] Not configured - set GSHEET_CREDENTIALS_FILE and GSHEET_SPREADSHEET_NAME in config.py")
         return 0
+
+    print("[GSHEET] Using credentials: " + GSHEET_CREDENTIALS_FILE)
+    print("[GSHEET] Target spreadsheet: " + GSHEET_SPREADSHEET_NAME)
 
     try:
         creds = Credentials.from_service_account_file(
