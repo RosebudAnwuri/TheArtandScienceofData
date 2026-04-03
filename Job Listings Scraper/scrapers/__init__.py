@@ -1,5 +1,4 @@
-from scrapers.greenhouse import GreenhouseScraper
-from scrapers.lever import LeverScraper
-from scrapers.generic import GenericScraper
+from scrapers.adzuna import AdzunaScraper
+from scrapers.jsearch import JSearchScraper
 
-__all__ = ["GreenhouseScraper", "LeverScraper", "GenericScraper"]
+__all__ = ["AdzunaScraper", "JSearchScraper"]

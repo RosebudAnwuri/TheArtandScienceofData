@@ -20,145 +20,77 @@ SCHEDULE_TIME = "09:00"   # 24h format, e.g. "09:00"
 LOCATION_KEYWORDS = ["london", "uk", "united kingdom", "remote", "emea"]
 MIN_MATCH_SCORE = 85      # Minimum match % to include a listing (0-100)
 
+# ── API Keys ────────────────────────────────────────────────────────────────
+# You need at least ONE of these. Both are free to sign up.
+#
+# Adzuna (recommended — UK-focused, best for London jobs):
+#   1. Go to https://developer.adzuna.com/
+#   2. Sign up for free → you get an App ID and API Key
+#
+# RapidAPI JSearch (aggregates LinkedIn, Indeed, Glassdoor):
+#   1. Go to https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch
+#   2. Sign up for free → subscribe to the free plan (500 requests/month)
+#   3. Copy your "X-RapidAPI-Key" from the dashboard
+#
+ADZUNA_APP_ID = ""          # e.g. "a1b2c3d4"
+ADZUNA_API_KEY = ""         # e.g. "e5f6g7h8i9j0k1l2m3n4o5p6"
+RAPIDAPI_KEY = ""           # e.g. "abc123def456..."
+
 # ── Target Companies ────────────────────────────────────────────────────────
-# Each entry: (company_name, careers_url, platform_type)
-# Platform types: "greenhouse", "lever", "workday", "custom"
+# The scrapers search for data science jobs at these companies specifically.
+# Jobs from other companies are ignored.
 TARGET_COMPANIES = [
     # ── FAANG / Big Tech ──
-    {
-        "name": "Google / Alphabet",
-        "platform": "custom",
-        "url": "https://www.google.com/about/careers/applications/jobs/results/?location=London%2C%20UK&q=data%20scientist",
-        "api_url": None,
-    },
-    {
-        "name": "Meta",
-        "platform": "custom",
-        "url": "https://www.metacareers.com/jobs?offices[0]=London%2C%20UK&q=data%20scientist",
-        "api_url": None,
-    },
-    {
-        "name": "Apple",
-        "platform": "custom",
-        "url": "https://jobs.apple.com/en-gb/search?location=london-LON&team=machine-learning-and-ai-MLAI+software-and-services-SFTWR",
-        "api_url": None,
-    },
-    {
-        "name": "Amazon",
-        "platform": "custom",
-        "url": "https://www.amazon.jobs/en-gb/search?base_query=data+scientist&loc_query=London%2C+England%2C+GBR",
-        "api_url": None,
-    },
-    {
-        "name": "Netflix",
-        "platform": "greenhouse",
-        "url": "https://jobs.netflix.com/search?location=London%2C%20United%20Kingdom&team=Data%20Science%20and%20Engineering",
-        "api_url": None,
-    },
+    "Google",
+    "Alphabet",
+    "DeepMind",
+    "Meta",
+    "Facebook",
+    "Apple",
+    "Amazon",
+    "AWS",
+    "Netflix",
+    "Microsoft",
     # ── Top AI Companies ──
-    {
-        "name": "Anthropic",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/anthropic",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
-    },
-    {
-        "name": "OpenAI",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/openai",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/openai/jobs",
-    },
-    {
-        "name": "DeepMind",
-        "platform": "custom",
-        "url": "https://deepmind.google/about/careers/",
-        "api_url": None,
-    },
-    {
-        "name": "Mistral AI",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/mistral",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/mistral/jobs",
-    },
-    {
-        "name": "Cohere",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/cohere",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/cohere/jobs",
-    },
-    {
-        "name": "Stability AI",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/stabilityai",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/stabilityai/jobs",
-    },
+    "Anthropic",
+    "OpenAI",
+    "Mistral",
+    "Cohere",
+    "Stability AI",
+    "Hugging Face",
+    "xAI",
     # ── Top-Paying Tech ──
-    {
-        "name": "Spotify",
-        "platform": "lever",
-        "url": "https://www.lifeatspotify.com/jobs?query=data%20scientist&location=london",
-        "api_url": None,
-    },
-    {
-        "name": "Stripe",
-        "platform": "custom",
-        "url": "https://stripe.com/jobs/search?office_locations=London&teams=Data+%26+Machine+Learning",
-        "api_url": None,
-    },
-    {
-        "name": "Palantir",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/palantir",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/palantir/jobs",
-    },
-    {
-        "name": "Databricks",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/databricks",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs",
-    },
-    {
-        "name": "Snowflake",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/snowflake",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/snowflake/jobs",
-    },
-    {
-        "name": "Airbnb",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/airbnb",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/airbnb/jobs",
-    },
-    {
-        "name": "Uber",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/uber",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/uber/jobs",
-    },
-    {
-        "name": "Two Sigma",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/twosigma",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/twosigma/jobs",
-    },
-    {
-        "name": "Citadel",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/citadel",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/citadel/jobs",
-    },
-    {
-        "name": "Jane Street",
-        "platform": "greenhouse",
-        "url": "https://boards.greenhouse.io/janestreet",
-        "api_url": "https://boards-api.greenhouse.io/v1/boards/janestreet/jobs",
-    },
-    {
-        "name": "Bloomberg",
-        "platform": "custom",
-        "url": "https://careers.bloomberg.com/job/search?lc=London&qf=data+scientist",
-        "api_url": None,
-    },
+    "Spotify",
+    "Stripe",
+    "Palantir",
+    "Databricks",
+    "Snowflake",
+    "Airbnb",
+    "Uber",
+    "Revolut",
+    "Monzo",
+    # ── Quant / Finance ──
+    "Two Sigma",
+    "Citadel",
+    "Jane Street",
+    "Bloomberg",
+    "D.E. Shaw",
+    "Point72",
+    "Man Group",
+    "G-Research",
+]
+
+# ── Search Queries ──────────────────────────────────────────────────────────
+# Multiple queries to cast a wide net
+SEARCH_QUERIES = [
+    "data scientist",
+    "staff data scientist",
+    "senior data scientist",
+    "machine learning scientist",
+    "applied scientist",
+    "research scientist",
+    "analytics manager",
+    "lead data scientist",
 ]
 
 # ── Data Storage ────────────────────────────────────────────────────────────

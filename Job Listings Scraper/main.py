@@ -19,23 +19,15 @@ Usage:
 
 import argparse
 import logging
-import sys
 import time
 
 import schedule
 
-from config import (
-    MIN_MATCH_SCORE,
-    SCHEDULE_DAY,
-    SCHEDULE_TIME,
-    SENT_JOBS_DB,
-    TARGET_COMPANIES,
-)
+from config import MIN_MATCH_SCORE, SCHEDULE_DAY, SCHEDULE_TIME, SENT_JOBS_DB
 from matcher import rank_jobs
+from scrapers.adzuna import AdzunaScraper
+from scrapers.jsearch import JSearchScraper
 from scrapers.base import JobListing
-from scrapers.generic import GenericScraper
-from scrapers.greenhouse import GreenhouseScraper
-from scrapers.lever import LeverScraper
 from utils.dedup import DeduplicationTracker
 from utils.emailer import send_job_digest
 
@@ -47,33 +39,41 @@ logging.basicConfig(
 )
 logger = logging.getLogger("main")
 
-# ── Scraper Registry ────────────────────────────────────────────────────────
-SCRAPER_MAP = {
-    "greenhouse": GreenhouseScraper,
-    "lever": LeverScraper,
-    "custom": GenericScraper,
-}
 
-
-def scrape_all_companies() -> list[JobListing]:
+def scrape_all_sources() -> list[JobListing]:
     """Run all configured scrapers and collect job listings."""
     all_jobs: list[JobListing] = []
 
-    for company_cfg in TARGET_COMPANIES:
-        platform = company_cfg.get("platform", "custom")
-        scraper_cls = SCRAPER_MAP.get(platform, GenericScraper)
+    # ── Adzuna (UK-focused, best for London) ────────────────────────────
+    logger.info("Running Adzuna scraper...")
+    try:
+        adzuna = AdzunaScraper()
+        jobs = adzuna.scrape()
+        all_jobs.extend(jobs)
+        logger.info("  → %d jobs from Adzuna", len(jobs))
+    except Exception as exc:
+        logger.error("  ✗ Adzuna scraper failed: %s", exc)
 
-        logger.info("Scraping %s (%s)...", company_cfg["name"], platform)
-        try:
-            scraper = scraper_cls(company_cfg)
-            jobs = scraper.scrape()
-            all_jobs.extend(jobs)
-            logger.info("  → %d jobs from %s", len(jobs), company_cfg["name"])
-        except Exception as exc:
-            logger.error("  ✗ Failed to scrape %s: %s", company_cfg["name"], exc)
+    # ── JSearch / RapidAPI (LinkedIn, Indeed, Glassdoor aggregator) ─────
+    logger.info("Running JSearch scraper...")
+    try:
+        jsearch = JSearchScraper()
+        jobs = jsearch.scrape()
+        all_jobs.extend(jobs)
+        logger.info("  → %d jobs from JSearch", len(jobs))
+    except Exception as exc:
+        logger.error("  ✗ JSearch scraper failed: %s", exc)
 
-    logger.info("Total raw listings scraped: %d", len(all_jobs))
-    return all_jobs
+    # ── Deduplicate across sources (same job may appear on both) ────────
+    seen: dict[str, JobListing] = {}
+    for job in all_jobs:
+        key = f"{job.company.lower()}|{job.title.lower()}"
+        if key not in seen:
+            seen[key] = job
+
+    deduped = list(seen.values())
+    logger.info("Total unique listings: %d (from %d raw)", len(deduped), len(all_jobs))
+    return deduped
 
 
 def run_pipeline(dry_run: bool = False):
@@ -83,9 +83,9 @@ def run_pipeline(dry_run: bool = False):
     logger.info("=" * 60)
 
     # 1. Scrape
-    all_jobs = scrape_all_companies()
+    all_jobs = scrape_all_sources()
     if not all_jobs:
-        logger.warning("No jobs found across any company. Check scraper configs / network.")
+        logger.warning("No jobs found. Make sure at least one API key is configured in config.py.")
         return
 
     # 2. Match & rank (≥ 85% score)
