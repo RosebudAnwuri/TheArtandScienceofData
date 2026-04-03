@@ -30,6 +30,7 @@ from scrapers.jsearch import JSearchScraper
 from scrapers.base import JobListing
 from utils.dedup import DeduplicationTracker
 from utils.emailer import send_job_digest
+from utils.notion import save_to_notion
 
 # ── Logging Setup ───────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -111,10 +112,13 @@ def run_pipeline(dry_run: bool = False):
     # 4. Print summary to console
     _print_summary(new_scored)
 
-    # 5. Send email
+    # 5. Save to Notion (if configured)
+    save_to_notion(new_scored)
+
+    # 6. Send email
     success = send_job_digest(new_scored, dry_run=dry_run)
 
-    # 6. Mark as sent (only if email succeeded or dry-run)
+    # 7. Mark as sent (only if email succeeded or dry-run)
     if success or dry_run:
         dedup.mark_sent([s.listing.unique_key() for s in new_scored])
 

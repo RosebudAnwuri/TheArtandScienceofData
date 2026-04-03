@@ -96,3 +96,17 @@ SEARCH_QUERIES = [
 # ── Data Storage ────────────────────────────────────────────────────────────
 SENT_JOBS_DB = "sent_jobs.json"      # Tracks previously sent listings
 SCRAPED_JOBS_DB = "scraped_jobs.json"  # Latest scrape results
+
+# ── Notion Integration (optional) ──────────────────────────────────────────
+# Saves every matched job to a Notion database for tracking applications.
+#
+# Setup:
+#   1. Go to https://www.notion.so/my-integrations
+#   2. Click "New integration" -> name it "Job Scraper" -> Submit
+#   3. Copy the "Internal Integration Secret" (starts with ntn_)
+#   4. Create a database in Notion with the required columns (see README)
+#   5. Share the database with your integration (click "..." -> Connections -> "Job Scraper")
+#   6. Copy the database ID from the URL (the 32-char string after the workspace name)
+#
+NOTION_API_KEY = ""          # e.g. "ntn_abc123..."
+NOTION_DATABASE_ID = ""      # e.g. "a1b2c3d4e5f6..."
