@@ -49,7 +49,7 @@ def _send_smtp(subject: str, html_body: str) -> bool:
     msg["Subject"] = subject
     msg["From"] = cfg["sender_email"]
     msg["To"] = cfg["recipient_email"]
-    msg.attach(MIMEText(html_body, "html"))
+    msg.attach(MIMEText(html_body, "html", "utf-8"))
 
     try:
         with smtplib.SMTP(cfg["smtp_server"], cfg["smtp_port"]) as server:
@@ -148,7 +148,9 @@ def _build_html(scored_jobs: list) -> str:
 
 
 def _esc(text: str) -> str:
-    """Basic HTML escaping."""
+    """HTML escaping with special character cleanup."""
+    # Replace non-breaking spaces and other problematic characters
+    text = text.replace("\xa0", " ").replace("\u200b", "")
     return (
         text.replace("&", "&amp;")
         .replace("<", "&lt;")
