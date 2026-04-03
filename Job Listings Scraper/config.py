@@ -97,16 +97,15 @@ SEARCH_QUERIES = [
 SENT_JOBS_DB = "sent_jobs.json"      # Tracks previously sent listings
 SCRAPED_JOBS_DB = "scraped_jobs.json"  # Latest scrape results
 
-# ── Notion Integration (optional) ──────────────────────────────────────────
-# Saves every matched job to a Notion database for tracking applications.
+# ── Google Sheets Integration (optional) ───────────────────────────────────
+# Saves every matched job to a Google Sheet for tracking applications.
 #
-# Setup:
-#   1. Go to https://www.notion.so/my-integrations
-#   2. Click "New integration" -> name it "Job Scraper" -> Submit
-#   3. Copy the "Internal Integration Secret" (starts with ntn_)
-#   4. Create a database in Notion with the required columns (see README)
-#   5. Share the database with your integration (click "..." -> Connections -> "Job Scraper")
-#   6. Copy the database ID from the URL (the 32-char string after the workspace name)
+# Setup (see README for detailed steps):
+#   1. Go to https://console.cloud.google.com/
+#   2. Create a project -> Enable "Google Sheets API" and "Google Drive API"
+#   3. Create a Service Account -> Download the JSON key file
+#   4. Create a Google Sheet -> Share it with the service account email
+#   5. Set the file path and sheet name below
 #
-NOTION_API_KEY = ""          # e.g. "ntn_abc123..."
-NOTION_DATABASE_ID = ""      # e.g. "a1b2c3d4e5f6..."
+GSHEET_CREDENTIALS_FILE = ""     # e.g. "credentials.json" (path to your downloaded JSON key)
+GSHEET_SPREADSHEET_NAME = ""     # e.g. "Job Tracker" (exact name of your Google Sheet)
