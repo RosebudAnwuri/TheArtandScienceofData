@@ -1,10 +1,9 @@
 """
-Email notification module — sends weekly job digest via SMTP (Gmail).
+Email notification module - sends weekly job digest via SMTP (Gmail).
 """
 
 import logging
 import smtplib
-from email.message import EmailMessage
 
 from config import EMAIL_CONFIG
 
@@ -62,7 +61,8 @@ def _send_smtp(subject: str, html_body: str) -> bool:
             print(f"[EMAIL] Logging in as {sender}...")
             server.login(sender, cfg["sender_password"])
             print(f"[EMAIL] Sending to {recipient}...")
-            server.sendmail(sender, recipient, raw_email)
+            # Encode to bytes ourselves to guarantee no ASCII error
+            server.sendmail(sender, recipient, raw_email.encode("ascii", errors="ignore"))
 
         print("[EMAIL] SUCCESS -- email sent!")
         logger.info("Email sent to %s.", recipient)
