@@ -12,6 +12,13 @@ import requests
 logger = logging.getLogger(__name__)
 
 
+def _clean(text: str) -> str:
+    """Remove non-ASCII characters that break terminals and email encoding."""
+    if not isinstance(text, str):
+        return str(text)
+    return text.encode("ascii", errors="ignore").decode("ascii")
+
+
 @dataclass
 class JobListing:
     """Represents a single job listing scraped from a careers page."""
@@ -29,6 +36,19 @@ class JobListing:
     benefits: list = field(default_factory=list)
     date_posted: str = ""
     department: str = ""
+
+    def __post_init__(self):
+        """Clean all string fields of non-ASCII characters."""
+        self.title = _clean(self.title)
+        self.company = _clean(self.company)
+        self.location = _clean(self.location)
+        self.description = _clean(self.description)
+        self.requirements = _clean(self.requirements)
+        self.salary_text = _clean(self.salary_text)
+        self.work_mode = _clean(self.work_mode)
+        self.date_posted = _clean(self.date_posted)
+        self.department = _clean(self.department)
+        self.benefits = [_clean(b) for b in self.benefits]
 
     def unique_key(self) -> str:
         """Key used for deduplication across runs."""
