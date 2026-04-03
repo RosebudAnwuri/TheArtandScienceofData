@@ -52,16 +52,22 @@ def _send_smtp(subject: str, html_body: str) -> bool:
     msg.attach(MIMEText(html_body, "html", "utf-8"))
 
     try:
+        print(f"\n[EMAIL] Connecting to {cfg['smtp_server']}:{cfg['smtp_port']}...")
         with smtplib.SMTP(cfg["smtp_server"], cfg["smtp_port"]) as server:
             server.ehlo()
+            print("[EMAIL] Starting TLS...")
             server.starttls()
             server.ehlo()
+            print(f"[EMAIL] Logging in as {cfg['sender_email']}...")
             server.login(cfg["sender_email"], cfg["sender_password"])
+            print(f"[EMAIL] Sending to {cfg['recipient_email']}...")
             server.send_message(msg)
 
+        print("[EMAIL] SUCCESS — email sent!")
         logger.info("Email sent to %s.", cfg["recipient_email"])
         return True
-    except smtplib.SMTPException as exc:
+    except Exception as exc:
+        print(f"\n[EMAIL] FAILED: {type(exc).__name__}: {exc}")
         logger.error("Failed to send email: %s", exc)
         return False
 
